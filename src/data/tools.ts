@@ -5,6 +5,7 @@
   | 'CAD 소스'
   | '공사일보'
   | '사진대지'
+  | '공정관리'
   | '실무검토'
 
 export type TrustLabel = '공식자료 우선' | '기준 확인' | '실무 기준' | '검토필요'
@@ -20,6 +21,7 @@ export interface ToolItem {
   feature: string
   status: '준비됨' | '준비중'
   keywords: string[]
+  link?: string
 }
 
 export const tools: ToolItem[] = [
@@ -55,9 +57,10 @@ export const tools: ToolItem[] = [
     description: '서버 저장 없이 브라우저에서 작성하고 결과물을 내려받는 방식으로 설계합니다.',
     trustLabel: '실무 기준',
     sourceLabel: '현장 표준 양식',
-    feature: '문서 생성 도구 예정',
-    status: '준비중',
+    feature: '공사일보프로 앱으로 연결',
+    status: '준비됨',
     keywords: ['공사일보', '작업일보', '현장일지', '일일보고'],
+    link: 'https://nam2037772.github.io/gongsailbo-pro/',
   },
   {
     id: 'photo-ledger',
@@ -67,9 +70,23 @@ export const tools: ToolItem[] = [
     description: '업로드 파일을 서버에 보관하지 않는 로컬 처리 방식을 우선합니다.',
     trustLabel: '실무 기준',
     sourceLabel: '현장 표준 양식',
-    feature: 'PDF 생성 도구 예정',
-    status: '준비중',
+    feature: '사진대지프로 앱으로 연결',
+    status: '준비됨',
     keywords: ['사진대지', '사진관리', '준공사진', '공사사진', 'pdf'],
+    link: 'https://nam2037772.github.io/sajindaeji-pro/',
+  },
+  {
+    id: 'process-schedule',
+    title: '공정관리 도구',
+    category: '공정관리',
+    answer: '공정표와 진행률을 정리해 현장 공정관리를 돕는 도구입니다.',
+    description: '전체 공정 계획과 실적을 비교해 관리하는 별도 앱으로 연결됩니다.',
+    trustLabel: '실무 기준',
+    sourceLabel: '현장 표준 양식',
+    feature: '공정관리프로 앱으로 연결',
+    status: '준비됨',
+    keywords: ['공정관리', '공정표', '일정관리', '진행률'],
+    link: 'https://nam2037772.github.io/gongjung-pro/',
   },
   {
     id: 'remitar-calc',
@@ -79,9 +96,10 @@ export const tools: ToolItem[] = [
     description: '현장 발주 전 대략 물량을 점검하는 계산 카드입니다. 제조사 기준 확인이 필요합니다.',
     trustLabel: '검토필요',
     sourceLabel: '제조사 기준 및 현장 보정 필요',
-    feature: '계산 도구 예정',
-    status: '준비중',
+    feature: '계산기프로 앱으로 연결',
+    status: '준비됨',
     keywords: ['레미탈', '몰탈', '모르타르', '소요량', '자재량'],
+    link: 'https://nam2037772.github.io/calculator-pro/',
   },
   {
     id: 'slope-calc',
@@ -91,9 +109,10 @@ export const tools: ToolItem[] = [
     description: '구배, 경사율, 각도 환산을 현장에서 바로 확인하는 계산 카드입니다.',
     trustLabel: '실무 기준',
     sourceLabel: '수학식 기준',
-    feature: '계산 도구 예정',
-    status: '준비중',
+    feature: '계산기프로 앱으로 연결',
+    status: '준비됨',
     keywords: ['경사도', '구배', '기울기', '퍼센트', '각도'],
+    link: 'https://nam2037772.github.io/calculator-pro/',
   },
   {
     id: 'vat-calc',
@@ -103,9 +122,10 @@ export const tools: ToolItem[] = [
     description: '견적서와 세금계산서 금액 확인에 쓰는 단순 계산 카드입니다.',
     trustLabel: '기준 확인',
     sourceLabel: '부가가치세 기본 계산식',
-    feature: '계산 도구 예정',
-    status: '준비중',
+    feature: '계산기프로 앱으로 연결',
+    status: '준비됨',
     keywords: ['부가세', '세금계산서', 'vat', '공급가액', '합계금액'],
+    link: 'https://nam2037772.github.io/calculator-pro/',
   },
   {
     id: 'standard-market-price',
@@ -206,6 +226,7 @@ export const categories: CategoryInfo[] = [
   { id: 'category-cad', title: 'CAD 소스', description: '자주 쓰는 CAD 블록, 상세도, 기호 자료를 출처와 함께 정리합니다.' },
   { id: 'category-daily-report', title: '공사일보', description: '현장 정보를 입력해 문서를 만들고 결과물을 내 PC에 저장하는 도구로 확장합니다.' },
   { id: 'category-photo-log', title: '사진대지', description: '사진과 설명을 배치해 PDF로 저장하는 현장 문서 도구로 확장합니다.' },
+  { id: 'category-process', title: '공정관리', description: '공정표와 진행률을 정리해 현장 공정을 관리하는 도구로 확장합니다.' },
   { id: 'category-review', title: '실무검토', description: '실정보고와 분쟁검토는 검토 항목을 먼저 정리하고, AI는 보조 기능으로만 다룹니다.' },
   { id: 'updates', title: '최신 기준', description: '법령, 기준, 양식 변경사항을 공식자료 중심으로 정리합니다.' },
 ]

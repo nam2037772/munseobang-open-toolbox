@@ -32,6 +32,10 @@ function SearchHub() {
   }, [query])
 
   const handleOpen = (tool: ToolItem) => {
+    if (tool.link) {
+      window.open(tool.link, '_blank', 'noopener,noreferrer')
+      return
+    }
     alert(`${tool.title}은 현재 MVP 준비 항목입니다. 서버 저장 없이 내 PC 저장 방식으로 확장할 예정입니다.`)
   }
 
