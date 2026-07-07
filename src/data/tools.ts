@@ -6,6 +6,7 @@
   | '공사일보'
   | '사진대지'
   | '공정관리'
+  | '품질관리'
   | '실무검토'
 
 export type TrustLabel = '공식자료 우선' | '기준 확인' | '실무 기준' | '검토필요'
@@ -87,6 +88,19 @@ export const tools: ToolItem[] = [
     status: '준비됨',
     keywords: ['공정관리', '공정표', '일정관리', '진행률'],
     link: 'https://nam2037772.github.io/gongjung-pro/',
+  },
+  {
+    id: 'inspection-pro',
+    title: '검측프로',
+    category: '품질관리',
+    answer: '검측요청서, 검측점검표, 결과통보서, 참여자 실명부와 사진대지를 브라우저에서 작성합니다.',
+    description: '서버 저장 없이 localStorage 임시저장, JSON 저장/불러오기, 브라우저 PDF 출력으로 현장 검측 문서를 관리합니다.',
+    trustLabel: '실무 기준',
+    sourceLabel: '일반 건설 검측 실무 기준',
+    feature: '검측프로 앱으로 연결',
+    status: '준비됨',
+    keywords: ['검측', '검측요청서', '검측점검표', '품질관리', '검측결과통보', '사진대지'],
+    link: './gumcheuk-pro/',
   },
   {
     id: 'remitar-calc',
@@ -227,6 +241,10 @@ export const categories: CategoryInfo[] = [
   { id: 'category-daily-report', title: '공사일보', description: '현장 정보를 입력해 문서를 만들고 결과물을 내 PC에 저장하는 도구로 확장합니다.' },
   { id: 'category-photo-log', title: '사진대지', description: '사진과 설명을 배치해 PDF로 저장하는 현장 문서 도구로 확장합니다.' },
   { id: 'category-process', title: '공정관리', description: '공정표와 진행률을 정리해 현장 공정을 관리하는 도구로 확장합니다.' },
+  { id: 'category-quality', title: '품질관리', description: '검측 요청, 점검표, 결과통보와 사진 증빙을 내 PC 중심으로 작성합니다.' },
   { id: 'category-review', title: '실무검토', description: '실정보고와 분쟁검토는 검토 항목을 먼저 정리하고, AI는 보조 기능으로만 다룹니다.' },
   { id: 'updates', title: '최신 기준', description: '법령, 기준, 양식 변경사항을 공식자료 중심으로 정리합니다.' },
 ]
+
+
+

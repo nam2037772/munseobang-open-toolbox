@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>검측프로 | 문서방 오픈 툴박스</title>
+<meta name="description" content="건설현장 검측요청서·검측점검표·검측결과통보·공사참여자실명부를 브라우저에서 작성하고 PDF로 저장하는 로컬 작업대" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-brand">
+    <strong>검측프로</strong>
+    <span class="topbar-sub">문서방 오픈 툴박스 · 품질관리</span>
+  </div>
+  <div class="topbar-actions">
+    <button id="btnNew" class="btn" type="button">새 검측</button>
+    <button id="btnLoad" class="btn" type="button">이전 검측 불러오기</button>
+    <input id="fileLoad" type="file" accept="application/json" hidden />
+    <button id="btnSaveJson" class="btn" type="button">JSON 저장</button>
+    <button id="btnResetAll" class="btn btn-danger" type="button">전체 초기화</button>
+  </div>
+</header>
+
+<div class="autosave-line" id="autosaveLine">자동 임시저장: -</div>
+
+<main class="layout">
+
+  <!-- ===================== 좌측: 입력 단계 ===================== -->
+  <section class="input-pane">
+    <nav class="step-nav" id="stepNav">
+      <button class="step-btn active" data-step="1" type="button">1. 현장정보</button>
+      <button class="step-btn" data-step="2" type="button">2. 검측요청</button>
+      <button class="step-btn" data-step="3" type="button">3. 검측점검표</button>
+      <button class="step-btn" data-step="4" type="button">4. 사진첨부</button>
+      <button class="step-btn" data-step="5" type="button">5. 결과통보</button>
+      <button class="step-btn" data-step="6" type="button">6. 참여자실명부</button>
+      <button class="step-btn" data-step="7" type="button">7. 출력/저장</button>
+    </nav>
+
+    <!-- STEP 1: 현장 기본정보 -->
+    <div class="step-panel active" data-panel="1">
+      <h2>현장 기본정보</h2>
+      <div class="form-grid">
+        <label>공사명<input id="pi_projectName" type="text" placeholder="예) OO현장 신축공사" /></label>
+        <label>현장명<input id="pi_siteName" type="text" placeholder="예) 오라동현장" /></label>
+        <label>시공사<input id="pi_contractor" type="text" /></label>
+        <label>감리자<input id="pi_supervisor" type="text" /></label>
+        <label>현장대리인<input id="pi_siteManager" type="text" /></label>
+        <label>검측번호<input id="pi_inspectionNo" type="text" placeholder="예) 2026-001" /></label>
+        <label>검측일자<input id="pi_inspectionDate" type="date" /></label>
+      </div>
+    </div>
+
+    <!-- STEP 2: 검측요청 정보 -->
+    <div class="step-panel" data-panel="2">
+      <h2>검측요청 정보</h2>
+      <div class="form-grid">
+        <label>공종<select id="ri_category"></select></label>
+        <label>세부공종<select id="ri_subWork"></select></label>
+        <label>위치 및 부위<input id="ri_location" type="text" placeholder="예) 지하1층 코아 벽체" /></label>
+        <label>도면번호<input id="ri_drawingNo" type="text" /></label>
+        <label>검측요구일시<input id="ri_requestDateTime" type="datetime-local" /></label>
+        <label>요청인<input id="ri_requestor" type="text" /></label>
+        <label class="full">비고<textarea id="ri_requestNote" rows="2"></textarea></label>
+      </div>
+      <p class="hint">세부공종을 선택하면 3단계 검측점검표에 기본 검사항목이 자동으로 채워집니다. (이미 작성한 항목은 유지되며, "기본항목 불러오기" 버튼으로 다시 채울 수 있습니다)</p>
+      <button id="btnLoadTemplateItems" class="btn" type="button">기본 검사항목 불러오기</button>
+    </div>
+
+    <!-- STEP 3: 검측점검표 -->
+    <div class="step-panel" data-panel="3">
+      <h2>검측점검표 작성</h2>
+      <p class="hint">각 검사항목의 결과는 현장 담당자가 직접 선택합니다. 프로그램은 판정을 대신하지 않습니다.</p>
+      <div id="checklistRows" class="checklist-rows"></div>
+      <button id="btnAddRow" class="btn" type="button">+ 검사항목 추가</button>
+
+      <h3>서명란</h3>
+      <div class="signature-grid">
+        <div class="sig-box" data-sig="contractorCheck">
+          <span>시공자 점검 서명란</span>
+          <div class="sig-preview" id="sigPreview_contractorCheck"></div>
+          <button class="btn btn-sm" type="button" data-sigbtn="contractorCheck">서명하기</button>
+        </div>
+        <div class="sig-box" data-sig="supervisorCheck">
+          <span>감리원 검측 서명란</span>
+          <div class="sig-preview" id="sigPreview_supervisorCheck"></div>
+          <button class="btn btn-sm" type="button" data-sigbtn="supervisorCheck">서명하기</button>
+        </div>
+        <div class="sig-box" data-sig="contractorRecheck">
+          <span>시공자 재점검 서명란</span>
+          <div class="sig-preview" id="sigPreview_contractorRecheck"></div>
+          <button class="btn btn-sm" type="button" data-sigbtn="contractorRecheck">서명하기</button>
+        </div>
+        <div class="sig-box" data-sig="supervisorRecheck">
+          <span>감리원 재검측 서명란</span>
+          <div class="sig-preview" id="sigPreview_supervisorRecheck"></div>
+          <button class="btn btn-sm" type="button" data-sigbtn="supervisorRecheck">서명하기</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 4: 사진첨부 -->
+    <div class="step-panel" data-panel="4">
+      <h2>사진첨부 자료</h2>
+      <div id="dropZone" class="drop-zone">
+        사진을 여기로 드래그하거나 클릭해서 선택하세요
+        <input id="photoInput" type="file" accept="image/*" multiple hidden />
+      </div>
+      <div id="photoList" class="photo-list"></div>
+    </div>
+
+    <!-- STEP 5: 검측결과통보서 -->
+    <div class="step-panel" data-panel="5">
+      <h2>검측결과통보서</h2>
+      <div class="form-grid">
+        <label>검측결과
+          <select id="rn_result">
+            <option value="">선택</option>
+            <option value="적합">적합</option>
+            <option value="부적합">부적합</option>
+            <option value="조건부 적합">조건부 적합</option>
+          </select>
+        </label>
+        <label>통보일자<input id="rn_noticeDate" type="date" /></label>
+        <label class="full">지시사항<textarea id="rn_instructions" rows="4" placeholder="부적합 사항에 대한 조치 지시 내용을 입력"></textarea></label>
+      </div>
+      <div class="signature-grid">
+        <div class="sig-box" data-sig="supervisorSign">
+          <span>감리원 서명란</span>
+          <div class="sig-preview" id="sigPreview_supervisorSign"></div>
+          <button class="btn btn-sm" type="button" data-sigbtn="supervisorSign">서명하기</button>
+        </div>
+        <div class="sig-box" data-sig="chiefSign">
+          <span>총괄감리원 서명란</span>
+          <div class="sig-preview" id="sigPreview_chiefSign"></div>
+          <button class="btn btn-sm" type="button" data-sigbtn="chiefSign">서명하기</button>
+        </div>
+      </div>
+      <p class="disclaimer-inline">본 결과는 작성 보조 자료이며, 최종 적합 여부 및 감리 승인은 현장 책임자와 감리자가 직접 판단합니다.</p>
+    </div>
+
+    <!-- STEP 6: 공사 참여자 실명부 -->
+    <div class="step-panel" data-panel="6">
+      <h2>공사 참여자 실명부</h2>
+      <div id="participantRows" class="participant-rows"></div>
+      <button id="btnAddParticipant" class="btn" type="button">+ 참여자 추가</button>
+    </div>
+
+    <!-- STEP 7: 출력/저장 -->
+    <div class="step-panel" data-panel="7">
+      <h2>출력 / 저장</h2>
+      <p class="hint">문서별로 PDF를 출력하거나, 전체 문서를 하나로 묶어 출력할 수 있습니다. (브라우저 인쇄 대화상자에서 "PDF로 저장"을 선택하세요)</p>
+      <div class="print-btn-grid">
+        <button class="btn" type="button" data-print="request">검측요청서 PDF</button>
+        <button class="btn" type="button" data-print="checklist">검측점검표 PDF</button>
+        <button class="btn" type="button" data-print="result">검측결과통보 PDF</button>
+        <button class="btn" type="button" data-print="participants">참여자실명부 PDF</button>
+        <button class="btn" type="button" data-print="photos">사진첨부 PDF</button>
+        <button class="btn btn-primary" type="button" data-print="all">전체 묶음 PDF</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 우측: 문서 미리보기 ===================== -->
+  <section class="preview-pane">
+    <div class="preview-tabs" id="previewTabs">
+      <button class="ptab active" data-doc="request" type="button">검측요청서</button>
+      <button class="ptab" data-doc="checklist" type="button">검측점검표</button>
+      <button class="ptab" data-doc="result" type="button">결과통보</button>
+      <button class="ptab" data-doc="participants" type="button">실명부</button>
+      <button class="ptab" data-doc="photos" type="button">사진대지</button>
+    </div>
+    <div class="preview-scroll">
+      <div id="previewArea" class="doc-a4"></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="app-footer">
+  본 프로그램은 문서작성 보조도구입니다. 검측 결과의 적합 여부, 감리 승인 및 최종 판단은 현장 책임자와 감리자가 직접 수행해야 합니다. 서버에 데이터를 저장하지 않으며, 모든 자료는 사용자의 브라우저와 PC에만 남습니다.
+</footer>
+
+<!-- 서명 모달 -->
+<div id="sigModal" class="modal-backdrop" hidden>
+  <div class="modal">
+    <h3>서명</h3>
+    <canvas id="sigCanvas" width="480" height="220"></canvas>
+    <div class="modal-actions">
+      <button id="sigClear" class="btn" type="button">지우기</button>
+      <button id="sigCancel" class="btn" type="button">취소</button>
+      <button id="sigSave" class="btn btn-primary" type="button">서명 확인</button>
+    </div>
+  </div>
+</div>
+
+<!-- 사진 설명 편집 모달 -->
+<div id="photoModal" class="modal-backdrop" hidden>
+  <div class="modal">
+    <h3>사진 설명</h3>
+    <img id="photoModalImg" class="photo-modal-img" alt="첨부 사진 미리보기" />
+    <label>연결 검사항목
+      <select id="photoModalLink"></select>
+    </label>
+    <label>설명<textarea id="photoModalCaption" rows="3"></textarea></label>
+    <div class="modal-actions">
+      <button id="photoModalDelete" class="btn btn-danger" type="button">삭제</button>
+      <button id="photoModalClose" class="btn btn-primary" type="button">확인</button>
+    </div>
+  </div>
+</div>
+
+<!-- 인쇄 전용 영역 (화면에는 보이지 않고 인쇄시에만 표시) -->
+<div id="printRoot"></div>
+
+<script src="inspectionTemplates.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
