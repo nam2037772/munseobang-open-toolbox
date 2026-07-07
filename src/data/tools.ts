@@ -41,18 +41,6 @@ export const tools: ToolItem[] = [
     link: 'https://nam2037772.github.io/tbm-log-pro/',
   },
   {
-    id: 'risk-assessment',
-    title: '위험성평가 문서',
-    category: '문서',
-    answer: '위험성평가는 유해위험요인, 위험성 결정, 감소대책, 실행 여부가 핵심입니다.',
-    description: '산업안전보건 기준에 맞춰 위험성평가 문서 작성 흐름을 정리합니다.',
-    trustLabel: '공식자료 우선',
-    sourceLabel: '산업안전보건법 및 고용노동부 자료',
-    feature: '작성 기준 카드',
-    status: '준비중',
-    keywords: ['위험성평가', '산업안전보건법', '안전', '유해위험요인'],
-  },
-  {
     id: 'daily-report',
     title: '공사일보 작성기',
     category: '공사일보',
@@ -155,6 +143,18 @@ export const tools: ToolItem[] = [
     status: '준비됨',
     keywords: ['부가세', '세금계산서', 'vat', '공급가액', '합계금액'],
     link: 'https://nam2037772.github.io/calculator-pro/',
+  },
+  {
+    id: 'risk-assessment',
+    title: '위험성평가 문서',
+    category: '문서',
+    answer: '위험성평가는 유해위험요인, 위험성 결정, 감소대책, 실행 여부가 핵심입니다.',
+    description: '산업안전보건 기준에 맞춰 위험성평가 문서 작성 흐름을 정리합니다.',
+    trustLabel: '공식자료 우선',
+    sourceLabel: '산업안전보건법 및 고용노동부 자료',
+    feature: '작성 기준 카드',
+    status: '준비중',
+    keywords: ['위험성평가', '산업안전보건법', '안전', '유해위험요인'],
   },
   {
     id: 'standard-market-price',
@@ -261,6 +261,7 @@ export const categories: CategoryInfo[] = [
   { id: 'category-review', title: '실무검토', description: '실정보고와 분쟁검토는 검토 항목을 먼저 정리하고, AI는 보조 기능으로만 다룹니다.' },
   { id: 'updates', title: '최신 기준', description: '법령, 기준, 양식 변경사항을 공식자료 중심으로 정리합니다.' },
 ]
+
 
 
 
