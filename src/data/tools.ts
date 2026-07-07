@@ -7,6 +7,7 @@
   | '사진대지'
   | '공정관리'
   | '품질관리'
+  | '최신소식'
   | '실무검토'
 
 export type TrustLabel = '공식자료 우선' | '기준 확인' | '실무 기준' | '검토필요'
@@ -143,6 +144,19 @@ export const tools: ToolItem[] = [
     link: 'https://nam2037772.github.io/calculator-pro/',
   },
   {
+    id: 'construction-briefing',
+    title: '건설실무브리핑',
+    category: '최신소식',
+    answer: '국토교통부, 협회, CSI 등 공식 출처의 건설 실무 소식을 빠르게 확인합니다.',
+    description: '원문 전문을 저장하지 않고 제목, 날짜, 출처, 카테고리, 공식 링크만 모아 보여주는 독립 브리핑 앱입니다.',
+    trustLabel: '공식자료 우선',
+    sourceLabel: '국토교통부·대한건설협회·대한건축사협회·CSI',
+    feature: '건설실무브리핑 앱으로 연결',
+    status: '준비됨',
+    keywords: ['건설실무브리핑', '최신소식', '공지', '정책', '안전', '건설기술', '법령', '고시'],
+    link: 'https://nam2037772.github.io/gunseol-silmu-briefing/',
+  },
+  {
     id: 'standard-market-price',
     title: '표준시장단가 기준 카드',
     category: '기준',
@@ -243,9 +257,12 @@ export const categories: CategoryInfo[] = [
   { id: 'category-photo-log', title: '사진대지', description: '사진과 설명을 배치해 PDF로 저장하는 현장 문서 도구로 확장합니다.' },
   { id: 'category-process', title: '공정관리', description: '공정표와 진행률을 정리해 현장 공정을 관리하는 도구로 확장합니다.' },
   { id: 'category-quality', title: '품질관리', description: '검측 요청, 점검표, 결과통보와 사진 증빙을 내 PC 중심으로 작성합니다.' },
+  { id: 'category-news', title: '최신소식', description: '공식 출처의 건설 정책, 안전, 기술, 법령 소식을 빠르게 확인합니다.' },
   { id: 'category-review', title: '실무검토', description: '실정보고와 분쟁검토는 검토 항목을 먼저 정리하고, AI는 보조 기능으로만 다룹니다.' },
   { id: 'updates', title: '최신 기준', description: '법령, 기준, 양식 변경사항을 공식자료 중심으로 정리합니다.' },
 ]
+
+
 
 
 
