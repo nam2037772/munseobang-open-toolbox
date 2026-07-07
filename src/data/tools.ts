@@ -100,7 +100,7 @@ export const tools: ToolItem[] = [
     feature: '검측프로 앱으로 연결',
     status: '준비됨',
     keywords: ['검측', '검측요청서', '검측점검표', '품질관리', '검측결과통보', '사진대지'],
-    link: './gumcheuk-pro/',
+    link: 'https://nam2037772.github.io/gumcheuk-pro/',
   },
   {
     id: 'remitar-calc',
@@ -245,6 +245,7 @@ export const categories: CategoryInfo[] = [
   { id: 'category-review', title: '실무검토', description: '실정보고와 분쟁검토는 검토 항목을 먼저 정리하고, AI는 보조 기능으로만 다룹니다.' },
   { id: 'updates', title: '최신 기준', description: '법령, 기준, 양식 변경사항을 공식자료 중심으로 정리합니다.' },
 ]
+
 
 
 
