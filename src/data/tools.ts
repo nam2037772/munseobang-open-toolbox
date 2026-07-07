@@ -31,12 +31,13 @@ export const tools: ToolItem[] = [
     title: 'TBM 일지 표준 양식',
     category: '문서',
     answer: '현장 TBM 기록은 참석자, 위험요인, 조치사항을 한 장으로 남기는 것이 기본입니다.',
-    description: 'TBM 회의 기록에 필요한 항목을 정리한 카드입니다. 현재는 양식 제공 전 검토 단계입니다.',
+    description: 'TBM 회의 기록에 필요한 참석자, 위험요인, 감소대책, 확인 결과를 작성하고 PC에 저장하는 도구입니다.',
     trustLabel: '실무 기준',
     sourceLabel: '현장 표준 양식',
-    feature: '양식 다운로드 예정',
-    status: '준비중',
+    feature: 'TBM일지프로 앱으로 연결',
+    status: '준비됨',
     keywords: ['tbm', '안전회의', '위험성평가', '일지', '안전'],
+    link: 'https://nam2037772.github.io/tbm-log-pro/',
   },
   {
     id: 'risk-assessment',
@@ -245,6 +246,7 @@ export const categories: CategoryInfo[] = [
   { id: 'category-review', title: '실무검토', description: '실정보고와 분쟁검토는 검토 항목을 먼저 정리하고, AI는 보조 기능으로만 다룹니다.' },
   { id: 'updates', title: '최신 기준', description: '법령, 기준, 양식 변경사항을 공식자료 중심으로 정리합니다.' },
 ]
+
 
 
 
