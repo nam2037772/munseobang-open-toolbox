@@ -1,12 +1,9 @@
 ﻿import { useState } from 'react'
 
 const NAV_ITEMS = [
-  { label: '문서', href: '#category-docs' },
-  { label: '계산기', href: '#category-calculators' },
-  { label: '기준', href: '#category-standards' },
-  { label: 'CAD 소스', href: '#category-cad' },
-  { label: '공사일보', href: '#category-daily-report' },
-  { label: '사진대지', href: '#category-photo-log' },
+  { label: '검색', href: '#search' },
+  { label: '즐겨찾기', href: '#favorites' },
+  { label: '업무 폴더', href: '#folders' },
   { label: '최신 기준', href: '#updates' },
 ]
 
@@ -23,12 +20,7 @@ function Header() {
 
         <nav className={`header__nav ${menuOpen ? 'header__nav--open' : ''}`} aria-label="주요 메뉴">
           {NAV_ITEMS.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className="header__nav-link"
-              onClick={() => setMenuOpen(false)}
-            >
+            <a key={item.href} href={item.href} className="header__nav-link" onClick={() => setMenuOpen(false)}>
               {item.label}
             </a>
           ))}
