@@ -105,6 +105,19 @@ export const tools: ToolItem[] = [
     link: 'https://nam2037772.github.io/gumcheuk-pro/',
   },
   {
+    id: 'construction-briefing',
+    title: '건설실무브리핑',
+    category: '최신소식',
+    answer: '국토교통부, 협회, CSI 등 공식 출처의 건설 실무 소식을 빠르게 확인합니다.',
+    description: '원문 전문을 저장하지 않고 제목, 날짜, 출처, 카테고리, 공식 링크만 모아 보여주는 독립 브리핑 앱입니다.',
+    trustLabel: '공식자료 우선',
+    sourceLabel: '국토교통부·대한건설협회·대한건축사협회·CSI',
+    feature: '건설실무브리핑 앱으로 연결',
+    status: '준비됨',
+    keywords: ['건설실무브리핑', '최신소식', '공지', '정책', '안전', '건설기술', '법령', '고시'],
+    link: 'https://nam2037772.github.io/gunseol-silmu-briefing/',
+  },
+  {
     id: 'remitar-calc',
     title: '레미탈 소요량 계산기',
     category: '계산기',
@@ -142,19 +155,6 @@ export const tools: ToolItem[] = [
     status: '준비됨',
     keywords: ['부가세', '세금계산서', 'vat', '공급가액', '합계금액'],
     link: 'https://nam2037772.github.io/calculator-pro/',
-  },
-  {
-    id: 'construction-briefing',
-    title: '건설실무브리핑',
-    category: '최신소식',
-    answer: '국토교통부, 협회, CSI 등 공식 출처의 건설 실무 소식을 빠르게 확인합니다.',
-    description: '원문 전문을 저장하지 않고 제목, 날짜, 출처, 카테고리, 공식 링크만 모아 보여주는 독립 브리핑 앱입니다.',
-    trustLabel: '공식자료 우선',
-    sourceLabel: '국토교통부·대한건설협회·대한건축사협회·CSI',
-    feature: '건설실무브리핑 앱으로 연결',
-    status: '준비됨',
-    keywords: ['건설실무브리핑', '최신소식', '공지', '정책', '안전', '건설기술', '법령', '고시'],
-    link: 'https://nam2037772.github.io/gunseol-silmu-briefing/',
   },
   {
     id: 'standard-market-price',
@@ -261,6 +261,7 @@ export const categories: CategoryInfo[] = [
   { id: 'category-review', title: '실무검토', description: '실정보고와 분쟁검토는 검토 항목을 먼저 정리하고, AI는 보조 기능으로만 다룹니다.' },
   { id: 'updates', title: '최신 기준', description: '법령, 기준, 양식 변경사항을 공식자료 중심으로 정리합니다.' },
 ]
+
 
 
 

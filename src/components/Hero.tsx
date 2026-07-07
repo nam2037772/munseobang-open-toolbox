@@ -1,10 +1,6 @@
 ﻿const BADGES = ['회원가입 없음', '서버 저장 없음', '공식자료 우선', '내 PC에 저장']
 
 function Hero() {
-  const handleDailyReportClick = () => {
-    alert('공사일보 작성기는 다음 단계에서 서버 저장 없는 PC 저장 방식으로 연결합니다.')
-  }
-
   return (
     <section className="hero">
       <div className="hero__inner">
@@ -28,9 +24,14 @@ function Hero() {
           <a href="#search" className="btn btn--primary">
             답안 카드 찾기
           </a>
-          <button type="button" className="btn btn--outline" onClick={handleDailyReportClick}>
-            공사일보 준비중
-          </button>
+          <a
+            href="https://nam2037772.github.io/gunseol-silmu-briefing/"
+            className="btn btn--outline"
+            target="_blank"
+            rel="noreferrer"
+          >
+            건설실무브리핑
+          </a>
         </div>
       </div>
     </section>
@@ -38,3 +39,5 @@ function Hero() {
 }
 
 export default Hero
+
+
