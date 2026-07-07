@@ -1,6 +1,7 @@
 ﻿import { apps, folders, type FolderId } from '../data/apps'
 import { useFavorites } from '../hooks/useFavorites'
 import AppCard from './AppCard'
+import News from './News'
 
 interface FolderViewProps {
   folderId: FolderId
@@ -17,7 +18,7 @@ function FolderView({ folderId, onBack }: FolderViewProps) {
       <div className="folder-view__top">
         <div>
           <p className="folder-view__path">문서방 <span aria-hidden="true">&gt;</span> {folder?.title ?? folderId}</p>
-          <h2 className="folder-view__title">{folder?.title ?? folderId}</h2>
+          <h1 className="folder-view__title">{folder?.title ?? folderId}</h1>
           {folder && <p className="folder-view__desc">{folder.description}</p>}
         </div>
         <button type="button" className="folder-view__back" onClick={onBack}>
@@ -25,11 +26,13 @@ function FolderView({ folderId, onBack }: FolderViewProps) {
         </button>
       </div>
 
-      <div className="app-grid">
+      <div className="app-grid app-grid--compact">
         {folderApps.map((app) => (
-          <AppCard key={app.id} app={app} isFavorite={isFavorite(app.id)} onToggleFavorite={toggleFavorite} />
+          <AppCard key={app.id} app={app} isFavorite={isFavorite(app.id)} onToggleFavorite={toggleFavorite} compact />
         ))}
       </div>
+
+      {folderId === '건설실무브리핑' && <News />}
     </section>
   )
 }

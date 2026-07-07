@@ -7,9 +7,10 @@ interface FolderGridProps {
 function FolderGrid({ onSelect }: FolderGridProps) {
   return (
     <section className="folders" id="folders">
-      <div className="section-heading">
-        <p className="section-heading__eyebrow">업무 카테고리</p>
-        <h2 className="section-title">필요한 업무 폴더를 먼저 여세요</h2>
+      <div className="workspace-heading">
+        <p className="workspace-heading__eyebrow">업무 폴더</p>
+        <h1 className="workspace-heading__title">오늘 할 업무를 선택하세요</h1>
+        <p className="workspace-heading__desc">도구 이름을 몰라도 괜찮습니다. 업무 폴더를 열면 필요한 카드만 모아 보여줍니다.</p>
       </div>
 
       <div className="folders__grid">

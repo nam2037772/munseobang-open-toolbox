@@ -4,9 +4,10 @@ interface AppCardProps {
   app: AppItem
   isFavorite: boolean
   onToggleFavorite: (id: string) => void
+  compact?: boolean
 }
 
-function AppCard({ app, isFavorite, onToggleFavorite }: AppCardProps) {
+function AppCard({ app, isFavorite, onToggleFavorite, compact = false }: AppCardProps) {
   const openApp = () => {
     if (app.url) {
       window.open(app.url, '_blank', 'noopener,noreferrer')
@@ -17,7 +18,7 @@ function AppCard({ app, isFavorite, onToggleFavorite }: AppCardProps) {
   }
 
   return (
-    <article className={`app-card app-card--${app.status === '사용가능' ? 'ready' : 'pending'}`}>
+    <article className={`app-card ${compact ? 'app-card--compact' : ''} app-card--${app.status === '사용가능' ? 'ready' : 'pending'}`}>
       <div className="app-card__top">
         <span className="app-card__category">{app.category}</span>
         <button
