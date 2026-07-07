@@ -1,7 +1,7 @@
 ﻿import { useMemo, useState } from 'react'
 import { tools, type ToolItem } from '../data/tools'
 
-const MAX_RESULTS = 8
+const MAX_RESULTS = 16
 
 function scoreTool(tool: ToolItem, q: string): number {
   let score = 0
@@ -57,7 +57,7 @@ function SearchHub() {
           검색은 AI 답변 생성이 아닙니다. 미리 정리한 기준 카드와 도구 카드 중 가장 가까운 항목만 보여줍니다.
         </p>
 
-        <p className="search-hub__result-title">{query.trim() ? '검색 결과' : '자주 찾는 답안 카드'}</p>
+        <p className="search-hub__result-title">{query.trim() ? '검색 결과' : '자주 찾는 도구와 기준 카드'}</p>
 
         <div className="search-hub__results">
           {results.length === 0 && (
@@ -72,19 +72,8 @@ function SearchHub() {
               </div>
               <h3 className="tool-card__title">{tool.title}</h3>
               <p className="tool-card__answer">{tool.answer}</p>
-              <p className="tool-card__desc">{tool.description}</p>
-              <dl className="tool-card__meta">
-                <div>
-                  <dt>기능</dt>
-                  <dd>{tool.feature}</dd>
-                </div>
-                <div>
-                  <dt>근거</dt>
-                  <dd>{tool.sourceLabel}</dd>
-                </div>
-              </dl>
               <button type="button" className="tool-card__open" onClick={() => handleOpen(tool)}>
-                열기
+                {tool.link ? '열기' : '준비중'}
               </button>
             </article>
           ))}
@@ -95,4 +84,6 @@ function SearchHub() {
 }
 
 export default SearchHub
+
+
 
