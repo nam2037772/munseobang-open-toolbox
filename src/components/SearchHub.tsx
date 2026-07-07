@@ -1,7 +1,7 @@
 ﻿import { useMemo, useState } from 'react'
 import { tools, type ToolItem } from '../data/tools'
 
-const MAX_RESULTS = 5
+const MAX_RESULTS = 8
 
 function scoreTool(tool: ToolItem, q: string): number {
   let score = 0
@@ -49,7 +49,7 @@ function SearchHub() {
           id="tool-search"
           type="text"
           className="search-hub__input"
-          placeholder="예: 공사일보, 사진대지, 레미탈, 경사도, KCS, 표준시장단가"
+          placeholder="예: 검측프로, 공사일보, 사진대지, 레미탈, 경사도, KCS"
           value={query}
           onChange={(event) => setQuery(event.target.value)}
         />
@@ -95,3 +95,4 @@ function SearchHub() {
 }
 
 export default SearchHub
+
