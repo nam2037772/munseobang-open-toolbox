@@ -157,6 +157,53 @@ export const tools: ToolItem[] = [
     keywords: ['위험성평가', '산업안전보건법', '안전', '유해위험요인'],
   },
   {
+    id: 'completion-docs',
+    title: '준공서류 체크카드',
+    category: '문서',
+    answer: '준공서류는 계약, 검사, 사진, 시험성적, 납품증빙을 빠짐없이 맞춰야 합니다.',
+    description: '준공 전 제출 서류와 누락 가능 항목을 점검하는 기준 카드입니다.',
+    trustLabel: '실무 기준',
+    sourceLabel: '현장 준공 제출 관행 및 계약문서 확인 필요',
+    feature: '체크리스트 예정',
+    status: '준비중',
+    keywords: ['준공', '준공서류', '완료계', '시험성적서', '납품확인'],
+  },
+  {
+    id: 'material-inspection',
+    title: '자재검수 체크카드',
+    category: '품질관리',
+    answer: '자재검수는 규격, 수량, 성적서, 반입일, 사진 증빙을 함께 확인합니다.',
+    description: '현장 반입 자재의 기본 검수 흐름을 정리하는 품질관리 카드입니다.',
+    trustLabel: '실무 기준',
+    sourceLabel: '시방서, 승인서, 시험성적서 확인 필요',
+    feature: '검수 체크리스트 예정',
+    status: '준비중',
+    keywords: ['자재검수', '반입검사', '시험성적서', '승인서', '품질'],
+  },
+  {
+    id: 'progress-payment-review',
+    title: '기성검토 체크카드',
+    category: '실무검토',
+    answer: '기성검토는 계약내역, 실제 시공량, 사진, 검사 여부, 공제 항목을 함께 봅니다.',
+    description: '월 기성 청구 전 물량과 증빙을 점검하는 실무검토 카드입니다.',
+    trustLabel: '검토필요',
+    sourceLabel: '계약내역서, 기성검사 자료 확인 필요',
+    feature: '기성 검토표 예정',
+    status: '준비중',
+    keywords: ['기성', '기성검토', '청구', '물량', '공제', '계약내역'],
+  },
+  {
+    id: 'defect-repair-log',
+    title: '하자보수 기록카드',
+    category: '품질관리',
+    answer: '하자보수는 발생 위치, 원인, 조치일, 전후 사진, 확인자를 남기는 것이 핵심입니다.',
+    description: '하자 접수부터 조치 완료까지 기록 흐름을 정리하는 카드입니다.',
+    trustLabel: '실무 기준',
+    sourceLabel: '하자보수 관리대장 및 현장 확인 기준',
+    feature: '하자 기록 양식 예정',
+    status: '준비중',
+    keywords: ['하자', '하자보수', '보수기록', '조치사진', '확인자'],
+  },  {
     id: 'standard-market-price',
     title: '표준시장단가 기준 카드',
     category: '기준',
@@ -261,6 +308,7 @@ export const categories: CategoryInfo[] = [
   { id: 'category-review', title: '실무검토', description: '실정보고와 분쟁검토는 검토 항목을 먼저 정리하고, AI는 보조 기능으로만 다룹니다.' },
   { id: 'updates', title: '최신 기준', description: '법령, 기준, 양식 변경사항을 공식자료 중심으로 정리합니다.' },
 ]
+
 
 
 

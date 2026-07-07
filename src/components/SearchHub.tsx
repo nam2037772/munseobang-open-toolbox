@@ -1,7 +1,7 @@
 ﻿import { useMemo, useState } from 'react'
 import { tools, type ToolItem } from '../data/tools'
 
-const MAX_RESULTS = 16
+const MAX_RESULTS = 20
 
 function scoreTool(tool: ToolItem, q: string): number {
   let score = 0
@@ -84,6 +84,7 @@ function SearchHub() {
 }
 
 export default SearchHub
+
 
 
 
