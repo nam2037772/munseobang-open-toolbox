@@ -2219,3 +2219,12 @@ select:focus-visible {
   border-color: var(--mds-color-primary);
   color: #ffffff;
 }
+
+.mds-sidebar-banner__image {
+  width: 100%;
+  height: 60px;
+  object-fit: cover;
+  border-radius: var(--mds-radius-sm);
+  margin-bottom: var(--mds-space-1);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}

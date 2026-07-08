@@ -87,6 +87,7 @@ interface SidebarBanner {
   content: string;
   buttonText: string;
   link: string;
+  imageUrl?: string;
 }
 
 const bannerData: SidebarBanner[] = [
@@ -104,7 +105,8 @@ const bannerData: SidebarBanner[] = [
     title: '아인산업안전',
     content: '안전용품 · 건설자재 · 방수자재 전문 납품 브랜드',
     buttonText: '바로가기',
-    link: 'https://ainsafety.com'
+    link: 'https://ainsafety.com',
+    imageUrl: '/ainsafety_banner_thumb.png'
   }
 ]
 
@@ -162,6 +164,13 @@ function SidebarExplorer() {
       <div className="mds-sidebar__banner-container" aria-label="공지 및 협력사 안내">
         {bannerData.map((banner) => (
           <div key={banner.id} className="mds-sidebar-banner">
+            {banner.imageUrl && (
+              <img 
+                src={banner.imageUrl} 
+                alt={`${banner.title} 이미지`}
+                className="mds-sidebar-banner__image" 
+              />
+            )}
             <div className="mds-sidebar-banner__header">
               <span className="mds-sidebar-banner__label">{banner.label}</span>
               <h4 className="mds-sidebar-banner__title">{banner.title}</h4>
