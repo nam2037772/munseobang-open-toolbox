@@ -54,6 +54,32 @@ function FileIcon() {
   )
 }
 
+// Newspaper Briefing Icon Component
+function NewsIcon() {
+  return (
+    <svg 
+      className="mds-tree__icon-svg" 
+      viewBox="0 0 24 24" 
+      width="16" 
+      height="16" 
+      style={{ marginRight: '8px', flexShrink: 0 }}
+    >
+      <rect 
+        x="3" 
+        y="4" 
+        width="18" 
+        height="16" 
+        rx="2" 
+        fill="#f8fafc" 
+        stroke="#475569" 
+        strokeWidth="1.5" 
+      />
+      <path d="M14 8h4M14 12h4M14 16h4" stroke="#475569" strokeWidth="1.5" strokeLinecap="round" />
+      <rect x="6" y="8" width="5" height="8" fill="#e2e8f0" stroke="#475569" strokeWidth="1.5" />
+    </svg>
+  )
+}
+
 function SidebarExplorer() {
   const { selectedPath, expandedFolders, activeTask, toggleFolder, selectTask, resetWorkspace } = useWorkspace()
 
@@ -80,7 +106,7 @@ function SidebarExplorer() {
                   aria-expanded={opensDirectly ? undefined : isExpanded}
                 >
                   <span className={`mds-tree__arrow ${isExpanded ? 'is-expanded' : ''}`}>{opensDirectly ? '' : '▶'}</span>
-                  <FolderIcon isOpen={isExpanded} />
+                  {opensDirectly ? <NewsIcon /> : <FolderIcon isOpen={isExpanded} />}
                   <span className="mds-tree__name">{folder.name}</span>
                 </button>
                 {!opensDirectly && isExpanded && (

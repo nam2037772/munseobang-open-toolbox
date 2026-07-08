@@ -643,7 +643,7 @@ export const explorerFolders: ExplorerFolder[] = [
     { id: 'calculator-task', name: '계산기', workflow: [{ id: 'remitar-calc', name: '레미탈 계산기', status: 'active', url: 'https://nam2037772.github.io/calculator-pro/' }, { id: 'slope-calc', name: '구배 계산기', status: 'pending', url: 'https://nam2037772.github.io/calculator-pro/' }, { id: 'vat-calc', name: '부가세 계산기', status: 'pending', url: 'https://nam2037772.github.io/calculator-pro/' }] },
   ] },
   { id: 'briefing', name: '건설뉴스브리핑', tasks: [
-    { id: 'briefing-task', name: '건설뉴스', workflow: [{ id: 'construction-briefing', name: '건설뉴스', status: 'active', url: 'https://nam2037772.github.io/gunseol-silmu-briefing/' }] },
+    { id: 'briefing-task', name: '건설뉴스브리핑', workflow: [{ id: 'construction-briefing', name: '건설뉴스브리핑', status: 'active', url: 'https://nam2037772.github.io/gunseol-silmu-briefing/' }] },
   ] },
 ]
 
