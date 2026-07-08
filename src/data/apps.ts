@@ -533,14 +533,15 @@ export const explorerFolders: ExplorerFolder[] = [
   { id: 'safety', name: '안전/환경', tasks: [
     { id: 'safety-tbm', name: 'TBM', workflow: [{ id: 'tbm-log', name: 'TBM 일지 작성', status: 'active', url: 'https://nam2037772.github.io/tbm-log-pro/' }, { id: 'safety-training', name: '안전교육 기록', status: 'pending' }] },
     { id: 'risk-assessment-task', name: '위험성평가', workflow: [{ id: 'risk-assessment', name: '위험성평가 문서 작성', status: 'active' }] },
-    { id: 'waste-management-task', name: '폐기물관리', workflow: [{ id: 'waste-manifest', name: '건설폐기물 배출 기록', status: 'active' }] },
+    { id: 'safety-training-task', name: '안전교육', workflow: [{ id: 'safety-training-log', name: '안전교육 기록', status: 'active' }] },
     { id: 'industrial-safety-health-cost-task', name: '산업안전보건관리비', workflow: [{ id: 'industrial-safety-health-cost', name: '산업안전보건관리비 사용내역 입력', status: 'active', url: './safety-environment-costs/?page=industrial' }] },
     { id: 'construction-safety-cost-task', name: '안전관리비', workflow: [{ id: 'construction-safety-cost', name: '안전관리비 사용내역 입력', status: 'active', url: './safety-environment-costs/?page=safety' }] },
     { id: 'environment-preservation-cost-task', name: '환경보전비', workflow: [{ id: 'environment-preservation-cost', name: '환경보전비 사용내역 입력', status: 'active', url: './safety-environment-costs/?page=environment' }] },
-    { id: 'waste-disposal-cost-task', name: '폐기물처리비', workflow: [{ id: 'waste-disposal-cost', name: '폐기물처리비 사용내역 입력', status: 'active', url: './safety-environment-costs/?page=waste' }] },
+    { id: 'waste-disposal-cost-task', name: '폐기물반출현황', workflow: [{ id: 'waste-disposal-cost', name: '폐기물반출현황 입력', status: 'active', url: './safety-environment-costs/?page=waste' }] },
   ] },
   { id: 'gongmu', name: '공무/행정', tasks: [
-    { id: 'official-docs', name: '공문 및 기성 서류', workflow: [{ id: 'official-document', name: '공문 초안 작성', status: 'active' }, { id: 'design-change', name: '설계변경 검토', status: 'pending' }] },
+    { id: 'official-docs', name: '공문발송', workflow: [{ id: 'official-document', name: '공문 초안 작성', status: 'active' }, { id: 'design-change', name: '설계변경 검토', status: 'pending' }] },
+    { id: 'progress-payment-task', name: '기성청구', workflow: [{ id: 'progress-payment', name: '기성 청구 서류 작성', status: 'active' }] },
     { id: 'monthly-settlement', name: '월정산보고', workflow: [{ id: 'monthly-settlement-doc', name: '월간 기성/정산 서류 작성', status: 'active' }] },
   ] },
   { id: 'common', name: '공통 업무', tasks: [

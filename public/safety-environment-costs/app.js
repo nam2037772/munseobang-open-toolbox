@@ -60,23 +60,22 @@ const pages = {
     ],
   },
   waste: {
-    title: '폐기물처리비',
-    ledger: '폐기물 반출 현황 / 일자별',
-    desc: '폐기물처리사용 시트의 계약 그룹과 일자별 반출 실적을 기준으로 처리수량과 증빙을 입력합니다.',
-    budget: 30595205,
+    title: '폐기물반출현황',
+    ledger: '폐기물 반출 현황',
+    desc: '일자별 폐기물 반출 실적을 종류, 처리운반업, 수량, 단위 기준으로 기록합니다.',
+    hasAmount: false,
+    numbered: true,
     columns: [
       { key: 'date', label: '처리일', type: 'date' },
-      { key: 'category', label: '폐기물 종류', type: 'select', options: ['폐목재', '폐콘크리트', '혼합건설폐기물', '폐아스콘', '석고보드류', '건설폐재류'] },
-      { key: 'vendor', label: '처리/운반업체', type: 'text' },
+      { key: 'category', label: '폐기물종류', type: 'select', options: ['폐목재', '폐콘크리트', '혼합건설폐기물', '폐아스콘', '석고보드류', '건설폐재류'] },
+      { key: 'vendor', label: '처리운반업', type: 'text' },
       { key: 'quantity', label: '실적수량', type: 'number' },
       { key: 'unit', label: '단위', type: 'select', options: ['TON', '㎥'] },
-      { key: 'unitPrice', label: '단가', type: 'number' },
-      { key: 'evidence', label: '증빙번호', type: 'text' },
     ],
     references: ['건설폐재류', '혼합폐기물', '폐콘크리트', '폐목재류', '폐아스콘', '운반비', '계량증명서'],
     rows: [
-      { date: '2026-06-01', category: '폐목재', vendor: '제주산업㈜', quantity: 0.83, unit: 'TON', unitPrice: 95000, evidence: '' },
-      { date: '2026-06-05', category: '폐콘크리트', vendor: '제주산업㈜', quantity: 125.2, unit: 'TON', unitPrice: 28900, evidence: '' },
+      { date: '2026-06-01', category: '폐목재', vendor: '제주산업㈜', quantity: 0.83, unit: 'TON' },
+      { date: '2026-06-05', category: '폐콘크리트', vendor: '제주산업㈜', quantity: 125.2, unit: 'TON' },
     ],
   },
 }
@@ -106,7 +105,8 @@ ledgerDesc.textContent = page.desc
 siteName.value = saved?.siteName || params.get('siteName') || '한국정보통신공사협회 제주특별자치도 회관 신축공사'
 reportMonth.value = saved?.reportMonth || '2026-06'
 reportDate.value = saved?.reportDate || params.get('date') || '2026-06-30'
-budget.value = saved?.budget || page.budget
+budget.value = saved?.budget || page.budget || 0
+if (page.hasAmount === false) budget.closest('label').style.display = 'none'
 referenceList.innerHTML = page.references.map((item) => `<span class="reference-chip">${item}</span>`).join('')
 
 function amountFor(row) {
@@ -125,13 +125,20 @@ function save() {
 }
 
 function updateTotals() {
+  if (page.hasAmount === false) {
+    totalAmount.textContent = `총 ${rows.length}건`
+    return
+  }
   const total = rows.reduce((sum, row) => sum + amountFor(row), 0)
   totalAmount.textContent = `합계 ${money.format(total)}원`
 }
 
 function render() {
-  head.innerHTML = `<tr>${page.columns.map((col) => `<th>${col.label}</th>`).join('')}<th>금액</th><th></th></tr>`
+  const numberHeader = page.numbered ? '<th>NO</th>' : ''
+  const amountHeader = page.hasAmount === false ? '' : '<th>금액</th>'
+  head.innerHTML = `<tr>${numberHeader}${page.columns.map((col) => `<th>${col.label}</th>`).join('')}${amountHeader}<th></th></tr>`
   body.innerHTML = rows.map((row, rowIndex) => {
+    const numberCell = page.numbered ? `<td class="row-no">${rowIndex + 1}</td>` : ''
     const cells = page.columns.map((col) => {
       const value = row[col.key] ?? ''
       if (col.type === 'select') {
@@ -139,7 +146,8 @@ function render() {
       }
       return `<td><input data-row="${rowIndex}" data-key="${col.key}" type="${col.type}" value="${value}" ${col.type === 'number' ? 'min="0" step="0.01"' : ''}></td>`
     }).join('')
-    return `<tr>${cells}<td class="row-total">${money.format(amountFor(row))}원</td><td><button type="button" class="delete-row" data-delete="${rowIndex}" aria-label="행 삭제">×</button></td></tr>`
+    const amountCell = page.hasAmount === false ? '' : `<td class="row-total">${money.format(amountFor(row))}원</td>`
+    return `<tr>${numberCell}${cells}${amountCell}<td><button type="button" class="delete-row" data-delete="${rowIndex}" aria-label="행 삭제">×</button></td></tr>`
   }).join('')
   updateTotals()
   save()
