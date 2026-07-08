@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { WorkspaceProvider, useWorkspace } from './context/WorkspaceContext'
 import SidebarExplorer from './components/SidebarExplorer'
 import WorkflowTimeline from './components/WorkflowTimeline'
@@ -8,10 +8,28 @@ import ConstructionPortal from './components/ConstructionPortal'
 import { quickPortals } from './data/portalSites'
 import './App.css'
 
+const PLACEHOLDERS = [
+  '예: KCS 되메우기 기준',
+  '예: TBM 작성법',
+  '예: 콘크리트 양생 기준',
+  '예: 국토부 방수 기준',
+  '예: 산안비 사용 기준',
+  '예: 공사일보 작성 양식'
+]
+
 function AppContent() {
   const { activeTask, selectedPath, resetWorkspace } = useWorkspace()
   const [googleQuery, setGoogleQuery] = useState('')
   const [googleError, setGoogleError] = useState('')
+  const [placeholderIndex, setPlaceholderIndex] = useState(0)
+
+  // Rotate placeholders every 3.5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setPlaceholderIndex((prev) => (prev + 1) % PLACEHOLDERS.length)
+    }, 3500)
+    return () => clearInterval(interval)
+  }, [])
 
   const handleGoogleSearch = () => {
     const trimmed = googleQuery.trim()
@@ -77,7 +95,7 @@ function AppContent() {
                   ))}
                 </div>
 
-                <h1 className="mds-dashboard__title">무엇을 도와드릴까요?</h1>
+                <h1 className="mds-dashboard__title">무엇을 찾으시나요?</h1>
                 <p className="mds-dashboard__subtitle">문서방은 작업을 시작하는 공간입니다. 검색을 통해 답을 찾거나, 왼쪽 탐색기에서 업무를 선택하세요.</p>
 
                 {/* 검색 통합 허브 영역 */}
@@ -93,7 +111,7 @@ function AppContent() {
                         id="google-search-input"
                         type="text"
                         className="mds-search-input"
-                        placeholder="예: KCS 되메우기 기준"
+                        placeholder={PLACEHOLDERS[placeholderIndex]}
                         value={googleQuery}
                         onChange={(e) => {
                           setGoogleQuery(e.target.value)
