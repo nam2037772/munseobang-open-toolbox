@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>안전/환경 비용 입력</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="cost-page">
+      <header class="cost-header">
+        <div>
+          <p class="cost-kicker">안전/환경</p>
+          <h1 id="page-title">비용 입력</h1>
+        </div>
+        <div class="cost-actions">
+          <button type="button" id="add-row">행 추가</button>
+          <button type="button" id="export-json">JSON 저장</button>
+          <button type="button" id="print-page">출력</button>
+        </div>
+      </header>
+
+      <section class="summary-grid" aria-label="기본 정보">
+        <label>현장명<input id="site-name" type="text" /></label>
+        <label>작성월<input id="report-month" type="month" /></label>
+        <label>작성기준일<input id="report-date" type="date" /></label>
+        <label>계상액<input id="budget" type="number" min="0" step="1" /></label>
+      </section>
+
+      <section class="ledger-panel">
+        <div class="ledger-panel__head">
+          <div>
+            <h2 id="ledger-title">사용내역</h2>
+            <p id="ledger-desc"></p>
+          </div>
+          <output id="total-amount">합계 0원</output>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead id="ledger-head"></thead>
+            <tbody id="ledger-body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="reference-panel" aria-labelledby="reference-title">
+        <h2 id="reference-title">참고 분류</h2>
+        <div id="reference-list" class="reference-list"></div>
+      </section>
+    </main>
+    <script src="./app.js"></script>
+  </body>
+</html>
