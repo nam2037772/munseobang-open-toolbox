@@ -80,6 +80,34 @@ function NewsIcon() {
   )
 }
 
+interface SidebarBanner {
+  id: string;
+  label: string;
+  title: string;
+  content: string;
+  buttonText: string;
+  link: string;
+}
+
+const bannerData: SidebarBanner[] = [
+  {
+    id: 'recommendation',
+    label: '추천 도구',
+    title: '실무 도구 제안',
+    content: '건설 실무에 필요한 양식과 업무 도구를 수시로 개발하고 있습니다.',
+    buttonText: '제안/문의',
+    link: 'mailto:contact@munseobang.com'
+  },
+  {
+    id: 'ainsafety',
+    label: '협력사',
+    title: '아인산업안전',
+    content: '안전용품 · 건설자재 · 방수자재 전문 납품 브랜드',
+    buttonText: '바로가기',
+    link: 'https://ainsafety.com'
+  }
+]
+
 function SidebarExplorer() {
   const { selectedPath, expandedFolders, activeTask, toggleFolder, selectTask, resetWorkspace } = useWorkspace()
 
@@ -129,6 +157,29 @@ function SidebarExplorer() {
           })}
         </ul>
       </nav>
+
+      {/* 광고/추천 배너 영역 */}
+      <div className="mds-sidebar__banner-container" aria-label="공지 및 협력사 안내">
+        {bannerData.map((banner) => (
+          <div key={banner.id} className="mds-sidebar-banner">
+            <div className="mds-sidebar-banner__header">
+              <span className="mds-sidebar-banner__label">{banner.label}</span>
+              <h4 className="mds-sidebar-banner__title">{banner.title}</h4>
+            </div>
+            <p className="mds-sidebar-banner__content">{banner.content}</p>
+            <a 
+              href={banner.link} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="mds-sidebar-banner__btn"
+              title={`${banner.title} 바로가기`}
+            >
+              {banner.buttonText}
+            </a>
+          </div>
+        ))}
+      </div>
+
       <div className="mds-sidebar__footer"><div className="mds-status-indicator"><span className="mds-status-indicator__dot"></span><span className="mds-status-indicator__label">로컬 보안 모드 사용 가능</span></div></div>
     </aside>
   )

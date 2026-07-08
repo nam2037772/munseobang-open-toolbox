@@ -2139,3 +2139,83 @@ select:focus-visible {
 .mds-portal-card__star-btn.is-favorite {
   color: var(--mds-color-warning);
 }
+
+/* ==========================================
+   MDS Sidebar Banner Styles
+   ========================================== */
+.mds-sidebar__banner-container {
+  padding: 0 var(--mds-space-4);
+  margin-top: var(--mds-space-4);
+  margin-bottom: var(--mds-space-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--mds-space-3);
+}
+
+.mds-sidebar-banner {
+  background-color: rgba(255, 255, 255, 0.015);
+  border: 1px solid var(--mds-color-border-subtle);
+  border-radius: var(--mds-radius-md);
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--mds-space-2);
+  transition: border-color var(--mds-transition-fast), background-color var(--mds-transition-fast);
+}
+
+.mds-sidebar-banner:hover {
+  border-color: rgba(255, 255, 255, 0.08);
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.mds-sidebar-banner__header {
+  display: flex;
+  align-items: center;
+  gap: var(--mds-space-2);
+}
+
+.mds-sidebar-banner__label {
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--mds-color-primary);
+  background-color: rgba(59, 130, 246, 0.12);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: var(--mds-radius-sm);
+  padding: 1px 4px;
+  white-space: nowrap;
+}
+
+.mds-sidebar-banner__title {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--mds-color-text-primary);
+  margin: 0;
+}
+
+.mds-sidebar-banner__content {
+  font-size: 10.5px;
+  color: var(--mds-color-text-secondary);
+  line-height: 1.35;
+  margin: 0;
+  word-break: keep-all;
+}
+
+.mds-sidebar-banner__btn {
+  background-color: var(--mds-color-bg-active);
+  border: 1px solid var(--mds-color-border-subtle);
+  border-radius: var(--mds-radius-sm);
+  color: var(--mds-color-text-primary);
+  font-size: 9.5px;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+  padding: 3px 8px;
+  align-self: flex-start;
+  transition: all var(--mds-transition-fast);
+}
+
+.mds-sidebar-banner__btn:hover {
+  background-color: var(--mds-color-primary);
+  border-color: var(--mds-color-primary);
+  color: #ffffff;
+}
