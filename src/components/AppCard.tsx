@@ -1,4 +1,4 @@
-﻿import type { AppItem } from '../data/apps'
+import type { AppItem } from '../data/apps'
 
 interface AppCardProps {
   app: AppItem
@@ -39,7 +39,7 @@ function AppCard({ app, isFavorite, onToggleFavorite, compact = false }: AppCard
       <p className="tool-card__desc">{app.description}</p>
 
       <div className="tool-card__footer">
-        <span className={`tool-card__status tool-card__status--${app.status === '사용 가능' ? 'ready' : 'soon'}`}>{app.status}</span>
+        <span className={`tool-card__status tool-card__status--${app.status === '사용가능' ? 'ready' : 'soon'}`}>{app.status}</span>
         <button type="button" className="tool-card__open" onClick={() => handleOpen(app)}>열기</button>
       </div>
     </article>
