@@ -1,6 +1,7 @@
 import { explorerFolders } from '../data/apps'
 import { useWorkspace } from '../context/WorkspaceContext'
 import type { ConstructionTask } from '../context/WorkspaceContext'
+import ainSafetyThumb from '../assets/ainsafety_banner_thumb.png'
 
 // Windows Explorer Yellow Folder Icon Component
 function FolderIcon({ isOpen }: { isOpen: boolean }) {
@@ -106,7 +107,7 @@ const bannerData: SidebarBanner[] = [
     content: '전국 온라인 안전용품전문점 · 건설자재 · 방수자재 납품',
     buttonText: '바로가기',
     link: 'https://ainsafety.com',
-    imageUrl: '/ainsafety_banner_thumb.png'
+    imageUrl: ainSafetyThumb
   }
 ]
 
