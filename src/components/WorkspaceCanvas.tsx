@@ -5,7 +5,7 @@ import HqCollaborationComposer from './HqCollaborationComposer'
 import HqDraftComposer from './HqDraftComposer'
 
 function WorkspaceCanvas() {
-  const { activeTask, activeStep, sharedData, updateSharedData, completeStep } = useWorkspace()
+  const { activeTask, activeStep, sharedData, completeStep } = useWorkspace()
   const [localSite, setLocalSite] = useState(sharedData.siteName || '')
   const [localWeather, setLocalWeather] = useState(sharedData.weather || '맑음')
 
@@ -42,11 +42,6 @@ function WorkspaceCanvas() {
   queryParams.set('date', sharedData.date || new Date().toISOString().split('T')[0])
   const iframeSrc = `${currentNode.url}?${queryParams.toString()}`
 
-  const handleNextStep = () => {
-    if (localSite) updateSharedData('siteName', localSite)
-    if (localWeather) updateSharedData('weather', localWeather)
-    completeStep(activeStep)
-  }
 
   return (
     <div className="mds-canvas-workspace">
@@ -66,7 +61,6 @@ function WorkspaceCanvas() {
             </select>
           </div>
         </div>
-        <button type="button" className="mds-btn mds-btn--success" onClick={handleNextStep}>{activeStep === activeTask.workflow.length - 1 ? '업무 마감 및 저장 완료' : '다음 단계로 데이터 연결'}</button>
       </div>
       <div className="mds-iframe-wrapper">
         <iframe key={`${currentNode.id}-${activeStep}`} src={iframeSrc} className="mds-iframe-canvas" title={currentNode.name} sandbox="allow-scripts allow-same-origin allow-downloads allow-forms allow-modals" />
