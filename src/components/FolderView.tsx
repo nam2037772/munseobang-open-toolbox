@@ -1,4 +1,4 @@
-﻿import { apps, folders, type FolderId } from '../data/apps'
+import { apps, folders, type FolderId } from '../data/apps'
 import { useFavorites } from '../hooks/useFavorites'
 import AppCard from './AppCard'
 import News from './News'
@@ -14,22 +14,26 @@ function FolderView({ folderId, onBack }: FolderViewProps) {
   const folderApps = apps.filter((app) => app.category === folderId)
 
   return (
-    <section className="folder-view" id="folder-view">
-      <div className="folder-view__top">
-        <div>
-          <p className="folder-view__path">문서방 <span aria-hidden="true">&gt;</span> {folder?.title ?? folderId}</p>
-          <h1 className="folder-view__title">{folder?.title ?? folderId}</h1>
-          {folder && <p className="folder-view__desc">{folder.description}</p>}
-        </div>
+    <section className="folder-view">
+      <div className="folder-view__breadcrumb">
+        <p className="folder-view__path">
+          문서방 <span aria-hidden="true">&gt;</span> {folder?.title ?? folderId}
+        </p>
         <button type="button" className="folder-view__back" onClick={onBack}>
-          전체 폴더로 돌아가기
+          ← 전체 업무
         </button>
       </div>
 
-      <div className="app-grid app-grid--compact">
-        {folderApps.map((app) => (
-          <AppCard key={app.id} app={app} isFavorite={isFavorite(app.id)} onToggleFavorite={toggleFavorite} compact />
-        ))}
+      {folder && <p className="folder-view__desc">{folder.description}</p>}
+
+      <div className="folder-view__grid">
+        {folderApps.length === 0 ? (
+          <p className="folder-view__empty">이 폴더에는 아직 등록된 도구가 없습니다.</p>
+        ) : (
+          folderApps.map((app) => (
+            <AppCard key={app.id} app={app} isFavorite={isFavorite(app.id)} onToggleFavorite={toggleFavorite} compact />
+          ))
+        )}
       </div>
 
       {folderId === '건설실무브리핑' && <News />}
