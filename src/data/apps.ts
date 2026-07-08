@@ -531,7 +531,7 @@ export const explorerFolders: ExplorerFolder[] = [
     { id: 'source-approval-task', name: '공급원승인', workflow: [{ id: 'source-approval', name: '공급원 승인 서류 작성', status: 'active' }] },
   ] },
   { id: 'safety', name: '안전/환경', tasks: [
-    { id: 'safety-tbm', name: 'TBM', workflow: [{ id: 'tbm-log', name: 'TBM 일지 작성', status: 'active' }, { id: 'safety-training', name: '안전교육 기록', status: 'pending' }] },
+    { id: 'safety-tbm', name: 'TBM', workflow: [{ id: 'tbm-log', name: 'TBM 일지 작성', status: 'active', url: 'https://nam2037772.github.io/tbm-log-pro/' }, { id: 'safety-training', name: '안전교육 기록', status: 'pending' }] },
     { id: 'risk-assessment-task', name: '위험성평가', workflow: [{ id: 'risk-assessment', name: '위험성평가 문서 작성', status: 'active' }] },
     { id: 'waste-management-task', name: '폐기물관리', workflow: [{ id: 'waste-manifest', name: '건설폐기물 배출 기록', status: 'active' }] },
     { id: 'industrial-safety-health-cost-task', name: '산업안전보건관리비', workflow: [{ id: 'industrial-safety-health-cost', name: '산업안전보건관리비 사용내역 입력', status: 'active', url: './safety-environment-costs/?page=industrial' }] },
@@ -545,5 +545,8 @@ export const explorerFolders: ExplorerFolder[] = [
   ] },
   { id: 'common', name: '공통 업무', tasks: [
     { id: 'calculator-task', name: '계산기', workflow: [{ id: 'remitar-calc', name: '레미탈 계산기', status: 'active', url: 'https://nam2037772.github.io/calculator-pro/' }, { id: 'slope-calc', name: '구배 계산기', status: 'pending', url: 'https://nam2037772.github.io/calculator-pro/' }, { id: 'vat-calc', name: '부가세 계산기', status: 'pending', url: 'https://nam2037772.github.io/calculator-pro/' }] },
+  ] },
+  { id: 'briefing', name: '건설실무브리핑', tasks: [
+    { id: 'briefing-task', name: '건설 실무 소식 확인', workflow: [{ id: 'construction-briefing', name: '건설실무브리핑 보기', status: 'active', url: 'https://nam2037772.github.io/gunseol-silmu-briefing/' }] },
   ] },
 ]

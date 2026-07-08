@@ -58,7 +58,10 @@ function AppContent() {
 
               <div className="mds-dashboard__split">
                 <section className="mds-feed-panel" aria-labelledby="brief-title">
-                  <h3 id="brief-title" className="mds-dashboard__section-title">오늘의 업무 브리핑</h3>
+                  <div className="mds-feed-panel__header">
+                    <h3 id="brief-title" className="mds-dashboard__section-title mds-dashboard__section-title--flush">오늘의 업무 브리핑</h3>
+                    <a className="mds-feed-panel__link" href="https://nam2037772.github.io/gunseol-silmu-briefing/" target="_blank" rel="noopener noreferrer">건설실무브리핑 전체보기 ↗</a>
+                  </div>
                   <ul className="mds-feed-list">
                     <li className="mds-feed-item"><span className="mds-feed-item__source mds-feed-item__source--molit">국토부</span><span className="mds-feed-item__title">소규모 건축공사 감리 기준 개정 고시 확인 필요</span></li>
                     <li className="mds-feed-item"><span className="mds-feed-item__source mds-feed-item__source--kcs">KCS</span><span className="mds-feed-item__title">콘크리트 마감 시공기준 변경안 확인</span></li>

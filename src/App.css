@@ -250,6 +250,35 @@
   border-bottom: 1px solid var(--mds-color-border-subtle);
 }
 
+.mds-feed-panel__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--mds-space-3);
+  border-bottom: 1px solid var(--mds-color-border-subtle);
+  margin-bottom: var(--mds-space-3);
+  padding-bottom: var(--mds-space-1);
+}
+
+.mds-dashboard__section-title--flush {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+  white-space: nowrap;
+}
+
+.mds-feed-panel__link {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--mds-color-primary);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.mds-feed-panel__link:hover {
+  text-decoration: underline;
+}
+
 /* Shortcuts Grid */
 .mds-grid {
   display: grid;
