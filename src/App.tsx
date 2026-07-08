@@ -4,35 +4,12 @@ import SidebarExplorer from './components/SidebarExplorer'
 import WorkflowTimeline from './components/WorkflowTimeline'
 import WorkspaceCanvas from './components/WorkspaceCanvas'
 import CommandBar from './components/CommandBar'
-import { AiProviderFactory } from './services/ai/aiProvider'
 import './App.css'
 
 function AppContent() {
   const { activeTask, selectedPath, resetWorkspace } = useWorkspace()
-  const [aiQuery, setAiQuery] = useState('')
   const [googleQuery, setGoogleQuery] = useState('')
-  const [aiAnswer, setAiAnswer] = useState('')
-  const [isAiLoading, setIsAiLoading] = useState(false)
   const [googleError, setGoogleError] = useState('')
-
-  const handleAiSearch = async () => {
-    const trimmed = aiQuery.trim()
-    if (!trimmed) {
-      setAiAnswer('질문할 내용을 입력해 주세요.')
-      return
-    }
-    setIsAiLoading(true)
-    setAiAnswer('')
-    try {
-      const provider = AiProviderFactory.getProvider('mock')
-      const response = await provider.search({ query: trimmed })
-      setAiAnswer(response.answer)
-    } catch (error) {
-      setAiAnswer('AI 검색 중 오류가 발생했습니다. 다시 시도해 주세요.')
-    } finally {
-      setIsAiLoading(false)
-    }
-  }
 
   const handleGoogleSearch = () => {
     const trimmed = googleQuery.trim()
@@ -84,41 +61,7 @@ function AppContent() {
                 {/* 검색 통합 허브 영역 */}
                 <div className="mds-search-hub">
                   
-                  {/* 1. 문서방 AI에게 질문하기 */}
-                  <div className="mds-search-box-card mds-search-box-card--ai">
-                    <label className="mds-search-box-label" htmlFor="ai-search-input">
-                      <span className="mds-search-box-label__icon">✦</span> 문서방 AI에게 질문하기
-                    </label>
-                    <div className="mds-search-box-group">
-                      <input
-                        id="ai-search-input"
-                        type="text"
-                        className="mds-search-input"
-                        placeholder="예: 되메우기 전에 단열재 보호해야 해? 또는 오늘 TBM 위험요인 추천해줘"
-                        value={aiQuery}
-                        onChange={(e) => setAiQuery(e.target.value)}
-                        onKeyDown={(e) => e.key === 'Enter' && handleAiSearch()}
-                        disabled={isAiLoading}
-                      />
-                      <button
-                        type="button"
-                        className="mds-search-btn mds-search-btn--ai"
-                        onClick={handleAiSearch}
-                        disabled={isAiLoading}
-                      >
-                        {isAiLoading ? '질문하는 중...' : 'AI에게 질문'}
-                      </button>
-                    </div>
-                    {/* AI 답변 영역 */}
-                    {aiAnswer && (
-                      <div className="mds-search-result-feedback mds-search-result-feedback--ai">
-                        <span className="mds-search-result-feedback__icon">✦</span>
-                        <p className="mds-search-result-feedback__text">{aiAnswer}</p>
-                      </div>
-                    )}
-                  </div>
-
-                  {/* 2. Google에서 검색하기 */}
+                  {/* Google에서 검색하기 */}
                   <div className="mds-search-box-card mds-search-box-card--google">
                     <label className="mds-search-box-label" htmlFor="google-search-input">
                       <span className="mds-search-box-label__icon">⌕</span> Google에서 검색하기
@@ -151,10 +94,6 @@ function AppContent() {
                     )}
                   </div>
 
-                  {/* 주의 문구 (면책 조항) */}
-                  <p className="mds-search-warning-text">
-                    AI 답변은 실무 검토용이며, 최종 판단은 관련 법령·기준·감리·발주처 확인이 필요합니다.
-                  </p>
                 </div>
               </section>
 
