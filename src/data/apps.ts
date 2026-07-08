@@ -540,7 +540,7 @@ export const explorerFolders: ExplorerFolder[] = [
     { id: 'waste-disposal-cost-task', name: '폐기물반출현황', workflow: [{ id: 'waste-disposal-cost', name: '폐기물반출현황 입력', status: 'active', url: './safety-environment-costs/?page=waste' }] },
   ] },
   { id: 'gongmu', name: '공무/행정', tasks: [
-    { id: 'official-docs', name: '공문발송', workflow: [{ id: 'official-document', name: '공문 초안 작성', status: 'active' }, { id: 'design-change', name: '설계변경 검토', status: 'pending' }] },
+    { id: 'official-docs', name: '공문발송', workflow: [{ id: 'official-document', name: '공문 초안 작성', status: 'active' }] },
     { id: 'progress-payment-task', name: '기성청구', workflow: [{ id: 'progress-payment', name: '기성 청구 서류 작성', status: 'active' }] },
     { id: 'monthly-settlement', name: '월정산보고', workflow: [{ id: 'monthly-settlement-doc', name: '월간 기성/정산 서류 작성', status: 'active' }] },
   ] },
@@ -551,3 +551,4 @@ export const explorerFolders: ExplorerFolder[] = [
     { id: 'briefing-task', name: '건설 실무 소식 확인', workflow: [{ id: 'construction-briefing', name: '건설실무브리핑 보기', status: 'active', url: 'https://nam2037772.github.io/gunseol-silmu-briefing/' }] },
   ] },
 ]
+

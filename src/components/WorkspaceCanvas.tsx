@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useWorkspace } from '../context/WorkspaceContext'
+import OfficialDocumentComposer from './OfficialDocumentComposer'
 
 function WorkspaceCanvas() {
   const { activeTask, activeStep, sharedData, updateSharedData, completeStep } = useWorkspace()
@@ -9,6 +10,10 @@ function WorkspaceCanvas() {
   if (!activeTask) return null
 
   const currentNode = activeTask.workflow[activeStep]
+
+  if (currentNode.id === 'official-document') {
+    return <OfficialDocumentComposer onComplete={() => completeStep(activeStep)} />
+  }
 
   if (!currentNode.url) {
     return (
@@ -61,3 +66,4 @@ function WorkspaceCanvas() {
 }
 
 export default WorkspaceCanvas
+
