@@ -1,9 +1,5 @@
 import { useMemo, useState } from 'react'
 
-interface OfficialDocumentComposerProps {
-  onComplete: () => void
-}
-
 interface AttachmentRow {
   id: number
   title: string
@@ -34,7 +30,7 @@ function formatDate(dateValue: string) {
   return `${year}. ${month}. ${day}`
 }
 
-function OfficialDocumentComposer({ onComplete }: OfficialDocumentComposerProps) {
+function OfficialDocumentComposer() {
   const [companyName, setCompanyName] = useState('일성종합건설주식회사')
   const [companyInfo, setCompanyInfo] = useState('우) 63587 / 제주특별자치도 서귀포시 동홍중앙로66번길22 / 전화 (064)767-1700 / 팩스 (064)767-1710')
   const [docNo, setDocNo] = useState('일성 - 호')
@@ -106,7 +102,6 @@ function OfficialDocumentComposer({ onComplete }: OfficialDocumentComposerProps)
         <div className="official-doc__actions">
           <button type="button" className="mds-btn" onClick={copyDocument}>{copied ? '복사됨' : '본문 복사'}</button>
           <button type="button" className="mds-btn mds-btn--primary" onClick={printDocument}>PDF 저장/인쇄</button>
-          <button type="button" className="mds-btn mds-btn--success" onClick={onComplete}>단계 완료</button>
         </div>
       </header>
 

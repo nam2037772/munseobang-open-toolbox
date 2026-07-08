@@ -1360,3 +1360,58 @@ select:focus-visible {
     font-size: 38px !important;
   }
 }
+/* Print parity override: keep the formatted official document to one A4 page. */
+.official-doc__paper {
+  height: 297mm;
+  overflow: hidden;
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  html,
+  body,
+  #root {
+    width: 210mm !important;
+    height: 296mm !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    background: #fff !important;
+  }
+
+  .mds-os-container,
+  .mds-main-content,
+  .mds-canvas,
+  .mds-workbench,
+  .official-doc,
+  .official-doc__grid,
+  .official-doc__preview {
+    width: 210mm !important;
+    height: 296mm !important;
+    min-height: 0 !important;
+    max-height: 296mm !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    background: #fff !important;
+  }
+
+  .official-doc__paper {
+    width: 210mm !important;
+    height: 296mm !important;
+    min-height: 0 !important;
+    max-height: 296mm !important;
+    margin: 0 !important;
+    padding: 13mm 13mm 12mm !important;
+    overflow: hidden !important;
+    box-shadow: none !important;
+    background: #fff !important;
+    color: #000 !important;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+}

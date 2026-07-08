@@ -12,7 +12,7 @@ function WorkspaceCanvas() {
   const currentNode = activeTask.workflow[activeStep]
 
   if (currentNode.id === 'official-document') {
-    return <OfficialDocumentComposer onComplete={() => completeStep(activeStep)} />
+    return <OfficialDocumentComposer />
   }
 
   if (!currentNode.url) {
