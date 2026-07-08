@@ -544,7 +544,11 @@ export const explorerFolders: ExplorerFolder[] = [
     { id: 'progress-payment-task', name: '기성청구', workflow: [{ id: 'progress-payment', name: '기성 청구 서류 작성', status: 'active' }] },
     { id: 'monthly-settlement', name: '월정산보고', workflow: [{ id: 'monthly-settlement-doc', name: '월간 기성/정산 서류 작성', status: 'active' }] },
   ] },
-  { id: 'common', name: '공통 업무', tasks: [
+  { id: 'head-office', name: '본사협업', tasks: [
+    { id: 'hq-collaboration-task', name: '업무협조 요청', workflow: [{ id: 'hq-collaboration-request', name: '본사 업무협조 요청서 작성', status: 'active' }] },
+    { id: 'hq-review-task', name: '본사 검토 요청', workflow: [{ id: 'hq-review-request', name: '본사 검토 요청서 작성', status: 'active' }] },
+    { id: 'hq-response-task', name: '회신/조치사항 정리', workflow: [{ id: 'hq-response-log', name: '본사 회신 및 조치사항 정리', status: 'active' }] },
+  ] },  { id: 'common', name: '공통 업무', tasks: [
     { id: 'calculator-task', name: '계산기', workflow: [{ id: 'remitar-calc', name: '레미탈 계산기', status: 'active', url: 'https://nam2037772.github.io/calculator-pro/' }, { id: 'slope-calc', name: '구배 계산기', status: 'pending', url: 'https://nam2037772.github.io/calculator-pro/' }, { id: 'vat-calc', name: '부가세 계산기', status: 'pending', url: 'https://nam2037772.github.io/calculator-pro/' }] },
   ] },
   { id: 'briefing', name: '건설실무브리핑', tasks: [
