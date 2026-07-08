@@ -103,7 +103,7 @@ const bannerData: SidebarBanner[] = [
     id: 'ainsafety',
     label: '협력사',
     title: '아인산업안전',
-    content: '안전용품 · 건설자재 · 방수자재 전문 납품 브랜드',
+    content: '전국 온라인 안전용품전문점 · 건설자재 · 방수자재 납품',
     buttonText: '바로가기',
     link: 'https://ainsafety.com',
     imageUrl: '/ainsafety_banner_thumb.png'
