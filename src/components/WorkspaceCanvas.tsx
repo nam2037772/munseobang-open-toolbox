@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useWorkspace } from '../context/WorkspaceContext'
 import OfficialDocumentComposer from './OfficialDocumentComposer'
 import HqCollaborationComposer from './HqCollaborationComposer'
+import HqDraftComposer from './HqDraftComposer'
 
 function WorkspaceCanvas() {
   const { activeTask, activeStep, sharedData, updateSharedData, completeStep } = useWorkspace()
@@ -18,6 +19,10 @@ function WorkspaceCanvas() {
 
   if (currentNode.id === 'hq-collaboration-request') {
     return <HqCollaborationComposer />
+  }
+
+  if (currentNode.id === 'hq-draft') {
+    return <HqDraftComposer />
   }
 
   if (!currentNode.url) {
