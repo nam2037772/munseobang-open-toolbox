@@ -1,22 +1,22 @@
 :root {
-  /* --- Colors (Dark Mode Standard) --- */
-  --mds-color-bg-base: hsl(222, 26%, 8%);      /* Deep Space Navy Grey (#0f1219) */
-  --mds-color-bg-surface: hsl(222, 27%, 13%);  /* Mid Tone Navy Grey (#181e2a) */
-  --mds-color-bg-active: hsl(222, 28%, 18%);   /* Highlight Active Items */
+  /* --- Colors (Light Mode Standard) --- */
+  --mds-color-bg-base: hsl(210, 20%, 96%);      /* Light Greyish Blue (#f1f5f9) */
+  --mds-color-bg-surface: hsl(0, 0%, 100%);     /* White Surface (#ffffff) */
+  --mds-color-bg-active: hsl(210, 20%, 90%);    /* Highlight Active Items (#e2e8f0) */
   
-  --mds-color-border-subtle: hsl(222, 28%, 21%); /* Control Outlines */
-  --mds-color-border-strong: hsl(217, 91%, 60%); /* Focus Outline */
+  --mds-color-border-subtle: hsl(214, 15%, 85%);/* Light Outlines (#cbd5e1) */
+  --mds-color-border-strong: hsl(217, 91%, 50%);/* Focus Outline (#3b82f6) */
   
-  --mds-color-primary: hsl(217, 91%, 60%);       /* Active Confidence Blue (#3b82f6) */
-  --mds-color-primary-hover: hsl(217, 91%, 70%);
+  --mds-color-primary: hsl(217, 91%, 50%);       /* Active Confidence Blue (#3b82f6) */
+  --mds-color-primary-hover: hsl(217, 91%, 40%);
   --mds-color-accent-safety: hsl(24, 95%, 53%);  /* Safety Orange (#f97316) */
   
   --mds-color-success: hsl(142, 70%, 45%);       /* Completed Green (🟢) */
-  --mds-color-warning: hsl(38, 92%, 50%);       /* Attention Required Yellow (🟡) */
+  --mds-color-warning: hsl(38, 92%, 50%);        /* Attention Required Yellow (🟡) */
   
-  --mds-color-text-primary: hsl(210, 40%, 96%);  /* Off White */
-  --mds-color-text-secondary: hsl(215, 16%, 65%);/* Slate Grey */
-  --mds-color-text-muted: hsl(215, 13%, 40%);    /* Dark Grey for Guides */
+  --mds-color-text-primary: hsl(222, 47%, 11%);  /* Dark Slate Grey (#0f172a) */
+  --mds-color-text-secondary: hsl(215, 16%, 35%);/* Slate Grey (#475569) */
+  --mds-color-text-muted: hsl(215, 13%, 50%);    /* Muted Slate Grey (#64748b) */
 
   /* --- Spacing System --- */
   --mds-space-1: 4px;
@@ -52,10 +52,10 @@
   --mds-transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
   --mds-transition-normal: 300ms cubic-bezier(0.4, 0, 0.2, 1);
   
-  --mds-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
-  --mds-shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.4);
+  --mds-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --mds-shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
 
-  color-scheme: dark;
+  color-scheme: light;
   color: var(--mds-color-text-primary);
   background: var(--mds-color-bg-base);
   font: 14px/1.6 'Pretendard', 'Apple SD Gothic Neo', 'Malgun Gothic', system-ui, sans-serif;
