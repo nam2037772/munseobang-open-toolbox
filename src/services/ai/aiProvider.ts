@@ -17,9 +17,6 @@ export interface AiSearchProvider {
  */
 export class MockAiProvider implements AiSearchProvider {
   async search(request: AiSearchRequest): Promise<AiSearchResponse> {
-    // Artificial delay to mimic API latency (micro-animation / user experience)
-    await new Promise((resolve) => setTimeout(resolve, 600));
-
     if (!request.query.trim()) {
       return {
         answer: "질문할 내용을 입력해 주세요.",
