@@ -552,10 +552,7 @@ export const explorerFolders: ExplorerFolder[] = [
     { id: 'calculator-task', name: '계산기', workflow: [{ id: 'remitar-calc', name: '레미탈 계산기', status: 'active', url: 'https://nam2037772.github.io/calculator-pro/' }, { id: 'slope-calc', name: '구배 계산기', status: 'pending', url: 'https://nam2037772.github.io/calculator-pro/' }, { id: 'vat-calc', name: '부가세 계산기', status: 'pending', url: 'https://nam2037772.github.io/calculator-pro/' }] },
   ] },
   { id: 'briefing', name: '건설뉴스브리핑', tasks: [
-    { id: 'briefing-task', name: '전체뉴스보기', workflow: [{ id: 'construction-briefing', name: '전체뉴스보기', status: 'active', url: 'https://nam2037772.github.io/gunseol-silmu-briefing/' }] },
-    { id: 'briefing-molit-task', name: '국토교통부', workflow: [{ id: 'briefing-molit', name: '국토교통부', status: 'active', url: 'https://nam2037772.github.io/gunseol-silmu-briefing/' }] },
-    { id: 'briefing-construction-association-task', name: '건설협회', workflow: [{ id: 'briefing-construction-association', name: '건설협회', status: 'active', url: 'https://nam2037772.github.io/gunseol-silmu-briefing/' }] },
-    { id: 'briefing-architects-association-task', name: '건축사협회', workflow: [{ id: 'briefing-architects-association', name: '건축사협회', status: 'active', url: 'https://nam2037772.github.io/gunseol-silmu-briefing/' }] },
+    { id: 'briefing-task', name: '건설뉴스', workflow: [{ id: 'construction-briefing', name: '건설뉴스', status: 'active', url: 'https://nam2037772.github.io/gunseol-silmu-briefing/' }] },
   ] },
 ]
 

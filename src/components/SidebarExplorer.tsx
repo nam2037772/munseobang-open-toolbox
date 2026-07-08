@@ -1,4 +1,4 @@
-﻿import { explorerFolders } from '../data/apps'
+import { explorerFolders } from '../data/apps'
 import { useWorkspace } from '../context/WorkspaceContext'
 import type { ConstructionTask } from '../context/WorkspaceContext'
 
@@ -15,14 +15,22 @@ function SidebarExplorer() {
         <ul className="mds-tree">
           {explorerFolders.map((folder) => {
             const isExpanded = expandedFolders.includes(folder.id)
+            const opensDirectly = folder.id === 'briefing'
+            const directTask = folder.tasks[0]
+            const isDirectActive = opensDirectly && activeTask?.id === directTask?.id
             return (
               <li key={folder.id} className="mds-tree__folder-group">
-                <button type="button" className={`mds-tree__item mds-tree__item--folder ${selectedPath[0] === folder.name ? 'is-selected' : ''}`} onClick={() => toggleFolder(folder.id)} aria-expanded={isExpanded}>
-                  <span className={`mds-tree__arrow ${isExpanded ? 'is-expanded' : ''}`}>▶</span>
+                <button
+                  type="button"
+                  className={`mds-tree__item mds-tree__item--folder ${selectedPath[0] === folder.name || isDirectActive ? 'is-selected' : ''}`}
+                  onClick={() => (opensDirectly && directTask ? selectTask(folder.name, directTask) : toggleFolder(folder.id))}
+                  aria-expanded={opensDirectly ? undefined : isExpanded}
+                >
+                  <span className={`mds-tree__arrow ${isExpanded ? 'is-expanded' : ''}`}>{opensDirectly ? '' : '▶'}</span>
                   <span className="mds-tree__icon" aria-hidden="true">□</span>
                   <span className="mds-tree__name">{folder.name}</span>
                 </button>
-                {isExpanded && (
+                {!opensDirectly && isExpanded && (
                   <ul className="mds-tree__sub">
                     {folder.tasks.map((task: ConstructionTask) => {
                       const isTaskActive = activeTask?.id === task.id
