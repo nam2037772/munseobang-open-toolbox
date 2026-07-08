@@ -17,7 +17,7 @@
       "id": "concrete_slump",
       "category": "품질",
       "item": "슬럼프 허용 오차",
-      "criteria": "지정 슬럼프가 100mm 이상일 때 허용차 ±25mm / 50mm 이상 100mm 미만일 때 ±15mm",
+      "criteria": "지정 슬럼프가 50mm 이상일 때 허용차 ±25mm / 50mm 미만일 때 ±15mm",
       "testMethod": "KS F 2402"
     },
     {
