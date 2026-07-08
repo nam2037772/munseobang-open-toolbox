@@ -5,6 +5,7 @@ import WorkflowTimeline from './components/WorkflowTimeline'
 import WorkspaceCanvas from './components/WorkspaceCanvas'
 import CommandBar from './components/CommandBar'
 import ConstructionPortal from './components/ConstructionPortal'
+import { quickPortals } from './data/portalSites'
 import './App.css'
 
 function AppContent() {
@@ -56,6 +57,26 @@ function AppContent() {
           {activeTask === null ? (
             <div className="mds-dashboard">
               <section className="mds-dashboard__hero">
+                {/* 포털 바로가기 (최상단) */}
+                <div className="mds-quick-portals">
+                  {quickPortals.map((portal) => (
+                    <a
+                      key={portal.id}
+                      href={portal.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mds-quick-portal-btn"
+                      style={{ '--brand-color': portal.color } as React.CSSProperties}
+                      title={`${portal.name} 새 창 열기`}
+                    >
+                      <span className="mds-quick-portal-btn__icon" aria-hidden="true">
+                        {portal.icon}
+                      </span>
+                      <span className="mds-quick-portal-btn__name">{portal.name}</span>
+                    </a>
+                  ))}
+                </div>
+
                 <h1 className="mds-dashboard__title">무엇을 도와드릴까요?</h1>
                 <p className="mds-dashboard__subtitle">문서방은 작업을 시작하는 공간입니다. 검색을 통해 답을 찾거나, 왼쪽 탐색기에서 업무를 선택하세요.</p>
 

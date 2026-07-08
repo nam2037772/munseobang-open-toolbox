@@ -25,6 +25,22 @@ export interface PortalCategoryInfo {
   label: string; // Filter button label
 }
 
+export interface QuickPortal {
+  id: string;
+  name: string;
+  url: string;
+  icon: string;
+  color?: string; // Brand color
+}
+
+export const quickPortals: QuickPortal[] = [
+  { id: 'naver', name: 'NAVER', url: 'https://www.naver.com', icon: 'N', color: '#03C75A' },
+  { id: 'google', name: 'Google', url: 'https://www.google.com', icon: 'G', color: '#4285F4' },
+  { id: 'daum', name: 'Daum', url: 'https://www.daum.net', icon: 'D', color: '#FAE100' },
+  { id: 'youtube', name: 'YouTube', url: 'https://www.youtube.com', icon: 'Y', color: '#FF0000' },
+  { id: 'bing', name: 'Bing', url: 'https://www.bing.com', icon: 'B', color: '#00809D' },
+]
+
 export const portalCategories: PortalCategoryInfo[] = [
   { id: 'all', name: '전체', label: '전체' },
   { id: 'government', name: '정부기관', label: '정부' },

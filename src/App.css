@@ -2043,3 +2043,99 @@ select:focus-visible {
 .mds-portal-card:hover .mds-portal-card__arrow {
   transform: translate(2px, -2px);
 }
+
+/* ==========================================
+   MDS Quick Portals (Top Launcher)
+   ========================================== */
+.mds-quick-portals {
+  display: flex;
+  justify-content: center;
+  gap: var(--mds-space-3);
+  margin-bottom: var(--mds-space-4);
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.mds-quick-portal-btn {
+  background-color: var(--mds-color-bg-surface);
+  border: 1px solid var(--mds-color-border-subtle);
+  border-radius: var(--mds-radius-md);
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: var(--mds-space-2);
+  text-decoration: none;
+  color: var(--mds-color-text-primary);
+  transition: border-color var(--mds-transition-fast), transform var(--mds-transition-fast), box-shadow var(--mds-transition-fast);
+}
+
+.mds-quick-portal-btn:hover {
+  border-color: var(--brand-color, var(--mds-color-primary));
+  transform: translateY(-2px);
+  box-shadow: var(--mds-shadow-md);
+}
+
+.mds-quick-portal-btn__icon {
+  font-size: 14px;
+  font-weight: 900;
+  color: var(--brand-color, var(--mds-color-primary));
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mds-quick-portal-btn__name {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* ==========================================
+   LocalStorage Favorites Section & Cards
+   ========================================== */
+.mds-portal__favorites-section {
+  margin-bottom: var(--mds-space-6);
+  padding-bottom: var(--mds-space-4);
+  border-bottom: 1px dashed var(--mds-color-border-subtle);
+}
+
+.mds-portal__section-subtitle {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--mds-color-warning);
+  margin-bottom: var(--mds-space-3);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.mds-portal__subtitle-star {
+  font-size: 16px;
+}
+
+.mds-portal-card--favorite {
+  border-left: 3px solid var(--mds-color-warning);
+}
+
+.mds-portal-card__star-btn {
+  background: none;
+  border: none;
+  color: var(--mds-color-text-muted);
+  font-size: 18px;
+  cursor: pointer;
+  margin-left: auto;
+  padding: var(--mds-space-1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color var(--mds-transition-fast), transform var(--mds-transition-fast);
+  z-index: 10;
+}
+
+.mds-portal-card__star-btn:hover {
+  color: var(--mds-color-warning);
+  transform: scale(1.2);
+}
+
+.mds-portal-card__star-btn.is-favorite {
+  color: var(--mds-color-warning);
+}
