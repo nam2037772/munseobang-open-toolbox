@@ -4,6 +4,7 @@ import SidebarExplorer from './components/SidebarExplorer'
 import WorkflowTimeline from './components/WorkflowTimeline'
 import WorkspaceCanvas from './components/WorkspaceCanvas'
 import CommandBar from './components/CommandBar'
+import ConstructionPortal from './components/ConstructionPortal'
 import './App.css'
 
 function AppContent() {
@@ -96,6 +97,9 @@ function AppContent() {
 
                 </div>
               </section>
+
+              {/* 건설 실무 포털 허브 */}
+              <ConstructionPortal />
 
               <section className="mds-dashboard__shortcuts" aria-labelledby="shortcut-title">
                 <h3 id="shortcut-title" className="mds-dashboard__section-title">주요 업무 바로가기</h3>

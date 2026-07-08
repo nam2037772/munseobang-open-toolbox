@@ -1877,3 +1877,169 @@ select:focus-visible {
     padding: 10px 0;
   }
 }
+
+/* ==========================================
+   MDS Construction Portal Styles
+   ========================================== */
+.mds-portal {
+  display: flex;
+  flex-direction: column;
+  gap: var(--mds-space-4);
+  max-width: 960px;
+  margin: var(--mds-space-4) auto;
+  text-align: left;
+}
+
+.mds-portal__header {
+  border-bottom: 1px solid var(--mds-color-border-subtle);
+  padding-bottom: var(--mds-space-2);
+}
+
+.mds-portal__title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--mds-color-text-primary);
+  margin-bottom: var(--mds-space-1);
+}
+
+.mds-portal__subtitle {
+  font-size: 13px;
+  color: var(--mds-color-text-secondary);
+  line-height: 1.5;
+}
+
+.mds-portal__filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--mds-space-2);
+  margin-bottom: var(--mds-space-2);
+  user-select: none;
+}
+
+.mds-portal__filter-btn {
+  background-color: var(--mds-color-bg-surface);
+  border: 1px solid var(--mds-color-border-subtle);
+  color: var(--mds-color-text-secondary);
+  border-radius: var(--mds-radius-full);
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--mds-transition-fast);
+}
+
+.mds-portal__filter-btn:hover {
+  border-color: var(--mds-color-primary);
+  color: var(--mds-color-text-primary);
+  background-color: var(--mds-color-bg-active);
+}
+
+.mds-portal__filter-btn.is-active {
+  background-color: var(--mds-color-primary);
+  color: var(--mds-color-text-primary);
+  border-color: var(--mds-color-primary);
+}
+
+.mds-portal__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--mds-space-4);
+}
+
+.mds-portal-card {
+  background-color: var(--mds-color-bg-surface);
+  border: 1px solid var(--mds-color-border-subtle);
+  border-radius: var(--mds-radius-md);
+  padding: var(--mds-space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--mds-space-2);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color var(--mds-transition-fast), transform var(--mds-transition-fast), box-shadow var(--mds-transition-fast);
+}
+
+.mds-portal-card:hover {
+  border-color: var(--mds-color-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--mds-shadow-md);
+}
+
+.mds-portal-card__header {
+  display: flex;
+  align-items: center;
+  gap: var(--mds-space-3);
+}
+
+.mds-portal-card__icon {
+  font-size: 24px;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mds-portal-card__title-area {
+  display: flex;
+  align-items: center;
+  gap: var(--mds-space-2);
+  flex-wrap: wrap;
+}
+
+.mds-portal-card__name {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--mds-color-text-primary);
+  margin: 0;
+}
+
+.mds-portal-card__badge {
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--mds-color-primary);
+  background-color: rgba(59, 130, 246, 0.15);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: var(--mds-radius-sm);
+  padding: 1px 5px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.mds-portal-card__desc {
+  font-size: 12px;
+  color: var(--mds-color-text-secondary);
+  line-height: 1.5;
+  margin: 0;
+  flex: 1;
+  word-break: keep-all;
+}
+
+.mds-portal-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--mds-color-primary);
+  margin-top: auto;
+  opacity: 0.8;
+  transition: opacity var(--mds-transition-fast);
+}
+
+.mds-portal-card:hover .mds-portal-card__footer {
+  opacity: 1;
+}
+
+.mds-portal-card__link-text {
+  text-decoration: none;
+}
+
+.mds-portal-card__arrow {
+  font-size: 10px;
+  transition: transform var(--mds-transition-fast);
+}
+
+.mds-portal-card:hover .mds-portal-card__arrow {
+  transform: translate(2px, -2px);
+}
