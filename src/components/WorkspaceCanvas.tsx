@@ -1,4 +1,4 @@
-﻿import { useState } from 'react'
+import { useState } from 'react'
 import { useWorkspace } from '../context/WorkspaceContext'
 
 function WorkspaceCanvas() {
@@ -54,7 +54,7 @@ function WorkspaceCanvas() {
         <button type="button" className="mds-btn mds-btn--success" onClick={handleNextStep}>{activeStep === activeTask.workflow.length - 1 ? '업무 마감 및 저장 완료' : '다음 단계로 데이터 연결'}</button>
       </div>
       <div className="mds-iframe-wrapper">
-        <iframe key={`${currentNode.id}-${activeStep}`} src={iframeSrc} className="mds-iframe-canvas" title={currentNode.name} sandbox="allow-scripts allow-same-origin allow-downloads allow-forms" />
+        <iframe key={`${currentNode.id}-${activeStep}`} src={iframeSrc} className="mds-iframe-canvas" title={currentNode.name} sandbox="allow-scripts allow-same-origin allow-downloads allow-forms allow-modals" />
       </div>
     </div>
   )
