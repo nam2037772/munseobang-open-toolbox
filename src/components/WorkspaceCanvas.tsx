@@ -63,7 +63,7 @@ function WorkspaceCanvas() {
         </div>
       </div>
       <div className="mds-iframe-wrapper">
-        <iframe key={`${currentNode.id}-${activeStep}`} src={iframeSrc} className="mds-iframe-canvas" title={currentNode.name} sandbox="allow-scripts allow-same-origin allow-downloads allow-forms allow-modals" />
+        <iframe key={`${currentNode.id}-${activeStep}`} src={iframeSrc} className="mds-iframe-canvas" title={currentNode.name} sandbox="allow-scripts allow-same-origin allow-downloads allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox" />
       </div>
     </div>
   )
