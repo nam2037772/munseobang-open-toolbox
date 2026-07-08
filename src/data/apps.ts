@@ -8,7 +8,7 @@ export type FolderId =
   | '기준·법령'
   | '계산기'
   | 'CAD 자료실'
-  | '건설실무브리핑'
+  | '건설뉴스브리핑'
 
 export type AppStatus = '사용가능' | '준비중' | '개발중'
 export type AppBadge = '공식자료 우선' | '기준 확인' | '실무 기준' | '검토필요'
@@ -41,7 +41,7 @@ export const folders: FolderInfo[] = [
   { id: '기준·법령', title: '기준·법령', marker: '기준', description: 'KS, KCS, KDS, 표준시장단가와 건설 관련 법령을 우선 연결합니다.' },
   { id: '계산기', title: '계산기', marker: '계산', description: '레미탈, 경사도, 부가세, 물량 산출 계산기를 모았습니다.' },
   { id: 'CAD 자료실', title: 'CAD 자료실', marker: 'CAD', description: 'CAD 블록, 표준도, 상세도, 도면 기호 자료실입니다.' },
-  { id: '건설실무브리핑', title: '건설실무브리핑', marker: '소식', description: '공식 출처의 건설 정책, 안전, 기술, 법령 소식을 빠르게 확인합니다.' },
+  { id: '건설뉴스브리핑', title: '건설뉴스브리핑', marker: '소식', description: '공식 출처의 건설 정책, 안전, 기술, 법령 소식을 빠르게 확인합니다.' },
 ]
 
 export const DEFAULT_FAVORITE_IDS = [
@@ -441,10 +441,10 @@ export const apps: AppItem[] = [
   },
   {
     id: 'construction-briefing',
-    title: '건설실무브리핑',
-    description: '공식 출처의 건설 실무 소식을 모아 보는 독립 앱입니다.',
-    category: '건설실무브리핑',
-    tags: ['건설실무브리핑', '최신소식', '뉴스', '정책', '안전', 'CSI'],
+    title: '건설뉴스브리핑',
+    description: '공식 출처의 건설 뉴스를 모아 보는 독립 앱입니다.',
+    category: '건설뉴스브리핑',
+    tags: ['건설뉴스브리핑', '최신소식', '뉴스', '정책', '안전', 'CSI'],
     status: '사용가능',
     badge: '공식자료 우선',
     url: 'https://nam2037772.github.io/gunseol-silmu-briefing/',
@@ -453,7 +453,7 @@ export const apps: AppItem[] = [
     id: 'briefing-molit',
     title: '국토교통부',
     description: '국토교통부 공지, 고시, 보도자료를 브리핑에서 확인합니다.',
-    category: '건설실무브리핑',
+    category: '건설뉴스브리핑',
     tags: ['국토교통부', 'MOLIT', '공지', '고시', '보도자료'],
     status: '사용가능',
     badge: '공식자료 우선',
@@ -463,7 +463,7 @@ export const apps: AppItem[] = [
     id: 'briefing-construction-association',
     title: '건설협회',
     description: '대한건설협회 공지사항을 브리핑에서 확인합니다.',
-    category: '건설실무브리핑',
+    category: '건설뉴스브리핑',
     tags: ['건설협회', '대한건설협회', 'CAK'],
     status: '사용가능',
     badge: '공식자료 우선',
@@ -473,7 +473,7 @@ export const apps: AppItem[] = [
     id: 'briefing-architects-association',
     title: '건축사협회',
     description: '대한건축사협회 공지사항을 브리핑에서 확인합니다.',
-    category: '건설실무브리핑',
+    category: '건설뉴스브리핑',
     tags: ['건축사협회', '대한건축사협회'],
     status: '사용가능',
     badge: '공식자료 우선',
@@ -483,7 +483,7 @@ export const apps: AppItem[] = [
     id: 'briefing-csi',
     title: 'CSI',
     description: '건설공사 안전관리 종합정보망 소식을 브리핑에서 확인합니다.',
-    category: '건설실무브리핑',
+    category: '건설뉴스브리핑',
     tags: ['CSI', '안전관리종합정보망', '안전'],
     status: '사용가능',
     badge: '공식자료 우선',
@@ -493,7 +493,7 @@ export const apps: AppItem[] = [
     id: 'briefing-new-tech',
     title: '건설신기술',
     description: '건설신기술 지정과 활용 소식을 모을 예정입니다.',
-    category: '건설실무브리핑',
+    category: '건설뉴스브리핑',
     tags: ['건설신기술', '신기술'],
     status: '준비중',
     badge: '공식자료 우선',
@@ -502,7 +502,7 @@ export const apps: AppItem[] = [
     id: 'briefing-law-update',
     title: '건설·부동산 규정 변경',
     description: '건설 및 부동산 관련 규정 개정 소식을 모을 예정입니다.',
-    category: '건설실무브리핑',
+    category: '건설뉴스브리핑',
     tags: ['규정변경', '건설부동산', '법령개정'],
     status: '준비중',
     badge: '공식자료 우선',
@@ -511,7 +511,7 @@ export const apps: AppItem[] = [
     id: 'briefing-ai-news',
     title: 'AI·건설 뉴스',
     description: '건설 분야 AI 활용 소식을 모을 예정입니다.',
-    category: '건설실무브리핑',
+    category: '건설뉴스브리핑',
     tags: ['AI', '건설AI', 'AI뉴스'],
     status: '개발중',
     badge: '실무 기준',
@@ -551,8 +551,20 @@ export const explorerFolders: ExplorerFolder[] = [
   ] },  { id: 'common', name: '공통 업무', tasks: [
     { id: 'calculator-task', name: '계산기', workflow: [{ id: 'remitar-calc', name: '레미탈 계산기', status: 'active', url: 'https://nam2037772.github.io/calculator-pro/' }, { id: 'slope-calc', name: '구배 계산기', status: 'pending', url: 'https://nam2037772.github.io/calculator-pro/' }, { id: 'vat-calc', name: '부가세 계산기', status: 'pending', url: 'https://nam2037772.github.io/calculator-pro/' }] },
   ] },
-  { id: 'briefing', name: '건설실무브리핑', tasks: [
-    { id: 'briefing-task', name: '건설 실무 소식 확인', workflow: [{ id: 'construction-briefing', name: '건설실무브리핑 보기', status: 'active', url: 'https://nam2037772.github.io/gunseol-silmu-briefing/' }] },
+  { id: 'briefing', name: '건설뉴스브리핑', tasks: [
+    { id: 'briefing-task', name: '전체 뉴스 보기', workflow: [{ id: 'construction-briefing', name: '건설뉴스브리핑 보기', status: 'active', url: 'https://nam2037772.github.io/gunseol-silmu-briefing/' }] },
+  ] },
+  { id: 'briefing-molit-folder', name: '국토교통부', tasks: [
+    { id: 'briefing-molit-task', name: '국토교통부 뉴스', workflow: [{ id: 'briefing-molit', name: '국토교통부 뉴스 보기', status: 'active', url: 'https://nam2037772.github.io/gunseol-silmu-briefing/' }] },
+  ] },
+  { id: 'briefing-construction-association-folder', name: '건설협회', tasks: [
+    { id: 'briefing-construction-association-task', name: '건설협회 소식', workflow: [{ id: 'briefing-construction-association', name: '건설협회 소식 보기', status: 'active', url: 'https://nam2037772.github.io/gunseol-silmu-briefing/' }] },
+  ] },
+  { id: 'briefing-architects-association-folder', name: '건축사협회', tasks: [
+    { id: 'briefing-architects-association-task', name: '건축사협회 소식', workflow: [{ id: 'briefing-architects-association', name: '건축사협회 소식 보기', status: 'active', url: 'https://nam2037772.github.io/gunseol-silmu-briefing/' }] },
+  ] },
+  { id: 'briefing-csi-folder', name: 'CSI', tasks: [
+    { id: 'briefing-csi-task', name: 'CSI 안전 소식', workflow: [{ id: 'briefing-csi', name: 'CSI 안전 소식 보기', status: 'active', url: 'https://nam2037772.github.io/gunseol-silmu-briefing/' }] },
   ] },
 ]
 

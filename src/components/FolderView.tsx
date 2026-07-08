@@ -36,7 +36,7 @@ function FolderView({ folderId, onBack }: FolderViewProps) {
         )}
       </div>
 
-      {folderId === '건설실무브리핑' && <News />}
+      {folderId === '건설뉴스브리핑' && <News />}
     </section>
   )
 }
