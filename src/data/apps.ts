@@ -525,10 +525,12 @@ export const explorerFolders: ExplorerFolder[] = [
     { id: 'daily-report-task', name: '공사일보', workflow: [{ id: 'daily-report', name: '공사일보 작성', status: 'active', url: 'https://nam2037772.github.io/gongsailbo-pro/' }] },
     { id: 'schedule-task', name: '공정관리', workflow: [{ id: 'process-schedule', name: '공정표 작성', status: 'active', url: 'https://nam2037772.github.io/gongjung-pro/' }] },
   ] },
-  { id: 'quality', name: '품질/검측', tasks: [
+  { id: 'quality-management', name: '품질관리', tasks: [
+    { id: 'source-approval-task', name: '공급원승인', workflow: [{ id: 'source-approval', name: '공급원 승인 서류 작성', status: 'active' }] },
+  ] },
+  { id: 'inspection-check', name: '검수검측', tasks: [
     { id: 'inspection-task', name: '검측요청', workflow: [{ id: 'inspection-pro', name: '검측서 작성', status: 'active', url: './gumcheuk-pro/' }] },
     { id: 'material-inspection-task', name: '자재검수', workflow: [{ id: 'material-witness', name: '자재 반입 검수', status: 'active', url: './gumcheuk-pro/' }, { id: 'photo-ledger', name: '반입 사진대지', status: 'pending', url: 'https://nam2037772.github.io/sajindaeji-pro/' }] },
-    { id: 'source-approval-task', name: '공급원승인', workflow: [{ id: 'source-approval', name: '공급원 승인 서류 작성', status: 'active' }] },
   ] },
   { id: 'safety', name: '안전/환경', tasks: [
     { id: 'safety-tbm', name: 'TBM', workflow: [{ id: 'tbm-log', name: 'TBM 일지 작성', status: 'active', url: 'https://nam2037772.github.io/tbm-log-pro/' }, { id: 'safety-training', name: '안전교육 기록', status: 'pending' }] },
