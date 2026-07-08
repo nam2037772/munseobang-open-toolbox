@@ -1224,7 +1224,7 @@ select:focus-visible {
 
 .official-doc-form__meta-row {
   display: grid;
-  grid-template-columns: 1fr 378px;
+  grid-template-columns: 1fr 302px;
   gap: 18px;
   align-items: start;
 }
@@ -1256,21 +1256,22 @@ select:focus-visible {
   width: 100%;
   border-collapse: collapse;
   table-layout: fixed;
-  font-size: 16px;
+  font-size: 13px;
+  line-height: 1.15;
   color: #000;
 }
 
 .official-doc-form__approval th,
 .official-doc-form__approval td {
   border: 1px solid #000;
-  height: 33px;
+  height: 18px;
   text-align: center;
   vertical-align: middle;
   font-weight: 400;
 }
 
 .official-doc-form__approval th:nth-child(1) {
-  width: 42px;
+  width: 30px;
 }
 
 .official-doc-form__subject {
@@ -1278,7 +1279,7 @@ select:focus-visible {
   gap: 14px;
   align-items: baseline;
   border-bottom: 2px solid #000;
-  margin: 20px 0 28px;
+  margin: 14px 0 24px;
   padding: 0 0 18px;
   font-size: 17px;
   line-height: 1.5;
