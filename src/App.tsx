@@ -1,12 +1,48 @@
+import { useState } from 'react'
 import { WorkspaceProvider, useWorkspace } from './context/WorkspaceContext'
 import SidebarExplorer from './components/SidebarExplorer'
 import WorkflowTimeline from './components/WorkflowTimeline'
 import WorkspaceCanvas from './components/WorkspaceCanvas'
 import CommandBar from './components/CommandBar'
+import { AiProviderFactory } from './services/ai/aiProvider'
 import './App.css'
 
 function AppContent() {
   const { activeTask, selectedPath, resetWorkspace } = useWorkspace()
+  const [aiQuery, setAiQuery] = useState('')
+  const [googleQuery, setGoogleQuery] = useState('')
+  const [aiAnswer, setAiAnswer] = useState('')
+  const [isAiLoading, setIsAiLoading] = useState(false)
+  const [googleError, setGoogleError] = useState('')
+
+  const handleAiSearch = async () => {
+    const trimmed = aiQuery.trim()
+    if (!trimmed) {
+      setAiAnswer('질문할 내용을 입력해 주세요.')
+      return
+    }
+    setIsAiLoading(true)
+    setAiAnswer('')
+    try {
+      const provider = AiProviderFactory.getProvider('mock')
+      const response = await provider.search({ query: trimmed })
+      setAiAnswer(response.answer)
+    } catch (error) {
+      setAiAnswer('AI 검색 중 오류가 발생했습니다. 다시 시도해 주세요.')
+    } finally {
+      setIsAiLoading(false)
+    }
+  }
+
+  const handleGoogleSearch = () => {
+    const trimmed = googleQuery.trim()
+    if (!trimmed) {
+      setGoogleError('검색어를 입력해 주세요.')
+      return
+    }
+    setGoogleError('')
+    window.open(`https://www.google.com/search?q=${encodeURIComponent(trimmed)}`, '_blank', 'noopener,noreferrer')
+  }
 
   if (window.self !== window.top) {
     return (
@@ -35,15 +71,91 @@ function AppContent() {
               </span>
             ))}
           </nav>
-          <div className="mds-topbar__search-guide"><kbd>Ctrl + K</kbd> 검색</div>
+          <div className="mds-topbar__search-guide"><kbd>Ctrl + K</kbd> 도구 찾기</div>
         </header>
 
         <main className="mds-canvas">
           {activeTask === null ? (
             <div className="mds-dashboard">
               <section className="mds-dashboard__hero">
-                <h1 className="mds-dashboard__title">오늘 어떤 업무를 하시겠습니까?</h1>
-                <p className="mds-dashboard__subtitle">문서방은 작업을 시작하는 공간입니다. 왼쪽 탐색기에서 업무를 선택하고 필요한 도구로 바로 이동합니다.</p>
+                <h1 className="mds-dashboard__title">무엇을 도와드릴까요?</h1>
+                <p className="mds-dashboard__subtitle">문서방은 작업을 시작하는 공간입니다. 검색을 통해 답을 찾거나, 왼쪽 탐색기에서 업무를 선택하세요.</p>
+
+                {/* 검색 통합 허브 영역 */}
+                <div className="mds-search-hub">
+                  
+                  {/* 1. 문서방 AI에게 질문하기 */}
+                  <div className="mds-search-box-card mds-search-box-card--ai">
+                    <label className="mds-search-box-label" htmlFor="ai-search-input">
+                      <span className="mds-search-box-label__icon">✦</span> 문서방 AI에게 질문하기
+                    </label>
+                    <div className="mds-search-box-group">
+                      <input
+                        id="ai-search-input"
+                        type="text"
+                        className="mds-search-input"
+                        placeholder="예: 되메우기 전에 단열재 보호해야 해? 또는 오늘 TBM 위험요인 추천해줘"
+                        value={aiQuery}
+                        onChange={(e) => setAiQuery(e.target.value)}
+                        onKeyDown={(e) => e.key === 'Enter' && handleAiSearch()}
+                        disabled={isAiLoading}
+                      />
+                      <button
+                        type="button"
+                        className="mds-search-btn mds-search-btn--ai"
+                        onClick={handleAiSearch}
+                        disabled={isAiLoading}
+                      >
+                        {isAiLoading ? '질문하는 중...' : 'AI에게 질문'}
+                      </button>
+                    </div>
+                    {/* AI 답변 영역 */}
+                    {aiAnswer && (
+                      <div className="mds-search-result-feedback mds-search-result-feedback--ai">
+                        <span className="mds-search-result-feedback__icon">✦</span>
+                        <p className="mds-search-result-feedback__text">{aiAnswer}</p>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* 2. Google에서 검색하기 */}
+                  <div className="mds-search-box-card mds-search-box-card--google">
+                    <label className="mds-search-box-label" htmlFor="google-search-input">
+                      <span className="mds-search-box-label__icon">⌕</span> Google에서 검색하기
+                    </label>
+                    <div className="mds-search-box-group">
+                      <input
+                        id="google-search-input"
+                        type="text"
+                        className="mds-search-input"
+                        placeholder="예: KCS 되메우기 기준"
+                        value={googleQuery}
+                        onChange={(e) => {
+                          setGoogleQuery(e.target.value)
+                          if (e.target.value.trim()) setGoogleError('')
+                        }}
+                        onKeyDown={(e) => e.key === 'Enter' && handleGoogleSearch()}
+                      />
+                      <button
+                        type="button"
+                        className="mds-search-btn mds-search-btn--google"
+                        onClick={handleGoogleSearch}
+                      >
+                        Google 검색
+                      </button>
+                    </div>
+                    {googleError && (
+                      <div className="mds-search-error-feedback">
+                        {googleError}
+                      </div>
+                    )}
+                  </div>
+
+                  {/* 주의 문구 (면책 조항) */}
+                  <p className="mds-search-warning-text">
+                    AI 답변은 실무 검토용이며, 최종 판단은 관련 법령·기준·감리·발주처 확인이 필요합니다.
+                  </p>
+                </div>
               </section>
 
               <section className="mds-dashboard__shortcuts" aria-labelledby="shortcut-title">
@@ -97,3 +209,4 @@ function App() {
 }
 
 export default App
+
