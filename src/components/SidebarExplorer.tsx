@@ -164,7 +164,14 @@ function SidebarExplorer() {
       {/* 광고/추천 배너 영역 */}
       <div className="mds-sidebar__banner-container" aria-label="공지 및 협력사 안내">
         {bannerData.map((banner) => (
-          <div key={banner.id} className="mds-sidebar-banner">
+          <a 
+            key={banner.id} 
+            href={banner.link} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="mds-sidebar-banner"
+            title={`${banner.title} 새 창 열기`}
+          >
             {banner.imageUrl && (
               <img 
                 src={banner.imageUrl} 
@@ -177,16 +184,10 @@ function SidebarExplorer() {
               <h4 className="mds-sidebar-banner__title">{banner.title}</h4>
             </div>
             <p className="mds-sidebar-banner__content">{banner.content}</p>
-            <a 
-              href={banner.link} 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="mds-sidebar-banner__btn"
-              title={`${banner.title} 바로가기`}
-            >
+            <span className="mds-sidebar-banner__btn">
               {banner.buttonText}
-            </a>
-          </div>
+            </span>
+          </a>
         ))}
       </div>
 

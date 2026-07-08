@@ -2160,6 +2160,8 @@ select:focus-visible {
   display: flex;
   flex-direction: column;
   gap: var(--mds-space-2);
+  text-decoration: none;
+  color: inherit;
   transition: border-color var(--mds-transition-fast), background-color var(--mds-transition-fast);
 }
 
