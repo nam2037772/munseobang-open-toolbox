@@ -1,0 +1,48 @@
+{
+  "code": "KCS 11 20 25",
+  "title": "흙쌓기 및 되메우기 시공기준",
+  "type": "KCS",
+  "revisionDate": "2024-02-15",
+  "originalUrl": "https://www.kcsc.re.kr/Standard/Portal/KCS/KCS_11_20_25",
+  "keywords": ["되메우기", "흙쌓기", "다짐", "다짐도", "흙", "터파기", "토공"],
+  "checkpoints": [
+    {
+      "id": "compaction_degree",
+      "category": "품질",
+      "item": "되메우기 다짐도 기준",
+      "criteria": "구조물 주변 및 일반 되메우기: 90% 이상의 다짐밀도 확보 필요 (KS F 2312 D다짐 기준)",
+      "testMethod": "KS F 2308 (들밀도시험)"
+    },
+    {
+      "id": "compaction_layer_thickness",
+      "category": "시공",
+      "item": "1회 다짐 흙 두께",
+      "criteria": "되메우기 시 1회 포설 다짐 두께는 느슨한 상태에서 300mm 이하이어야 함",
+      "testMethod": "현장 자 측정 검사"
+    },
+    {
+      "id": "backfill_soil_quality",
+      "category": "시공",
+      "item": "되메우기 흙의 품질 조건",
+      "criteria": "유기물이 함유되지 않고 최대 입경 100mm 이하의 사질토 혹은 적정 토사 원자재 사용",
+      "testMethod": "입도시험 및 체가름 검사"
+    }
+  ],
+  "formulas": [
+    {
+      "id": "soil_volume_factor",
+      "name": "흙의 체적변화계수(L, C값) 환산 공식",
+      "expression": "compactedVolume = looseVolume * (C / L)",
+      "unit": "㎥"
+    }
+  ],
+  "relatedApps": [
+    { "appId": "backfill-test", "tabName": "되메우기 검측" },
+    { "appId": "quality-test", "tabName": "토질 들밀도시험" }
+  ],
+  "relations": {
+    "parentCode": "KCS 11 20 00",
+    "dependencies": ["KDS 11 20 15"],
+    "referencedKS": ["KS F 2308", "KS F 2312", "KS F 2324"]
+  }
+}

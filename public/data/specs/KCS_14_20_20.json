@@ -1,0 +1,48 @@
+{
+  "code": "KCS 14 20 20",
+  "title": "방수공사 시공기준",
+  "type": "KCS",
+  "revisionDate": "2024-02-15",
+  "originalUrl": "https://www.kcsc.re.kr/Standard/Portal/KCS/KCS_14_20_20",
+  "keywords": ["방수", "도막", "아스팔트", "시트", "누수", "지하외벽", "액체방수"],
+  "checkpoints": [
+    {
+      "id": "concrete_substrate_dry",
+      "category": "시공",
+      "item": "방수용 바탕 콘크리트 건조 상태",
+      "criteria": "시트 및 도막 방수 시 바탕 콘크리트의 함수율은 8% 이하이어야 함",
+      "testMethod": "함수율 측정기 검사"
+    },
+    {
+      "id": "water_leakage_test",
+      "category": "품질",
+      "item": "담수 시험 (방수 완공 후)",
+      "criteria": "실내 욕실, 다용도실 등 방수 시공 부위는 최소 24시간 동안 물을 채워 담수시험을 거쳐 누수 여부를 확인함",
+      "testMethod": "육안 검사 및 수위 측정"
+    },
+    {
+      "id": "liquid_waterproof_thickness",
+      "category": "시공",
+      "item": "시멘트 액체 방수 도포 두께",
+      "criteria": "설계도서 지정을 따르되 보통 2회 도포 시 총 두께 5mm ~ 8mm 이상 확보 필요",
+      "testMethod": "현장 샘플링 코어링 측정"
+    }
+  ],
+  "formulas": [
+    {
+      "id": "waterproof_area_calc",
+      "name": "방수 면적 및 자재 소요량 산정",
+      "expression": "materialNeeded = area * thicknessFactor",
+      "unit": "kg"
+    }
+  ],
+  "relatedApps": [
+    { "appId": "waterproof-test", "tabName": "방수 담수검측" },
+    { "appId": "quality-test", "tabName": "자재 반입 검수" }
+  ],
+  "relations": {
+    "parentCode": "KCS 14 20 00",
+    "dependencies": ["KDS 14 20 60"],
+    "referencedKS": ["KS F 3211", "KS F 4934"]
+  }
+}

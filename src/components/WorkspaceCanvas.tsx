@@ -3,6 +3,7 @@ import { useWorkspace } from '../context/WorkspaceContext'
 import OfficialDocumentComposer from './OfficialDocumentComposer'
 import HqCollaborationComposer from './HqCollaborationComposer'
 import HqDraftComposer from './HqDraftComposer'
+import NavigatorPanel from './navigator/NavigatorPanel'
 
 function WorkspaceCanvas() {
   const { activeTask, activeStep, sharedData, completeStep } = useWorkspace()
@@ -23,6 +24,10 @@ function WorkspaceCanvas() {
 
   if (currentNode.id === 'hq-draft') {
     return <HqDraftComposer />
+  }
+
+  if (currentNode.url === 'local://navigator') {
+    return <NavigatorPanel />
   }
 
   if (!currentNode.url) {

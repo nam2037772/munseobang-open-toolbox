@@ -1,0 +1,55 @@
+{
+  "code": "KCS 14 20 10",
+  "title": "일반콘크리트 시공기준",
+  "type": "KCS",
+  "revisionDate": "2024-02-15",
+  "originalUrl": "https://www.kcsc.re.kr/Standard/Portal/KCS/KCS_14_20_10",
+  "keywords": ["콘크리트", "양생", "슬럼프", "공기량", "타설", "온도", "배합"],
+  "checkpoints": [
+    {
+      "id": "concrete_temp",
+      "category": "시공",
+      "item": "콘크리트 비비기 및 타설 온도",
+      "criteria": "일반 콘크리트 타설 시 온도는 35℃ 이하이어야 함 (서중의 경우)",
+      "testMethod": "KS F 2422"
+    },
+    {
+      "id": "concrete_slump",
+      "category": "품질",
+      "item": "슬럼프 허용 오차",
+      "criteria": "지정 슬럼프가 100mm 이상일 때 허용차 ±25mm / 50mm 이상 100mm 미만일 때 ±15mm",
+      "testMethod": "KS F 2402"
+    },
+    {
+      "id": "curing_wet",
+      "category": "품질",
+      "item": "습윤양생 기간",
+      "criteria": "일반 포틀랜드 시멘트 사용 시 일평균 기온 15℃ 이상 조건에서 최소 5일간 습윤상태 유지 / 고조강 시멘트의 경우 3일",
+      "testMethod": "시방 요건 기준"
+    },
+    {
+      "id": "air_content",
+      "category": "품질",
+      "item": "공기량 기준",
+      "criteria": "보통 콘크리트의 경우 공기량 기준치 4.5% (허용오차 ±1.5%)",
+      "testMethod": "KS F 2421"
+    }
+  ],
+  "formulas": [
+    {
+      "id": "curing_days",
+      "name": "시멘트 종류별 최소 습윤양생 기간 산정",
+      "expression": "days = cementType === 'portland' ? 5 : (cementType === 'high-early' ? 3 : 7)",
+      "unit": "일(Days)"
+    }
+  ],
+  "relatedApps": [
+    { "appId": "quality-test", "tabName": "재료시험" },
+    { "appId": "concrete-test", "tabName": "타설 검측" }
+  ],
+  "relations": {
+    "parentCode": "KCS 14 20 00",
+    "dependencies": ["KDS 14 20 01", "KCS 14 20 11"],
+    "referencedKS": ["KS F 4009", "KS F 2402", "KS F 2422"]
+  }
+}

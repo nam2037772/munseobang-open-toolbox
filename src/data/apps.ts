@@ -641,6 +641,7 @@ export const explorerFolders: ExplorerFolder[] = [
     { id: 'hq-response-task', name: '회신/조치사항 정리', workflow: [{ id: 'hq-response-log', name: '본사 회신 및 조치사항 정리', status: 'active' }] },
   ] },  { id: 'common', name: '공통 업무', tasks: [
     { id: 'calculator-task', name: '계산기', workflow: [{ id: 'remitar-calc', name: '레미탈 계산기', status: 'active', url: 'https://nam2037772.github.io/calculator-pro/' }, { id: 'slope-calc', name: '구배 계산기', status: 'pending', url: 'https://nam2037772.github.io/calculator-pro/' }, { id: 'vat-calc', name: '부가세 계산기', status: 'pending', url: 'https://nam2037772.github.io/calculator-pro/' }] },
+    { id: 'navigator-task', name: '건설기준 탐색기', workflow: [{ id: 'standards-navigator', name: '건설기준 탐색기', status: 'active', url: 'local://navigator' }] }
   ] },
   { id: 'briefing', name: '건설뉴스브리핑', tasks: [
     { id: 'briefing-task', name: '건설뉴스브리핑', workflow: [{ id: 'construction-briefing', name: '건설뉴스브리핑', status: 'active', url: 'https://nam2037772.github.io/gunseol-silmu-briefing/' }] },

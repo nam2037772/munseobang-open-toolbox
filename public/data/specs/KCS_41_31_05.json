@@ -1,0 +1,48 @@
+{
+  "code": "KCS 41 31 05",
+  "title": "건축물 단열공사 시공기준",
+  "type": "KCS",
+  "revisionDate": "2024-02-15",
+  "originalUrl": "https://www.kcsc.re.kr/Standard/Portal/KCS/KCS_41_31_05",
+  "keywords": ["단열", "보온", "열전도율", "우레탄", "스티로폼", "결로", "외단열"],
+  "checkpoints": [
+    {
+      "id": "insulation_gap",
+      "category": "시공",
+      "item": "단열재 틈새 및 조인트 관리",
+      "criteria": "단열재 간의 이음매 틈새는 2mm 이하로 밀착 시공해야 하며, 틈새가 생길 경우 우레탄 폼 등으로 충진 봉밀함",
+      "testMethod": "현장 육안 및 버니어캘리퍼스 측정"
+    },
+    {
+      "id": "insulation_adhesive",
+      "category": "시공",
+      "item": "단열재 부착용 접착제 도포 면적 비율",
+      "criteria": "단열재 후면에 바르는 접착제 도포 면적은 단열재 판 전체 면적의 최소 40% 이상이어야 함 (외단열 공종의 경우)",
+      "testMethod": "탈착 샘플 확인"
+    },
+    {
+      "id": "thermal_conductivity",
+      "category": "품질",
+      "item": "단열재 종류별 열전도율 기준",
+      "criteria": "비드법 2종(네오폴) 기준 열전도율 0.031 W/m·K 이하 충족 여부 확인",
+      "testMethod": "KS F 9002"
+    }
+  ],
+  "formulas": [
+    {
+      "id": "u_value_calc",
+      "name": "부위별 열관류율(U-Value) 환산 공식",
+      "expression": "uValue = 1 / (0.11 + (thickness / thermalConductivity) + 0.04)",
+      "unit": "W/㎡·K"
+    }
+  ],
+  "relatedApps": [
+    { "appId": "insulation-check", "tabName": "단열 검측" },
+    { "appId": "calculator-pro", "tabName": "열관류율 계산기" }
+  ],
+  "relations": {
+    "parentCode": "KCS 41 31 00",
+    "dependencies": ["KDS 41 10 05"],
+    "referencedKS": ["KS F 9002", "KS M 3808"]
+  }
+}

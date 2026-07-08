@@ -1,0 +1,55 @@
+{
+  "code": "KCS 14 20 11",
+  "title": "철근공사 시공기준",
+  "type": "KCS",
+  "revisionDate": "2024-02-15",
+  "originalUrl": "https://www.kcsc.re.kr/Standard/Portal/KCS/KCS_14_20_11",
+  "keywords": ["철근", "이음", "정착", "배근", "조립", "피복두께", "갈고리"],
+  "checkpoints": [
+    {
+      "id": "cover_depth_slabs",
+      "category": "시공",
+      "item": "콘크리트 최소 피복 두께 (슬래브/벽체)",
+      "criteria": "흙에 접하지 않는 실내 슬래브 및 벽체: D16 이하 철근의 경우 20mm 이상 / D19 이상은 40mm 이상",
+      "testMethod": "KS D 3504"
+    },
+    {
+      "id": "cover_depth_columns",
+      "category": "시공",
+      "item": "콘크리트 최소 피복 두께 (기둥/보)",
+      "criteria": "흙에 접하지 않는 실내 기둥 및 보: 40mm 이상",
+      "testMethod": "시방 요건 기준"
+    },
+    {
+      "id": "rebar_hook",
+      "category": "시공",
+      "item": "철근의 갈고리 설치 대상",
+      "criteria": "원형 철근 및 스터럽, 띠철근에는 반드시 정착/이음부 90도 또는 135도 표준 갈고리를 가공 설치함",
+      "testMethod": "설계도면 준수"
+    },
+    {
+      "id": "rebar_lap_length",
+      "category": "시공",
+      "item": "철근의 겹침 이음 길이",
+      "criteria": "설계도서에 명기되지 않은 경우, 기본 정착 및 이음 계산식 기준 적용 (일반적으로 40d 이상, d는 철근 지름)",
+      "testMethod": "현장 자 대조 검사"
+    }
+  ],
+  "formulas": [
+    {
+      "id": "lap_length_calc",
+      "name": "일반 철근 겹침 이음 길이 산정 공식",
+      "expression": "lapLength = 40 * rebarDiameter",
+      "unit": "mm"
+    }
+  ],
+  "relatedApps": [
+    { "appId": "rebar-inspection", "tabName": "철근 배근 사진" },
+    { "appId": "quality-test", "tabName": "재료 반입 검수" }
+  ],
+  "relations": {
+    "parentCode": "KCS 14 20 00",
+    "dependencies": ["KDS 14 20 50", "KCS 14 20 10"],
+    "referencedKS": ["KS D 3504", "KS D 3552"]
+  }
+}

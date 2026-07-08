@@ -18,7 +18,7 @@ const PLACEHOLDERS = [
 ]
 
 function AppContent() {
-  const { activeTask, selectedPath, resetWorkspace } = useWorkspace()
+  const { activeTask, selectedPath, resetWorkspace, selectTask } = useWorkspace()
   const [googleQuery, setGoogleQuery] = useState('')
   const [googleError, setGoogleError] = useState('')
   const [placeholderIndex, setPlaceholderIndex] = useState(0)
@@ -39,6 +39,14 @@ function AppContent() {
     }
     setGoogleError('')
     window.open(`https://www.google.com/search?q=${encodeURIComponent(trimmed)}`, '_blank', 'noopener,noreferrer')
+  }
+
+  const handleOpenNavigator = () => {
+    selectTask('공통 업무', {
+      id: 'navigator-task',
+      name: '건설기준 탐색기',
+      workflow: [{ id: 'standards-navigator', name: '건설기준 탐색기', status: 'active', url: 'local://navigator' }]
+    })
   }
 
   if (window.self !== window.top) {
@@ -133,6 +141,22 @@ function AppContent() {
                       </div>
                     )}
                   </div>
+
+                  {/* 건설기준 탐색기 바로가기 카드 */}
+                  <button 
+                    type="button" 
+                    className="mds-search-box-card mds-search-box-card--navigator-shortcut"
+                    onClick={handleOpenNavigator}
+                  >
+                    <div className="mds-navigator-shortcut-content">
+                      <span className="mds-navigator-shortcut-icon">📘</span>
+                      <div className="mds-navigator-shortcut-text">
+                        <strong className="mds-navigator-shortcut-title">건설기준 탐색기 (Standards Navigator)</strong>
+                        <p className="mds-navigator-shortcut-desc">철근 피복두께, 슬럼프, 되메우기 등 KCS 핵심 수치 기준을 0초만에 확인하세요.</p>
+                      </div>
+                    </div>
+                    <span className="mds-navigator-shortcut-arrow">바로가기 ▶</span>
+                  </button>
 
                 </div>
               </section>
