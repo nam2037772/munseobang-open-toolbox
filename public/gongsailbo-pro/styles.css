@@ -442,7 +442,7 @@ td input {
   width: 210mm;
   height: 297mm;
   margin: 0 auto;
-  padding: 10mm 9mm;
+  padding: 20mm 20mm 10mm 20mm;
   background: #fff;
   color: #111;
   font-family: "Malgun Gothic", Arial, sans-serif;
@@ -537,7 +537,7 @@ td input {
 @media print {
   @page {
     size: A4 portrait;
-    margin: 10mm;
+    margin: 20mm 20mm 10mm 20mm;
   }
 
   body {

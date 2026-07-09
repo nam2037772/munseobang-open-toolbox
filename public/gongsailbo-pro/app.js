@@ -40,8 +40,8 @@ const PREVIEW_ZOOM_STEP = 0.1;
 // styles.css @media print의 @page 여백/글자크기와 반드시 같은 값을 유지해야 한다.
 const PRINT_PAGE_WIDTH_MM = 210;
 const PRINT_PAGE_HEIGHT_MM = 297;
-const PRINT_MARGIN_TOP_MM = 10;
-const PRINT_MARGIN_SIDE_MM = 10;
+const PRINT_MARGIN_TOP_MM = 20;
+const PRINT_MARGIN_SIDE_MM = 20;
 const PRINT_MARGIN_BOTTOM_MM = 10;
 const PRINT_FONT_SIZE_PX = 9.5;
 const PRINT_FIT_MIN_ZOOM = 0.35;
