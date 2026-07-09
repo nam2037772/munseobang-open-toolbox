@@ -61,7 +61,7 @@ export const apps: AppItem[] = [
     tags: ['공사일보', '작업일보', '현장일지', '일일보고'],
     status: '사용가능',
     badge: '실무 기준',
-    url: 'https://nam2037772.github.io/gongsailbo-pro/',
+    url: './gongsailbo-pro/',
   },
   {
     id: 'photo-ledger',
@@ -603,7 +603,7 @@ import type { ExplorerFolder } from '../context/WorkspaceContext'
 export const explorerFolders: ExplorerFolder[] = [
   { id: 'gongsa', name: '공사 관리', tasks: [
     { id: 'photo-ledger-task', name: '사진대지', workflow: [{ id: 'photo-ledger', name: '사진대지 PDF 작성', status: 'active', url: 'https://nam2037772.github.io/sajindaeji-pro/' }] },
-    { id: 'daily-report-task', name: '공사일보', workflow: [{ id: 'daily-report', name: '공사일보 작성', status: 'active', url: 'https://nam2037772.github.io/gongsailbo-pro/' }] },
+    { id: 'daily-report-task', name: '공사일보', workflow: [{ id: 'daily-report', name: '공사일보 작성', status: 'active', url: './gongsailbo-pro/' }] },
     { id: 'schedule-task', name: '공정관리', workflow: [{ id: 'process-schedule', name: '공정표 작성', status: 'active', url: 'https://nam2037772.github.io/gongjung-pro/' }] },
   ] },
   { id: 'quality-management', name: '품질관리', tasks: [

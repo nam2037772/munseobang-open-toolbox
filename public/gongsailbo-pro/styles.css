@@ -1,0 +1,618 @@
+:root {
+  --ink: #17212b;
+  --muted: #667085;
+  --line: #d7dde5;
+  --soft: #f4f6f8;
+  --panel: #ffffff;
+  --brand: #145c52;
+  --brand-strong: #0b4038;
+  --accent: #c07a1d;
+  --danger: #b42318;
+  --blue: #2458a6;
+  --shadow: 0 10px 28px rgba(22, 31, 45, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: #eef2f5;
+  font-family: "Malgun Gothic", "Apple SD Gothic Neo", Arial, sans-serif;
+  font-size: 14px;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  height: 38px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  white-space: nowrap;
+  background: #fff;
+  color: var(--ink);
+  cursor: pointer;
+  padding: 0 14px;
+}
+
+button:hover {
+  border-color: var(--brand);
+}
+
+button.primary {
+  border-color: var(--brand);
+  background: var(--brand);
+  color: #fff;
+}
+
+button.small {
+  height: 32px;
+  padding: 0 10px;
+}
+
+button.wide {
+  width: 100%;
+}
+
+button.danger {
+  color: var(--danger);
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--ink);
+  padding: 9px 10px;
+}
+
+textarea {
+  resize: vertical;
+  line-height: 1.55;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: center;
+  padding: 16px 22px;
+  background: #16222f;
+  color: #fff;
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: 22px;
+  letter-spacing: 0;
+}
+
+.topbar p {
+  margin: 4px 0 0;
+  color: #c8d1dc;
+}
+
+.top-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.shell {
+  display: grid;
+  grid-template-columns: 270px minmax(0, 1fr);
+  gap: 16px;
+  padding: 16px;
+  min-height: calc(100vh - 74px);
+}
+
+.sidebar,
+.workspace {
+  min-width: 0;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.panel,
+.sheet {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.panel {
+  padding: 14px;
+}
+
+.panel.grow {
+  flex: 1;
+  min-height: 280px;
+}
+
+.field {
+  min-width: 0;
+}
+
+.field + .field {
+  margin-top: 10px;
+}
+
+.date-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.date-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  height: auto;
+  min-height: 42px;
+  text-align: left;
+}
+
+.date-item.active {
+  border-color: var(--brand);
+  background: #e8f3f0;
+}
+
+.date-item span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.sheet {
+  padding: 16px;
+}
+
+.sheet-title,
+.section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.sheet-title h2,
+.section-head h2,
+.section-head h3 {
+  margin: 0;
+}
+
+.sheet-title h2 {
+  font-size: 20px;
+}
+
+.sheet-title span,
+.section-head span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.form-grid .field + .field {
+  margin-top: 0;
+}
+
+.temp-inputs {
+  display: flex;
+  gap: 8px;
+}
+
+.span-2 {
+  grid-column: span 2;
+}
+
+.tabs {
+  display: flex;
+  gap: 4px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 14px;
+  overflow-x: auto;
+}
+
+.tab {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.tab.active {
+  color: var(--brand);
+  border-bottom: 3px solid var(--brand);
+}
+
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  margin-top: 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 880px;
+}
+
+th,
+td {
+  border-bottom: 1px solid var(--line);
+  padding: 7px;
+  vertical-align: middle;
+}
+
+th {
+  background: #f1f4f7;
+  color: #394553;
+  font-size: 12px;
+  text-align: left;
+}
+
+td.num {
+  width: 86px;
+}
+
+td.action-cell {
+  width: 64px;
+  min-width: 64px;
+  text-align: center;
+}
+
+td input {
+  height: 34px;
+  padding: 6px 8px;
+}
+
+.readonly {
+  background: #f6f7f9;
+  color: var(--blue);
+  font-weight: 700;
+}
+
+.share-box {
+  margin-top: 16px;
+}
+
+#shareText {
+  margin-top: 10px;
+  background: #f8fafb;
+}
+
+#toast {
+  position: fixed;
+  left: 50%;
+  bottom: 22px;
+  transform: translateX(-50%);
+  min-width: 220px;
+  max-width: calc(100vw - 32px);
+  padding: 11px 14px;
+  border-radius: 8px;
+  background: #16222f;
+  color: #fff;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, bottom 0.2s ease;
+}
+
+#toast.show {
+  bottom: 30px;
+  opacity: 1;
+}
+
+@media (max-width: 980px) {
+  .shell {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .panel.grow {
+    min-height: 160px;
+  }
+
+  .form-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .topbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .top-actions {
+    width: 100%;
+  }
+
+  .top-actions button {
+    flex: 1;
+  }
+
+  .shell {
+    padding: 10px;
+  }
+
+  .sidebar {
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .span-2 {
+    grid-column: auto;
+  }
+}
+
+.preview-panel {
+  margin-top: 16px;
+  padding: 16px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.preview-meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.zoom-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.zoom-controls button.small {
+  width: 32px;
+  padding: 0;
+}
+
+#zoomLevel {
+  min-width: 44px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.preview-scroll {
+  margin-top: 12px;
+  overflow: auto;
+  background: #d9e0e7;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 18px;
+}
+
+.report-paper {
+  width: 210mm;
+  height: 297mm;
+  margin: 0 auto;
+  padding: 10mm 9mm;
+  background: #fff;
+  color: #111;
+  font-family: "Malgun Gothic", Arial, sans-serif;
+  font-size: 10px;
+  line-height: 1.25;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.14);
+}
+
+.report-paper table {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.report-paper th,
+.report-paper td {
+  border: 1px solid #222;
+  padding: 3px 4px;
+  height: 22px;
+  color: #111;
+  vertical-align: middle;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+.report-paper th {
+  background: #e8edf2;
+  text-align: center;
+  font-weight: 700;
+}
+
+.report-title th {
+  height: 34px;
+  background: #fff;
+  font-size: 18px;
+  letter-spacing: 0;
+}
+
+.report-meta td,
+.report-meta th {
+  height: 24px;
+}
+
+.report-section th {
+  background: #d7e2ea;
+  height: 24px;
+  font-size: 11px;
+}
+
+.report-paper .center {
+  text-align: center;
+}
+
+.report-paper .right {
+  text-align: right;
+}
+
+.report-paper .memo-cell-wide {
+  height: 92px;
+  white-space: pre-line;
+  vertical-align: top;
+}
+
+.report-paper .sign-cell {
+  height: 46px;
+  text-align: center;
+}
+
+/* 표 맨 위 빈 줄: 인쇄물을 철핀/펀치로 철할 때 구멍 뚫을 여백.
+   테두리를 0으로 두면 Chromium 인쇄(PDF) 엔진이 배율(zoom)이 걸린 상태에서
+   내용 없는 셀의 높이를 0으로 접어버리는 버그가 있어, 일부러 일반 셀과 같은
+   테두리를 그대로 둔다(높이가 실제로 반영되게 하기 위함). */
+.report-paper .punch-cell {
+  height: 20mm;
+  padding: 0;
+}
+
+.report-paper col.narrow {
+  width: 8%;
+}
+
+.report-paper col.medium {
+  width: 13%;
+}
+
+.report-paper col.wide {
+  width: 25%;
+}
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 10mm;
+  }
+
+  body {
+    background: #fff;
+  }
+
+  .topbar,
+  .sidebar,
+  .sheet,
+  .preview-panel > .section-head,
+  #toast {
+    display: none !important;
+  }
+
+  .shell {
+    display: block;
+    padding: 0;
+    min-height: auto;
+  }
+
+  .workspace {
+    display: block;
+  }
+
+  .preview-panel {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+  }
+
+  .preview-scroll {
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    border: 0;
+    background: #fff;
+  }
+
+  .report-paper {
+    width: 100% !important;
+    height: 277mm !important;
+    min-height: auto;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    font-size: 9.5px;
+    /* app.js의 fitPreviewToOnePage()가 내용량에 맞춰 계산한 배율. 없으면 1(원본 크기) */
+    zoom: var(--print-fit-zoom, 1) !important;
+  }
+}
+
+.date-list {
+  position: relative;
+  z-index: 2;
+}
+
+.date-item {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  min-height: 48px;
+  padding: 10px 12px;
+  touch-action: manipulation;
+  user-select: none;
+}
+
+.date-item strong,
+.date-item span {
+  pointer-events: none;
+}
+
+.date-item:focus-visible {
+  outline: 3px solid rgba(20, 92, 82, 0.28);
+  outline-offset: 2px;
+}
