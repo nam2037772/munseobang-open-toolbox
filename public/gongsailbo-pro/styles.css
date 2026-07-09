@@ -579,7 +579,7 @@ td input {
 
   .report-paper {
     width: 100% !important;
-    height: 277mm !important;
+    height: 100vh !important;
     min-height: auto;
     margin: 0;
     padding: 0;
