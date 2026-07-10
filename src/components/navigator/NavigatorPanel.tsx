@@ -140,7 +140,32 @@ function NavigatorPanel() {
             ) : loadingIndex ? (
               <li className="mds-navigator-widget__empty">검색 중...</li>
             ) : filteredResults.length === 0 ? (
-              <li className="mds-navigator-widget__empty">검색 결과가 없습니다.</li>
+              <>
+                <li className="mds-navigator-widget__empty">검색 결과가 없습니다.</li>
+                {query.trim() && (
+                  <li className="mds-navigator-widget__external-search">
+                    <p className="mds-navigator-widget__external-search-desc">원하는 기준을 찾지 못하셨나요? 국가건설기준센터 외부 검색을 이용해 보세요.</p>
+                    <div className="mds-navigator-widget__external-search-btns">
+                      <a
+                        href={`https://www.kcsc.re.kr/Search/List?searchTxt=${encodeURIComponent(query)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mds-navigator-external-btn"
+                      >
+                        KCSC 외부 검색 ↗
+                      </a>
+                      <a
+                        href={`https://www.google.com/search?q=site:kcsc.re.kr+${encodeURIComponent(query)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mds-navigator-external-btn"
+                      >
+                        Google KCSC 검색 ↗
+                      </a>
+                    </div>
+                  </li>
+                )}
+              </>
             ) : (
               filteredResults.map((item) => (
                 <li key={item.code} className="mds-navigator-item">
@@ -215,19 +240,37 @@ function NavigatorPanel() {
                 </div>
               </section>
 
-              {/* 원문 보기 버튼 */}
+              {/* 원문 및 외부 검색 링크 */}
               <footer className="mds-spec-detail-card__footer">
                 <div className="mds-spec-dependencies">
                   <strong>연관 기준:</strong> {selectedNode.relations.dependencies.join(', ') || '없음'}
                 </div>
-                <a
-                  href={selectedNode.originalUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mds-spec-origin-btn"
-                >
-                  국토부 원문 보기 ↗
-                </a>
+                <div className="mds-spec-detail-card__links">
+                  <a
+                    href={selectedNode.originalUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mds-spec-origin-btn"
+                  >
+                    국토부 원문 보기 ↗
+                  </a>
+                  <a
+                    href={`https://www.kcsc.re.kr/Search/List?searchTxt=${encodeURIComponent(selectedNode.title)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mds-spec-external-btn"
+                  >
+                    건설기준센터 외부 검색 ↗
+                  </a>
+                  <a
+                    href={`https://www.google.com/search?q=site:kcsc.re.kr+${encodeURIComponent(selectedNode.title)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mds-spec-external-btn"
+                  >
+                    Google KCSC 검색 ↗
+                  </a>
+                </div>
               </footer>
             </article>
           ) : (
