@@ -2698,3 +2698,19 @@ select:focus-visible {
   color: var(--mds-color-primary);
   white-space: nowrap;
 }
+
+/* Error states for Navigator Panel */
+.mds-navigator-widget__error-item {
+  padding: var(--mds-space-4);
+  text-align: center;
+  font-size: 13px;
+  color: #ef4444;
+  line-height: 1.5;
+  background-color: rgba(239, 68, 68, 0.05);
+  border-radius: var(--mds-radius-md);
+  margin: var(--mds-space-2);
+}
+
+.mds-navigator-widget__detail-error {
+  color: #ef4444 !important;
+}

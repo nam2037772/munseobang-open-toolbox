@@ -8,25 +8,62 @@ function NavigatorPanel() {
   const [query, setQuery] = useState('')
   const [results, setResults] = useState<SpecIndexItem[]>([])
   const [selectedNode, setSelectedNode] = useState<SpecNode | null>(null)
+  
+  // States for handling error and loading status
+  const [loadingIndex, setLoadingIndex] = useState(false)
+  const [indexError, setIndexError] = useState<string | null>(null)
   const [loadingDetail, setLoadingDetail] = useState(false)
+  const [detailError, setDetailError] = useState<string | null>(null)
+  
   const [filterType, setFilterType] = useState<'all' | 'KCS' | 'KDS' | 'KS'>('all')
 
   // Load index / search on query change
   useEffect(() => {
+    let active = true
     const delayDebounce = setTimeout(async () => {
-      const searchResults = await searchSpecs(query)
-      setResults(searchResults)
+      if (!active) return
+      setLoadingIndex(true)
+      setIndexError(null)
+      try {
+        const searchResults = await searchSpecs(query)
+        if (active) {
+          setResults(searchResults)
+        }
+      } catch (error: any) {
+        if (active) {
+          console.error(error)
+          setIndexError('기준 정보 인덱스를 로드하지 못했습니다. 네트워크 상태나 파일 경로를 확인해 주세요.')
+        }
+      } finally {
+        if (active) {
+          setLoadingIndex(false)
+        }
+      }
     }, 200)
 
-    return () => clearTimeout(delayDebounce)
+    return () => {
+      active = false
+      clearTimeout(delayDebounce)
+    }
   }, [query])
 
   // Select a spec item to view details
   const handleSelectSpec = async (code: string) => {
     setLoadingDetail(true)
-    const detail = await getSpecDetail(code)
-    setSelectedNode(detail)
-    setLoadingDetail(false)
+    setDetailError(null)
+    try {
+      const detail = await getSpecDetail(code)
+      if (!detail) {
+        throw new Error('상세 데이터를 찾을 수 없습니다.')
+      }
+      setSelectedNode(detail)
+    } catch (error: any) {
+      console.error(error)
+      setDetailError(`'${code}' 기준의 상세 데이터를 불러오지 못했습니다.`)
+      setSelectedNode(null)
+    } finally {
+      setLoadingDetail(false)
+    }
   }
 
   // Handle clicking a related app button in the spec card
@@ -40,7 +77,7 @@ function NavigatorPanel() {
         ]
       })
     } else {
-      alert(`[문서방 OS] '${appId}' 도구로 이동합니다. 왼쪽 탐색기에서 해당 서식을 열어주세요.`);
+      alert(`[문서방 OS] '${appId}' 도구로 이동합니다. 지정된 서식을 열어주세요.`);
     }
   }
 
@@ -98,21 +135,26 @@ function NavigatorPanel() {
         <div className="mds-navigator-widget__list-panel">
           <h4 className="mds-navigator-widget__panel-title">기준 목록 ({filteredResults.length})</h4>
           <ul className="mds-navigator-widget__list">
-            {filteredResults.map((item) => (
-              <li key={item.code} className="mds-navigator-item">
-                <button
-                  type="button"
-                  className={`mds-navigator-item__btn ${selectedNode?.code === item.code ? 'is-selected' : ''}`}
-                  onClick={() => handleSelectSpec(item.code)}
-                >
-                  <span className="mds-navigator-item__code">{item.code}</span>
-                  <span className="mds-navigator-item__title">{item.title}</span>
-                  <span className="mds-navigator-item__arrow">▶</span>
-                </button>
-              </li>
-            ))}
-            {filteredResults.length === 0 && (
+            {indexError ? (
+              <li className="mds-navigator-widget__error-item">{indexError}</li>
+            ) : loadingIndex ? (
+              <li className="mds-navigator-widget__empty">검색 중...</li>
+            ) : filteredResults.length === 0 ? (
               <li className="mds-navigator-widget__empty">검색 결과가 없습니다.</li>
+            ) : (
+              filteredResults.map((item) => (
+                <li key={item.code} className="mds-navigator-item">
+                  <button
+                    type="button"
+                    className={`mds-navigator-item__btn ${selectedNode?.code === item.code ? 'is-selected' : ''}`}
+                    onClick={() => handleSelectSpec(item.code)}
+                  >
+                    <span className="mds-navigator-item__code">{item.code}</span>
+                    <span className="mds-navigator-item__title">{item.title}</span>
+                    <span className="mds-navigator-item__arrow">▶</span>
+                  </button>
+                </li>
+              ))
             )}
           </ul>
         </div>
@@ -121,6 +163,11 @@ function NavigatorPanel() {
         <div className="mds-navigator-widget__detail-panel">
           {loadingDetail ? (
             <div className="mds-navigator-widget__detail-empty">스펙 상세를 로드하는 중...</div>
+          ) : detailError ? (
+            <div className="mds-navigator-widget__detail-empty mds-navigator-widget__detail-error">
+              <span className="mds-navigator-widget__decor-star" aria-hidden="true">⚠️</span>
+              <p>{detailError}</p>
+            </div>
           ) : selectedNode ? (
             <article className="mds-spec-detail-card">
               <header className="mds-spec-detail-card__header">

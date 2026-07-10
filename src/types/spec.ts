@@ -38,4 +38,6 @@ export interface SpecIndexItem {
   title: string;
   type: string;
   keywords: string[];
+  summary?: string;
+  checkpoints?: string[];
 }
