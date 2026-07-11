@@ -57,4 +57,43 @@ test.describe('문서방 오픈툴박스 스모크 테스트', () => {
     await expect(page.locator('#google-search-input')).toBeVisible()
     await expect(page.locator('.mds-family-apps__grid')).toBeVisible()
   })
+
+  test('5. 공사일보 독립 앱 직접 URL 접속 및 새로고침 데이터 보존 검증', async ({ page }) => {
+    // 1) 직접 URL 접속 (Vite 정적 리소스는 index.html 명시가 안전함)
+    await page.goto('http://localhost:5173/gongsailbo-pro/index.html')
+    await expect(page.locator('#projectName')).toBeVisible()
+    
+    // 2) 현장명 값 입력 변경
+    const testProjectName = '플레이라이트 통합 테스트 현장'
+    await page.fill('#projectName', testProjectName)
+    await page.locator('#projectName').blur()
+    
+    // 3) 저장 버튼 클릭 (공사일보는 명시적 저장이 필요함)
+    const saveBtn = page.locator('#saveBtn')
+    await expect(saveBtn).toBeVisible()
+    await saveBtn.click()
+    
+    // 4) 새로고침
+    await page.reload()
+    
+    // 5) 로컬 스토리지 키 prefix가 반영되어 새로고침 후에도 유지되는지 검증
+    await expect(page.locator('#projectName')).toHaveValue(testProjectName)
+  })
+
+  test('6. 안전환경보전비 독립 앱 JSON 백업 파일 다운로드 기능 작동 검증', async ({ page }) => {
+    // 직접 URL 접속 (Vite 정적 리소스는 index.html 명시가 안전함)
+    await page.goto('http://localhost:5173/safety-environment-costs/index.html')
+    
+    // 다운로드 이벤트 약속 정의
+    const downloadPromise = page.waitForEvent('download')
+    
+    // 백업/다운로드 버튼 클릭
+    const exportBtn = page.locator('#export-json')
+    await expect(exportBtn).toBeVisible()
+    await exportBtn.click()
+    
+    // 다운로드 완료 대기 및 검증
+    const download = await downloadPromise
+    expect(download.suggestedFilename()).toContain('산업안전보건관리비')
+  })
 })

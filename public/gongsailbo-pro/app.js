@@ -1,4 +1,13 @@
 const STORAGE_KEY = "munseobang:gongsailbo:v1";
+const OLD_STORAGE_KEY = "construction-daily-pro-v1";
+if (localStorage.getItem(OLD_STORAGE_KEY) && !localStorage.getItem(STORAGE_KEY)) {
+  try {
+    localStorage.setItem(STORAGE_KEY, localStorage.getItem(OLD_STORAGE_KEY));
+    localStorage.removeItem(OLD_STORAGE_KEY);
+  } catch (e) {
+    console.error("Migration failed", e);
+  }
+}
 
 const defaults = {
   projectName: "한국정보통신공사협회 제주특별자치도 회관 신축공사",

@@ -83,7 +83,16 @@ const pages = {
 const params = new URLSearchParams(location.search)
 const pageKey = pages[params.get('page')] ? params.get('page') : 'industrial'
 const page = pages[pageKey]
+const oldStorageKey = `safety-environment-costs:${pageKey}`
 const storageKey = `munseobang:safety-costs:${pageKey}`
+if (localStorage.getItem(oldStorageKey) && !localStorage.getItem(storageKey)) {
+  try {
+    localStorage.setItem(storageKey, localStorage.getItem(oldStorageKey));
+    localStorage.removeItem(oldStorageKey);
+  } catch (e) {
+    console.error("Migration failed", e);
+  }
+}
 const saved = JSON.parse(localStorage.getItem(storageKey) || 'null')
 let rows = saved?.rows || page.rows
 

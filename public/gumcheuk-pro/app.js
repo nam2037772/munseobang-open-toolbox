@@ -5,6 +5,15 @@
  */
 
 const STORAGE_KEY = "munseobang:gumcheuk:autosave_v1";
+const OLD_STORAGE_KEY = "gumcheukpro_autosave_v1";
+if (localStorage.getItem(OLD_STORAGE_KEY) && !localStorage.getItem(STORAGE_KEY)) {
+  try {
+    localStorage.setItem(STORAGE_KEY, localStorage.getItem(OLD_STORAGE_KEY));
+    localStorage.removeItem(OLD_STORAGE_KEY);
+  } catch (e) {
+    console.error("Migration failed", e);
+  }
+}
 
 /* ===================== 상태(state) ===================== */
 
