@@ -1,5 +1,225 @@
 [
   {
+    "source": "국토교통부",
+    "category": "공지사항",
+    "title": "스마트물류센터 인증 취소 고시",
+    "date": "2026-07-10",
+    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=268764&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "공지사항",
+    "title": "스마트물류센터 인증 공고(2026년 제2호)",
+    "date": "2026-07-10",
+    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=268835&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "공지사항",
+    "title": "공업화주택 인정 공고",
+    "date": "2026-07-10",
+    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=268836&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "공지사항",
+    "title": "건설신기술 보호기간 연장(2783)",
+    "date": "2026-07-10",
+    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=268761&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "보도자료",
+    "title": "[참고] 서소문 건널목 7.11일(토) 0시부터 차량 통행 재개",
+    "date": "2026-07-10",
+    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092212&src=text&kw=000004",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "보도자료",
+    "title": "[참고] 한-몽 항공회담 성과, 지방공항 운수권 확대·인천~울란바타르 증편",
+    "date": "2026-07-10",
+    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092214&src=text&kw=000004",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "보도자료",
+    "title": "[장관동정] 김윤덕 장관, “도로 침수 대비 철저 지시”",
+    "date": "2026-07-10",
+    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092213&src=text&kw=000004",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "보도자료",
+    "title": "[장관동정] 김윤덕 장관, “좋은 집 더 빠르게 공급하도록 모듈러 기술 키울 것”",
+    "date": "2026-07-10",
+    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092211&src=text&kw=000004",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "공지사항",
+    "title": "[덕둔~계류 도로확포장공사] 타당성평가 보고서 검토 결과",
+    "date": "2026-07-10",
+    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=268882&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "보도자료",
+    "title": "한성숙 국무총리, 고양창릉 현장 방문 3기 신도시 속도 제고 점검",
+    "date": "2026-07-09",
+    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092210&src=text&kw=000004",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "보도자료",
+    "title": "[참고] 호남 반도체 첨단국가산단 사업 예정지 일원 토지거래허가구역 신규 지정",
+    "date": "2026-07-09",
+    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092209&src=text&kw=000004",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "보도자료",
+    "title": "국민을 위한 휴게소로 거듭난다",
+    "date": "2026-07-09",
+    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092204&src=text&kw=000004",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "보도자료",
+    "title": "김용석 대광위원장,인천 2호선 고양연장 예타현황 점검",
+    "date": "2026-07-09",
+    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092207&src=text&kw=000004",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "보도자료",
+    "title": "대한민국 항공안전, 세계 기준으로 더 높인다",
+    "date": "2026-07-09",
+    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092205&src=text&kw=000004",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "보도자료",
+    "title": "캠핑장 분양·회원권 투자 광고, 명백한 불법입니다",
+    "date": "2026-07-09",
+    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092206&src=text&kw=000004",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "공지사항",
+    "title": "토지거래허가구역 지정 공고",
+    "date": "2026-07-09",
+    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=268852&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "공지사항",
+    "title": "호남고속철도 건설사업(고막원～목포(임성리)) 실시계획 변경 승인",
+    "date": "2026-07-09",
+    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=268765&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "보도자료",
+    "title": "반세기 전 아날로그 항공사진, 디지털로 되살린다",
+    "date": "2026-07-09",
+    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092208&src=text&kw=000004",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "대한건설협회",
+    "category": "보도자료",
+    "title": "[26.07.09] 「제1기 대한건설협회 대학생 서포터즈」 위촉",
+    "date": "2026-07-09",
+    "url": "https://www.cak.or.kr/lay1/bbs/S1T9C12/A/2/view.do?article_seq=158903",
+    "tags": [
+      "건설",
+      "협회"
+    ]
+  },
+  {
+    "source": "대한건설협회",
+    "category": "보도자료",
+    "title": "[26.07.09] 2026 건설의날 기념식 개최",
+    "date": "2026-07-09",
+    "url": "https://www.cak.or.kr/lay1/bbs/S1T9C12/A/2/view.do?article_seq=158891",
+    "tags": [
+      "건설",
+      "협회"
+    ]
+  },
+  {
     "source": "대한건축사협회",
     "category": "공지사항",
     "title": "[공지사항] 『건축사를 위한 AI 실무활용법』 교육생 모집공고",
@@ -8,6 +228,83 @@
     "tags": [
       "건축",
       "협회"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "보도자료",
+    "title": "경부선 청도사고 등 철도안전법 위반사항에 과징금 부과",
+    "date": "2026-07-08",
+    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092203&src=text&kw=000004",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "보도자료",
+    "title": "9일 「2026년 건설의 날」 기념행사 개최 “미래를 짓는 K-건설”",
+    "date": "2026-07-08",
+    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092202&src=text&kw=000004",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "보도자료",
+    "title": "[장관동정] 공공기관 이전, 민간투자 이끌어...김윤덕 장관, 전북 KB 금융타운 개소식 참석",
+    "date": "2026-07-08",
+    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092201&src=text&kw=000004",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "보도자료",
+    "title": "제6회 2026 대한민국 드론·UAM 박람회, 일상을 바꾸고, 미래를 그리다",
+    "date": "2026-07-08",
+    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092199&src=text&kw=000004",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "공지사항",
+    "title": "정부조직법 개편 사항 반영을 위한 산업단지계획 통합기준 일부개정공고",
+    "date": "2026-07-08",
+    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=268809&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "공지사항",
+    "title": "건설신기술 보호기간 연장 신청(2802)",
+    "date": "2026-07-08",
+    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=268755&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "공지사항",
+    "title": "건설신기술 보호기간 연장 신청(2795)",
+    "date": "2026-07-08",
+    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=268749&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
+      "건설"
     ]
   },
   {
@@ -211,7 +508,7 @@
   {
     "source": "CSI",
     "category": "공지사항",
-    "title": "2026년 상반기 건설공사 안전관리 종합정보망(CSI) 시스템 사용자 만족도 및 AI 챗봇 설문조사 안내",
+    "title": "2026년 상반기 건설공사 안전관리 종합정보망(CSI) 시스템 사용자 만족도 및 AI 챗봇 설문조사 안내(기한연장)",
     "date": "2026-07-06",
     "url": "https://www.csi.go.kr/community/noticeOnlyView.do?bbs_id=noti&bbt_no=148274",
     "tags": [
