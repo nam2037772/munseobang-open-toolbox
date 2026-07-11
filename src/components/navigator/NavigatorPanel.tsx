@@ -1,7 +1,51 @@
 import { useState, useEffect } from 'react'
 import { useWorkspace } from '../../context/WorkspaceContext'
-import { searchSpecs, getSpecDetail } from '../../services/specEngine'
+import { searchSpecs, getSpecDetail, summarizeWithAI } from '../../services/specEngine'
 import type { SpecIndexItem, SpecNode } from '../../types/spec'
+
+// Inline basic Markdown parser to avoid external dependencies
+function parseInlineMarkdown(text: string) {
+  const boldRegex = /\*\*(.*?)\*\*/g
+  const parts = []
+  let lastIndex = 0
+  let match
+
+  while ((match = boldRegex.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push(text.substring(lastIndex, match.index))
+    }
+    parts.push(<strong key={match.index}>{match[1]}</strong>)
+    lastIndex = boldRegex.lastIndex
+  }
+  if (lastIndex < text.length) {
+    parts.push(text.substring(lastIndex))
+  }
+  return parts.length > 0 ? parts : text
+}
+
+function renderMarkdown(text: string) {
+  if (!text) return null
+  const lines = text.split('\n')
+  return lines.map((line, idx) => {
+    const trimmed = line.trim()
+    if (trimmed.startsWith('### ')) {
+      return <h4 key={idx} className="mds-md-h3">{parseInlineMarkdown(trimmed.replace('### ', ''))}</h4>
+    }
+    if (trimmed.startsWith('## ')) {
+      return <h3 key={idx} className="mds-md-h2">{parseInlineMarkdown(trimmed.replace('## ', ''))}</h3>
+    }
+    if (trimmed.startsWith('# ')) {
+      return <h2 key={idx} className="mds-md-h1">{parseInlineMarkdown(trimmed.replace('# ', ''))}</h2>
+    }
+    if (trimmed.startsWith('* ') || trimmed.startsWith('- ')) {
+      return <li key={idx} className="mds-md-li">{parseInlineMarkdown(trimmed.substring(2))}</li>
+    }
+    if (!trimmed) {
+      return <div key={idx} className="mds-md-br" />
+    }
+    return <p key={idx} className="mds-md-p">{parseInlineMarkdown(line)}</p>
+  })
+}
 
 function NavigatorPanel() {
   const { selectTask } = useWorkspace()
@@ -16,6 +60,25 @@ function NavigatorPanel() {
   const [detailError, setDetailError] = useState<string | null>(null)
   
   const [filterType, setFilterType] = useState<'all' | 'KCS' | 'KDS' | 'KS'>('all')
+
+  // AI 요약 관련 상태
+  const [aiSummary, setAiSummary] = useState('')
+  const [aiLoading, setAiLoading] = useState(false)
+  const [apiKey, setApiKey] = useState('')
+  const [showApiSettings, setShowApiSettings] = useState(false)
+  const [tempApiKey, setTempApiKey] = useState('')
+
+  // Load API key from local storage on mount
+  useEffect(() => {
+    const savedKey = localStorage.getItem('munseobang_gemini_api_key') || ''
+    setApiKey(savedKey)
+    setTempApiKey(savedKey)
+  }, [])
+
+  // Reset AI summary when node changes
+  useEffect(() => {
+    setAiSummary('')
+  }, [selectedNode])
 
   // Load index / search on query change
   useEffect(() => {
@@ -66,6 +129,38 @@ function NavigatorPanel() {
     }
   }
 
+  // Handle AI summary generation
+  const handleAiSummary = async () => {
+    if (!selectedNode) return
+    setAiLoading(true)
+    try {
+      const result = await summarizeWithAI(selectedNode, apiKey)
+      setAiSummary(result)
+    } catch (e: any) {
+      setAiSummary(`오류가 발생했습니다: ${e.message}`)
+    } finally {
+      setAiLoading(false)
+    }
+  }
+
+  // Save API Key
+  const handleSaveApiKey = () => {
+    const key = tempApiKey.trim()
+    localStorage.setItem('munseobang_gemini_api_key', key)
+    setApiKey(key)
+    setShowApiSettings(false)
+    alert('API 키가 저장되었습니다.')
+  }
+
+  // Delete API Key
+  const handleDeleteApiKey = () => {
+    localStorage.removeItem('munseobang_gemini_api_key')
+    setApiKey('')
+    setTempApiKey('')
+    setShowApiSettings(false)
+    alert('API 키가 브라우저에서 제거되었습니다.')
+  }
+
   // Handle clicking a related app button in the spec card
   const handleLaunchApp = (appId: string) => {
     if (appId === 'calculator-pro' || appId === 'calculator-task') {
@@ -88,8 +183,72 @@ function NavigatorPanel() {
   return (
     <div className="mds-navigator-widget">
       <div className="mds-navigator-widget__header">
-        <h3 className="mds-navigator-widget__title">📘 건설기준 Navigator</h3>
-        <p className="mds-navigator-widget__subtitle">KCS/KDS 핵심 수치와 관련 업무 도구를 바로 찾아 연결합니다.</p>
+        <div className="mds-navigator-widget__title-row">
+          <div>
+            <h3 className="mds-navigator-widget__title">📘 건설기준 Navigator</h3>
+            <p className="mds-navigator-widget__subtitle">KCS/KDS 핵심 수치와 관련 업무 도구를 바로 찾아 연결합니다.</p>
+          </div>
+          <button 
+            type="button" 
+            className={`mds-navigator-settings-btn ${apiKey ? 'has-key' : ''}`}
+            onClick={() => setShowApiSettings(!showApiSettings)}
+            title="Gemini API 설정"
+          >
+            ⚙️ {apiKey ? 'AI 활성화됨' : 'AI 실험실 설정'}
+          </button>
+        </div>
+
+        {/* API 설정 창 */}
+        {showApiSettings && (
+          <div className="mds-api-settings-panel">
+            <h4 className="mds-api-settings-panel__title">⚙️ Gemini API 설정 (개발자용 / 실험 기능)</h4>
+            <div className="mds-api-settings-warning">
+              <p>⚠️ **보안 및 사용 주의사항**</p>
+              <ul>
+                <li>입력하신 API Key는 브라우저 LocalStorage에 저장됩니다. (공용 PC에서는 사용하지 마십시오.)</li>
+                <li>언제든지 키를 삭제하여 폐기하실 수 있습니다.</li>
+                <li>과금 방지를 위해 Google AI Studio에서 API 호출 제한 및 사용량 한도 설정을 권장합니다.</li>
+              </ul>
+            </div>
+            <div className="mds-api-settings-panel__form">
+              <input
+                type="password"
+                className="mds-api-settings-panel__input"
+                placeholder="Gemini API Key 입력"
+                value={tempApiKey}
+                onChange={(e) => setTempApiKey(e.target.value)}
+              />
+              <div className="mds-api-settings-panel__buttons">
+                <a 
+                  href="https://aistudio.google.com/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="mds-api-settings-panel__link"
+                >
+                  무료 API 키 발급받기 ↗
+                </a>
+                <div className="mds-api-settings-panel__action-btns">
+                  {apiKey && (
+                    <button 
+                      type="button" 
+                      className="mds-btn mds-btn--danger" 
+                      onClick={handleDeleteApiKey}
+                    >
+                      키 삭제
+                    </button>
+                  )}
+                  <button 
+                    type="button" 
+                    className="mds-btn mds-btn--primary" 
+                    onClick={handleSaveApiKey}
+                  >
+                    저장
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
 
       {/* 1. 검색바 영역 */}
@@ -220,6 +379,34 @@ function NavigatorPanel() {
                     </li>
                   ))}
                 </ul>
+              </section>
+
+              {/* AI 기준 요약 섹션 (실험 기능) */}
+              <section className="mds-spec-section mds-spec-section--ai">
+                <div className="mds-spec-section__header-row">
+                  <h4 className="mds-spec-section__title">✨ AI 기준 요약 <span className="mds-badge-experimental">실험실</span></h4>
+                  <button
+                    type="button"
+                    className="mds-spec-ai-btn"
+                    onClick={handleAiSummary}
+                    disabled={aiLoading}
+                  >
+                    {aiLoading ? '요약 분석 중...' : 'AI로 기준 요약하기'}
+                  </button>
+                </div>
+                
+                {aiLoading && (
+                  <div className="mds-spec-ai-loading">
+                    <span className="mds-navigator-ai-loading-spinner" />
+                    <p>제공된 실제 기준 조항만을 바탕으로 AI가 정밀 요약 중입니다...</p>
+                  </div>
+                )}
+
+                {aiSummary && (
+                  <div className="mds-spec-ai-result-box">
+                    {renderMarkdown(aiSummary)}
+                  </div>
+                )}
               </section>
 
               {/* 관련 업무 앱 연결 */}

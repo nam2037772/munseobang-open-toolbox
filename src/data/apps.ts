@@ -601,50 +601,41 @@ export const apps: AppItem[] = [
 import type { ExplorerFolder } from '../context/WorkspaceContext'
 
 export const explorerFolders: ExplorerFolder[] = [
-  { id: 'gongsa', name: '공사 관리', tasks: [
-    { id: 'photo-ledger-task', name: '사진대지', workflow: [{ id: 'photo-ledger', name: '사진대지 PDF 작성', status: 'active', url: 'https://nam2037772.github.io/sajindaeji-pro/' }] },
-    { id: 'daily-report-task', name: '공사일보', workflow: [{ id: 'daily-report', name: '공사일보 작성', status: 'active', url: './gongsailbo-pro/' }] },
-    { id: 'schedule-task', name: '공정관리', workflow: [{ id: 'process-schedule', name: '공정표 작성', status: 'active', url: 'https://nam2037772.github.io/gongjung-pro/' }] },
-  ] },
-  { id: 'quality-management', name: '품질관리', tasks: [
-    { id: 'quality-test-task', name: '품질시험', workflow: [{ id: 'quality-test', name: '품질시험 기록', status: 'active' }] },
-    { id: 'test-report-task', name: '시험성적서', workflow: [{ id: 'test-report', name: '시험성적서 관리', status: 'active' }] },
-    { id: 'quality-plan-task', name: '품질관리계획', workflow: [{ id: 'quality-plan', name: '품질관리계획서 작성', status: 'active' }] },
-    { id: 'concrete-test-task', name: '콘크리트시험', workflow: [{ id: 'concrete-test', name: '콘크리트 시험 기록', status: 'active' }] },
-    { id: 'construction-plan-task', name: '시공계획서', workflow: [{ id: 'construction-plan', name: '시공계획서 검토', status: 'active' }] },
-  ] },
-  { id: 'inspection-check', name: '검수·검측업무', tasks: [
-    { id: 'inspection-pro-task', name: '검측프로', workflow: [{ id: 'inspection-pro', name: '검측서 작성', status: 'active', url: './gumcheuk-pro/' }] },
-    { id: 'inspection-request-task', name: '검측요청서', workflow: [{ id: 'inspection-request', name: '검측요청서 작성', status: 'active' }] },
-    { id: 'inspection-checklist-task', name: '검측체크리스트', workflow: [{ id: 'inspection-checklist', name: '검측체크리스트 작성', status: 'active' }] },
-    { id: 'material-inspection-task', name: '자재검수', workflow: [{ id: 'material-witness', name: '자재 반입 검수', status: 'active', url: './gumcheuk-pro/' }, { id: 'photo-ledger', name: '반입 사진대지', status: 'pending', url: 'https://nam2037772.github.io/sajindaeji-pro/' }] },
-    { id: 'source-approval-task', name: '공급원승인', workflow: [{ id: 'source-approval', name: '공급원 승인 서류 작성', status: 'active' }] },
-    { id: 'construction-confirm-task', name: '시공확인', workflow: [{ id: 'construction-confirm', name: '시공확인 기록', status: 'active' }] },
-  ] },
-  { id: 'safety', name: '안전/환경', tasks: [
-    { id: 'safety-tbm', name: 'TBM', workflow: [{ id: 'tbm-log', name: 'TBM 일지 작성', status: 'active', url: 'https://nam2037772.github.io/tbm-log-pro/' }, { id: 'safety-training', name: '안전교육 기록', status: 'pending' }] },
-    { id: 'risk-assessment-task', name: '위험성평가', workflow: [{ id: 'risk-assessment', name: '위험성평가 문서 작성', status: 'active' }] },
-    { id: 'safety-training-task', name: '안전교육', workflow: [{ id: 'safety-training-log', name: '안전교육 기록', status: 'active' }] },
-    { id: 'industrial-safety-health-cost-task', name: '산업안전보건관리비', workflow: [{ id: 'industrial-safety-health-cost', name: '산업안전보건관리비 사용내역 입력', status: 'active', url: './safety-environment-costs/?page=industrial' }] },
-    { id: 'construction-safety-cost-task', name: '안전관리비', workflow: [{ id: 'construction-safety-cost', name: '안전관리비 사용내역 입력', status: 'active', url: './safety-environment-costs/?page=safety' }] },
-    { id: 'environment-preservation-cost-task', name: '환경보전비', workflow: [{ id: 'environment-preservation-cost', name: '환경보전비 사용내역 입력', status: 'active', url: './safety-environment-costs/?page=environment' }] },
-    { id: 'waste-disposal-cost-task', name: '폐기물반출현황', workflow: [{ id: 'waste-disposal-cost', name: '폐기물반출현황 입력', status: 'active', url: './safety-environment-costs/?page=waste' }] },
-  ] },
-  { id: 'gongmu', name: '공무/행정', tasks: [
-    { id: 'official-docs', name: '공문발송', workflow: [{ id: 'official-document', name: '공문 초안 작성', status: 'active' }] },
-    { id: 'progress-payment-task', name: '기성청구', workflow: [{ id: 'progress-payment', name: '기성 청구 서류 작성', status: 'active' }] },
-    { id: 'monthly-settlement', name: '월정산보고', workflow: [{ id: 'monthly-settlement-doc', name: '월간 기성/정산 서류 작성', status: 'active' }] },
-  ] },
-  { id: 'head-office', name: '본사협업', tasks: [
-    { id: 'hq-collaboration-task', name: '업무협조 요청', workflow: [{ id: 'hq-collaboration-request', name: '본사 업무협조 요청서 작성', status: 'active' }] },
-    { id: 'hq-draft-task', name: '본사기안', workflow: [{ id: 'hq-draft', name: '본사기안서 작성', status: 'active' }] },
-    { id: 'hq-response-task', name: '회신/조치사항 정리', workflow: [{ id: 'hq-response-log', name: '본사 회신 및 조치사항 정리', status: 'active' }] },
-  ] },  { id: 'common', name: '공통 업무', tasks: [
-    { id: 'calculator-task', name: '계산기', workflow: [{ id: 'remitar-calc', name: '레미탈 계산기', status: 'active', url: 'https://nam2037772.github.io/calculator-pro/' }, { id: 'slope-calc', name: '구배 계산기', status: 'pending', url: 'https://nam2037772.github.io/calculator-pro/' }, { id: 'vat-calc', name: '부가세 계산기', status: 'pending', url: 'https://nam2037772.github.io/calculator-pro/' }] },
-    { id: 'navigator-task', name: '건설기준 탐색기', workflow: [{ id: 'standards-navigator', name: '건설기준 탐색기', status: 'active', url: 'local://navigator' }] }
-  ] },
   { id: 'briefing', name: '건설뉴스브리핑', tasks: [
     { id: 'briefing-task', name: '건설뉴스브리핑', workflow: [{ id: 'construction-briefing', name: '건설뉴스브리핑', status: 'active', url: 'https://nam2037772.github.io/gunseol-silmu-briefing/' }] },
   ] },
+]
+
+export interface FamilyApp {
+  id: string
+  name: string
+  category: string
+  description: string
+  url?: string
+  status: '사용가능' | '준비중'
+  icon: string
+}
+
+export const familyApps: FamilyApp[] = [
+  // 공사관리
+  { id: 'daily-report', name: '공사일보 작성기', category: '공사관리', description: '현장명, 날짜, 작업 내용을 입력해 공사일보를 작성합니다.', url: './gongsailbo-pro/', status: '사용가능', icon: '📝' },
+  { id: 'photo-ledger', name: '사진대지 PDF 작성기', category: '공사관리', description: '사진과 설명을 배치해 사진대지 PDF를 빠르게 빌드합니다.', url: 'https://nam2037772.github.io/sajindaeji-pro/', status: '사용가능', icon: '📸' },
+  { id: 'gongjung-pro', name: '공정관리 도구', category: '공사관리', description: '공정표와 진행률을 일목요연하게 관리합니다.', url: 'https://nam2037772.github.io/gongjung-pro/', status: '사용가능', icon: '📊' },
+  
+  // 검수검측
+  { id: 'inspection-pro', name: '검측프로', category: '검수검측', description: '검측요청서, 점검표, 결과통보서와 사진대지를 작성합니다.', url: './gumcheuk-pro/', status: '사용가능', icon: '🔍' },
+  
+  // 안전환경
+  { id: 'tbm-log-pro', name: 'TBM 일지 표준 양식', category: '안전환경', description: '작업 전 TBM 회의록 및 안전 점검 일지를 작성합니다.', url: 'https://nam2037772.github.io/tbm-log-pro/', status: '사용가능', icon: '⛑️' },
+  { id: 'safety-environment-costs', name: '안전환경보전비 관리', category: '안전환경', description: '산업안전보건비, 안전관리비, 환경보전비, 폐기물 관리를 통합 처리합니다.', url: './safety-environment-costs/', status: '사용가능', icon: '🌱' },
+  
+  // 공통업무
+  { id: 'calculator-pro', name: '계산기 프로', category: '공통업무', description: '레미탈 소요량, 구배(경사도), 부가세 등을 계산합니다.', url: 'https://nam2037772.github.io/calculator-pro/', status: '사용가능', icon: '🧮' },
+  { id: 'navigator', name: '건설기준 탐색기', category: '공통업무', description: 'KCS/KDS 등 핵심 건설 기준 수치를 즉시 탐색합니다.', url: 'local://navigator', status: '사용가능', icon: '📘' },
+
+  // 준비 중인 카테고리들의 대표 자리표시자
+  { id: 'quality-prep', name: '품질관리 독립 앱', category: '품질관리', description: '품질시험, 시험성적서 등 품질 문서 관리용 개별 앱입니다.', status: '준비중', icon: '🛡️' },
+  { id: 'gongmu-prep', name: '공무행정 독립 앱', category: '공무행정', description: '공문 초안, 기성 청구 서류 작성용 개별 앱입니다.', status: '준비중', icon: '🏛️' },
+  { id: 'hq-prep', name: '본사협업 독립 앱', category: '본사협업', description: '본사 업무협조 요청 및 본사 기안 작성용 개별 앱입니다.', status: '준비중', icon: '🏢' },
 ]
 
