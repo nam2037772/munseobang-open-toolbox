@@ -1,10 +1,10 @@
-﻿/**
+/**
  * 검측프로 - 앱 로직
  * 서버 전송 없음. 모든 데이터는 localStorage(임시자동저장) 또는
  * 사용자가 내려받는 JSON 파일에만 존재한다.
  */
 
-const STORAGE_KEY = "gumcheukpro_autosave_v1";
+const STORAGE_KEY = "munseobang:gumcheuk:autosave_v1";
 
 /* ===================== 상태(state) ===================== */
 

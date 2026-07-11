@@ -1,4 +1,4 @@
-const STORAGE_KEY = "construction-daily-pro-v1";
+const STORAGE_KEY = "munseobang:gongsailbo:v1";
 
 const defaults = {
   projectName: "한국정보통신공사협회 제주특별자치도 회관 신축공사",
