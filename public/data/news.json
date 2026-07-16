@@ -1,6 +1,83 @@
 [
   {
     "source": "국토교통부",
+    "category": "보도자료",
+    "title": "[참고] 국내 개발 UAM 기체 비행 성공",
+    "date": "2026-07-16",
+    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092234&src=text&kw=000004",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "보도자료",
+    "title": "[참고] 미래를 짓다, 모두를 잇다 국토교통부 업무보고",
+    "date": "2026-07-16",
+    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092233&src=text&kw=000004",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "공지사항",
+    "title": "교제폭력 · 스토킹 레드플래그 10",
+    "date": "2026-07-16",
+    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=268997&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "공지사항",
+    "title": "건설신기술 지정 신청(2811)",
+    "date": "2026-07-16",
+    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=268837&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "공지사항",
+    "title": "나주 에너지 국가산업단지 산업단지계획 변경(1차) 및 지형도면",
+    "date": "2026-07-16",
+    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=268881&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "공지사항",
+    "title": "철강구조물 제작공장 공장인증서 발급",
+    "date": "2026-07-16",
+    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=268725&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "대한건설협회",
+    "category": "공지사항",
+    "title": "[2026-2] 대한건설협회 소프트웨어 구입 입찰공고(긴급)",
+    "date": "2026-07-16",
+    "url": "https://www.cak.or.kr/lay1/bbs/S1T9C11/A/1/view.do?article_seq=159259",
+    "tags": [
+      "건설",
+      "협회"
+    ]
+  },
+  {
+    "source": "국토교통부",
     "category": "공지사항",
     "title": "수원~인천 복선전철 건설사업 실시계획 변경(16차) 승인 고시",
     "date": "2026-07-15",
@@ -104,6 +181,17 @@
     "title": "「부동산개발사업(PF) 사업성 평가기관」신청 접수 안내",
     "date": "2026-07-15",
     "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=268939&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "보도자료",
+    "title": "[설명] 해외 자율주행 기업의 진출을 고려한 제도화 방향은 전혀 결정된 바 없습니다.",
+    "date": "2026-07-15",
+    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092232&src=text&kw=000004",
     "tags": [
       "정책",
       "건설"
@@ -485,39 +573,6 @@
   },
   {
     "source": "국토교통부",
-    "category": "보도자료",
-    "title": "[참고] 호남 반도체 첨단국가산단 사업 예정지 일원 토지거래허가구역 신규 지정",
-    "date": "2026-07-09",
-    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092209&src=text&kw=000004",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "보도자료",
-    "title": "국민을 위한 휴게소로 거듭난다",
-    "date": "2026-07-09",
-    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092204&src=text&kw=000004",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "보도자료",
-    "title": "김용석 대광위원장,인천 2호선 고양연장 예타현황 점검",
-    "date": "2026-07-09",
-    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092207&src=text&kw=000004",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
     "category": "공지사항",
     "title": "토지거래허가구역 지정 공고",
     "date": "2026-07-09",
@@ -588,50 +643,6 @@
     "title": "건설신기술 보호기간 연장 신청(2802)",
     "date": "2026-07-08",
     "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=268755&mode=view&src=text&kw=000001",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "공지사항",
-    "title": "건설신기술 보호기간 연장 신청(2795)",
-    "date": "2026-07-08",
-    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=268749&mode=view&src=text&kw=000001",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "공지사항",
-    "title": "[유운~매산, 관리~유정, 발순~수면 도로확포장공사] 타당성평가 보고서 검토 결과",
-    "date": "2026-07-07",
-    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=268783&mode=view&src=text&kw=000001",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "공지사항",
-    "title": "완도~강진 고속도로 건설사업 전략환경영향평가서(초안) 공람 및 주민설명회 개최 공고",
-    "date": "2026-07-07",
-    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=268763&mode=view&src=text&kw=000001",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "공지사항",
-    "title": "제34회 한국물류대상 정부포상 후보자 공개 검증",
-    "date": "2026-07-07",
-    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=268784&mode=view&src=text&kw=000001",
     "tags": [
       "정책",
       "건설"
