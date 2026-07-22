@@ -1,5 +1,16 @@
 [
   {
+    "source": "CSI",
+    "category": "공지사항",
+    "title": "시스템 작업 안내(2026-07-23 18:00 ~ 02:00)",
+    "date": "2026-07-23",
+    "url": "https://www.csi.go.kr/community/noticeOnlyView.do?bbs_id=noti&bbt_no=148476",
+    "tags": [
+      "안전",
+      "건설"
+    ]
+  },
+  {
     "source": "국토교통부",
     "category": "보도자료",
     "title": "여수1호 석유화학 사업재편 본격화, 건설공사 체불 방지 위해 대금지급시스템 개편",
@@ -27,6 +38,61 @@
     "title": "장항선 복선전철화 2단계(홍성∼대야) 사업 실시계획 변경 승인",
     "date": "2026-07-22",
     "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=268910&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "보도자료",
+    "title": "[참고] 물류시설 화재예방 및 대응체계를 면밀히 검토하여 개선해 나가겠습니다.",
+    "date": "2026-07-22",
+    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092251&src=text&kw=000004",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "보도자료",
+    "title": "[장관동정] 김윤덕 장관, 새만금과 호남권 투자기업과 소통 확대",
+    "date": "2026-07-22",
+    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092250&src=text&kw=000004",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "보도자료",
+    "title": "[설명] 공공기관 기능개혁에 대해서는 결정된 바 없습니다.",
+    "date": "2026-07-22",
+    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092248&src=text&kw=000004",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "보도자료",
+    "title": "올여름 안전한 휴가길 최우선… 극한호우·기상이변 철저 대응",
+    "date": "2026-07-22",
+    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092246&src=text&kw=000004",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "보도자료",
+    "title": "유휴자산 활용해 주민 삶의 질 높인다, “2026 지역수요맞춤지원 사업 15곳 최종 선정”",
+    "date": "2026-07-22",
+    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092245&src=text&kw=000004",
     "tags": [
       "정책",
       "건설"
@@ -562,50 +628,6 @@
   },
   {
     "source": "국토교통부",
-    "category": "보도자료",
-    "title": "[장관동정] 김윤덕 장관, 한국토지주택공사 신임 사장에 임명장 전수",
-    "date": "2026-07-14",
-    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092225&src=text&kw=000004",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "보도자료",
-    "title": "부동산정책, 국민의 목소리를 듣습니다.",
-    "date": "2026-07-14",
-    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092224&src=text&kw=000004",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "보도자료",
-    "title": "전세 계약 전 ‘위험신호’ 민간플랫폼서도 한눈에…, 정부-민간, 연계구축 첫걸음",
-    "date": "2026-07-14",
-    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092221&src=text&kw=000004",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "보도자료",
-    "title": "민간 개발 도심항공교통(UAM) 기체 첫 공개,K-UAM 비행 쇼케이스 개최",
-    "date": "2026-07-14",
-    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092220&src=text&kw=000004",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
     "category": "공지사항",
     "title": "자동차부품 자기인증 시험시설 지정 고시",
     "date": "2026-07-14",
@@ -643,17 +665,6 @@
     "title": "제26회 화물자동차 운전자의 날 정부포상 후보자 공개검증",
     "date": "2026-07-14",
     "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=268894&mode=view&src=text&kw=000001",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "보도자료",
-    "title": "분양가상한제 기본형건축비 비정기 고시",
-    "date": "2026-07-14",
-    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092223&src=text&kw=000004",
     "tags": [
       "정책",
       "건설"
