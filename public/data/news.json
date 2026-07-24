@@ -1,5 +1,93 @@
 [
   {
+    "source": "국토교통부",
+    "category": "보도자료",
+    "title": "[설명] 용산국제업무지구 등 주택정책 현안 관련 서울시와 지속적으로 논의하고 있습니다.",
+    "date": "2026-07-24",
+    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092255&src=text&kw=000004",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "공지사항",
+    "title": "원주무실 공공지원민간임대주택 공급촉진지구 지정 변경(4차) 및 지구계획 변경(4차) 승인, 지형도면 등의 고시",
+    "date": "2026-07-24",
+    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269017&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "공지사항",
+    "title": "비관리청 도로공사 시행 허가 내용(안양-성남)",
+    "date": "2026-07-24",
+    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=268936&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "공지사항",
+    "title": "서울 중곡역 인근 도심 공공주택 복합지구의 지정 및 지형도면등의 고시",
+    "date": "2026-07-24",
+    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269050&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "공지사항",
+    "title": "고속국도관리청의 업무 및 권한대행 공고(계양-강화 등 6개 노선)",
+    "date": "2026-07-24",
+    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269019&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "공지사항",
+    "title": "2026년 제2차 국립도시건축박물관 공개구입 예정자료 화상 공개",
+    "date": "2026-07-24",
+    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269100&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "공지사항",
+    "title": "고흥도양 고령자복지주택 건설사업 공공주택건설 사업계획 변경",
+    "date": "2026-07-24",
+    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269064&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "대한건설협회",
+    "category": "공지사항",
+    "title": "「2026 스마트건설 청년인재 채용설명회」 개최 및 참가신청 안내",
+    "date": "2026-07-24",
+    "url": "https://www.cak.or.kr/lay1/bbs/S1T9C11/A/1/view.do?article_seq=159477",
+    "tags": [
+      "건설",
+      "협회"
+    ]
+  },
+  {
     "source": "CSI",
     "category": "공지사항",
     "title": "시스템 작업 안내(2026-07-23 18:00 ~ 02:00)",
@@ -85,6 +173,39 @@
     "tags": [
       "건축",
       "협회"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "보도자료",
+    "title": "스마트도시산업 통계 특수분류 제정으로 산업육성 토대 마련한다",
+    "date": "2026-07-23",
+    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092253&src=text&kw=000004",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "보도자료",
+    "title": "’26년 상반기 전국 지가 1.22% 상승",
+    "date": "2026-07-23",
+    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092252&src=text&kw=000004",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "공지사항",
+    "title": "국립도시건축박물관 2026년 제3차 자료 공개구입 공고",
+    "date": "2026-07-23",
+    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269094&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
+      "건설"
     ]
   },
   {
@@ -484,50 +605,6 @@
     ]
   },
   {
-    "source": "국토교통부",
-    "category": "공지사항",
-    "title": "교제폭력 · 스토킹 레드플래그 10",
-    "date": "2026-07-16",
-    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=268997&mode=view&src=text&kw=000001",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "공지사항",
-    "title": "건설신기술 지정 신청(2811)",
-    "date": "2026-07-16",
-    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=268837&mode=view&src=text&kw=000001",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "공지사항",
-    "title": "나주 에너지 국가산업단지 산업단지계획 변경(1차) 및 지형도면",
-    "date": "2026-07-16",
-    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=268881&mode=view&src=text&kw=000001",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "공지사항",
-    "title": "철강구조물 제작공장 공장인증서 발급",
-    "date": "2026-07-16",
-    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=268725&mode=view&src=text&kw=000001",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
     "source": "대한건설협회",
     "category": "공지사항",
     "title": "[2026-2] 대한건설협회 소프트웨어 구입 입찰공고(긴급)",
@@ -555,28 +632,6 @@
     "title": "신축매입임대 자금조달 부담 완화 등 전면 시행",
     "date": "2026-07-16",
     "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092236&src=text&kw=000004",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "공지사항",
-    "title": "수원~인천 복선전철 건설사업 실시계획 변경(16차) 승인 고시",
-    "date": "2026-07-15",
-    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=268834&mode=view&src=text&kw=000001",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "공지사항",
-    "title": "2026년 여객자동차터미널 BF인증 지원 사업( 4차)",
-    "date": "2026-07-15",
-    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=268929&mode=view&src=text&kw=000001",
     "tags": [
       "정책",
       "건설"
@@ -621,50 +676,6 @@
     "title": "전세버스 경유 유가보조금 7월 16일부터 지급",
     "date": "2026-07-15",
     "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092229&src=text&kw=000004",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "보도자료",
-    "title": "대전 노후계획도시 정비 선도지구 선정",
-    "date": "2026-07-15",
-    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092228&src=text&kw=000004",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "보도자료",
-    "title": "「건축법」 하위법령 개정안 입법예고",
-    "date": "2026-07-15",
-    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092227&src=text&kw=000004",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "보도자료",
-    "title": "′28년 도심항공교통(UAM) 상용화 속도 낸다. 시범운용모델 마련 및 제1호 조종사·정비사 양성 프로젝트 착수",
-    "date": "2026-07-15",
-    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092226&src=text&kw=000004",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "공지사항",
-    "title": "「부동산개발사업(PF) 사업성 평가기관」신청 접수 안내",
-    "date": "2026-07-15",
-    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=268939&mode=view&src=text&kw=000001",
     "tags": [
       "정책",
       "건설"
