@@ -90,6 +90,28 @@
   {
     "source": "CSI",
     "category": "공지사항",
+    "title": "[긴급] 시스템 작업 안내(2026-07-24 12:00 ~ 13:00)",
+    "date": "2026-07-24",
+    "url": "https://www.csi.go.kr/community/noticeOnlyView.do?bbs_id=noti&bbt_no=148511",
+    "tags": [
+      "안전",
+      "건설"
+    ]
+  },
+  {
+    "source": "CSI",
+    "category": "공지사항",
+    "title": "시스템 오류 안내",
+    "date": "2026-07-24",
+    "url": "https://www.csi.go.kr/community/noticeOnlyView.do?bbs_id=noti&bbt_no=148508",
+    "tags": [
+      "안전",
+      "건설"
+    ]
+  },
+  {
+    "source": "CSI",
+    "category": "공지사항",
     "title": "시스템 작업 안내(2026-07-23 18:00 ~ 02:00)",
     "date": "2026-07-23",
     "url": "https://www.csi.go.kr/community/noticeOnlyView.do?bbs_id=noti&bbt_no=148476",
