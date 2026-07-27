@@ -1,6 +1,50 @@
 [
   {
     "source": "국토교통부",
+    "category": "공지사항",
+    "title": "수도권광역급행철도 B노선 민간투자사업 보상협의 공고(공시송달)",
+    "date": "2026-07-27",
+    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269071&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "공지사항",
+    "title": "감정평가사 등록취소 공고",
+    "date": "2026-07-27",
+    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269053&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "대한건축사협회",
+    "category": "공지사항",
+    "title": "[공지사항] 제2차『BF인증의 이해와 적용사례』교육생 추가모집공고",
+    "date": "2026-07-27",
+    "url": "https://www.kira.or.kr/jsp/main/01/01.jsp?mode=read&ba_id=263907",
+    "tags": [
+      "건축",
+      "협회"
+    ]
+  },
+  {
+    "source": "대한건축사협회",
+    "category": "공지사항",
+    "title": "[공지사항] 제3차『생성형 AI를 활용한 건축 디자인 크리에이티브(초중급)』교육생 모집공고(부산)",
+    "date": "2026-07-27",
+    "url": "https://www.kira.or.kr/jsp/main/01/01.jsp?mode=read&ba_id=263906",
+    "tags": [
+      "건축",
+      "협회"
+    ]
+  },
+  {
+    "source": "국토교통부",
     "category": "보도자료",
     "title": "[설명] 용산국제업무지구 등 주택정책 현안 관련 서울시와 지속적으로 논의하고 있습니다.",
     "date": "2026-07-24",
@@ -588,28 +632,6 @@
     "title": "한-알제리, 정기 직항노선 개설 가능해진다",
     "date": "2026-07-20",
     "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092237&src=text&kw=000004",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "공지사항",
-    "title": "건설신기술 지정 신청(2806)",
-    "date": "2026-07-20",
-    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=268850&mode=view&src=text&kw=000001",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "공지사항",
-    "title": "[공고문] 국토교통부 「AI 응용제품 신속 상용화 지원사업」 2차 공고(도로·모빌리티 분야)",
-    "date": "2026-07-20",
-    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269034&mode=view&src=text&kw=000001",
     "tags": [
       "정책",
       "건설"
