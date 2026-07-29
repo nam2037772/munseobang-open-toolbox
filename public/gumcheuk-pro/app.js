@@ -4,14 +4,14 @@
  * 사용자가 내려받는 JSON 파일에만 존재한다.
  */
 
-const STORAGE_KEY = "munseobang:gumcheuk:autosave_v1";
-const OLD_STORAGE_KEY = "gumcheukpro_autosave_v1";
-if (localStorage.getItem(OLD_STORAGE_KEY) && !localStorage.getItem(STORAGE_KEY)) {
+const STORAGE_KEY = "gumcheukpro_autosave_v1";
+const TOOLBOX_STORAGE_KEY = "munseobang:gumcheuk:autosave_v1";
+if (!localStorage.getItem(STORAGE_KEY) && localStorage.getItem(TOOLBOX_STORAGE_KEY)) {
   try {
-    localStorage.setItem(STORAGE_KEY, localStorage.getItem(OLD_STORAGE_KEY));
-    localStorage.removeItem(OLD_STORAGE_KEY);
+    // 기존 배포본의 임시저장도 보존한다. 원본 키는 복구 여지를 위해 삭제하지 않는다.
+    localStorage.setItem(STORAGE_KEY, localStorage.getItem(TOOLBOX_STORAGE_KEY));
   } catch (e) {
-    console.error("Migration failed", e);
+    console.warn("[검측프로] 기존 배포본의 자동저장 데이터를 복원하지 못했습니다.", e);
   }
 }
 
@@ -30,8 +30,18 @@ function uid() {
   return "id" + Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
 }
 
+/**
+ * 저장 데이터 스키마 버전.
+ *  1: 최초 버전 (필드 없음. 없으면 1로 간주한다)
+ *  2: 검측업무 DB 연동. schemaVersion / templateSource / 체크리스트 행의
+ *     DB 추적 필드(dbItemId, criteriaStatus, verificationStatus 등)가 추가됨.
+ */
+const SCHEMA_VERSION = 2;
+
 function createDefaultState() {
   return {
+    schemaVersion: SCHEMA_VERSION,
+    templateSource: "legacy",
     projectInfo: {
       projectName: "",
       siteName: "",
@@ -82,8 +92,37 @@ function loadFromStorage() {
   }
 }
 
+/**
+ * 예전 버전으로 저장된 데이터를 현재 스키마로 올린다.
+ * 기존 데이터를 지우지 않는다. 없는 필드를 채워 넣기만 한다.
+ */
+function migrateState(loaded) {
+  if (!loaded || typeof loaded !== "object") return loaded;
+  const from = Number(loaded.schemaVersion) || 1;
+  if (from >= SCHEMA_VERSION) return loaded;
+
+  // v1 -> v2: 체크리스트 행에 DB 추적 필드가 없다. 기존 손입력 항목으로 표시한다.
+  if (from < 2) {
+    loaded.schemaVersion = 2;
+    if (!loaded.templateSource) loaded.templateSource = "legacy";
+    if (Array.isArray(loaded.checklist)) {
+      loaded.checklist = loaded.checklist.map((row) => ({
+        ...row,
+        dbItemId: row.dbItemId || null,
+        dbTemplateId: row.dbTemplateId || null,
+        // 기존 항목의 standard 는 사람이 넣은 값이므로 없다고 단정하지 않는다.
+        criteriaStatus: row.criteriaStatus || (row.standard ? "present" : "unknown"),
+        verificationStatus: row.verificationStatus || "unverified",
+      }));
+    }
+    console.info("[검측프로] 저장 데이터를 v" + from + " → v2 로 변환했습니다.");
+  }
+  return loaded;
+}
+
 function mergeWithDefaults(loaded) {
   const base = createDefaultState();
+  loaded = migrateState(loaded) || {};
   return {
     ...base,
     ...loaded,
@@ -178,6 +217,25 @@ function bindTopbar() {
   });
 
   document.getElementById("btnSaveJson").addEventListener("click", () => {
+    // 부적합인데 조치사항이 없으면 파일로 내보내지 않는다.
+    // (schema.sql 의 inspection_result CHECK 제약과 같은 규칙)
+    const invalid = checklistValidationErrors();
+    if (invalid.length > 0) {
+      goToStep(3);
+      renderChecklistRows();
+      const first = document.querySelector(`.checklist-row[data-idx="${invalid[0]}"]`);
+      if (first) first.scrollIntoView({ block: "center" });
+      alert(
+        "저장할 수 없습니다.\n\n" +
+          "부적합으로 판정했으나 조치사항이 비어 있는 검사항목이 " +
+          invalid.length +
+          "건 있습니다.\n" +
+          "해당 순번: " +
+          invalid.map((i) => i + 1).join(", ") +
+          "\n\n조치사항을 입력한 뒤 다시 저장하세요."
+      );
+      return;
+    }
     const data = JSON.stringify(state, null, 2);
     const blob = new Blob([data], { type: "application/json" });
     const url = URL.createObjectURL(blob);
@@ -345,7 +403,14 @@ function loadTemplateItemsIntoChecklist(code, force) {
     result: { c1: "", c2: "", s1: "", s2: "" },
     action: "",
     remark: "",
+    // 검측업무 DB에서 온 항목이면 추적 정보를 함께 싣는다.
+    // 기존 하드코딩 템플릿에는 이 필드들이 없으므로 기본값이 들어간다.
+    dbItemId: it.dbItemId || null,
+    dbTemplateId: it.dbTemplateId || null,
+    criteriaStatus: it.criteriaStatus || (it.standard ? "present" : "unknown"),
+    verificationStatus: it.verificationStatus || "unverified",
   }));
+  state.templateSource = tpl.templateSource || "legacy";
   renderChecklistRows();
   scheduleAutosave();
   scheduleRender();
@@ -374,6 +439,7 @@ function bindChecklist() {
     } else {
       state.checklist[idx][field] = e.target.value;
     }
+    if (field.startsWith("result.") && e.type === "change") renderChecklistRows();
     scheduleAutosave();
     scheduleRender();
   }
@@ -404,6 +470,24 @@ function resultSelectHTML(field, selected) {
   return `<select data-field="${field}">${opts}</select>`;
 }
 
+/** 이 행에 부적합 판정이 하나라도 있는가 */
+function rowHasFail(row) {
+  const r = (row && row.result) || {};
+  return ["c1", "c2", "s1", "s2"].some((k) => r[k] === "부적합");
+}
+
+/**
+ * 부적합인데 조치사항이 비어 있는 행들의 인덱스.
+ * schema.sql 의 inspection_result CHECK 제약과 같은 규칙이다.
+ */
+function checklistValidationErrors() {
+  const bad = [];
+  state.checklist.forEach((row, i) => {
+    if (rowHasFail(row) && !String(row.action || "").trim()) bad.push(i);
+  });
+  return bad;
+}
+
 function renderChecklistRows() {
   const container = document.getElementById("checklistRows");
   if (state.checklist.length === 0) {
@@ -413,15 +497,26 @@ function renderChecklistRows() {
   container.innerHTML = state.checklist
     .map((row, i) => {
       const photoCount = state.photos.filter((p) => p.linkedItem === i).length;
+      const missingCriteria = row.criteriaStatus === "missing_in_source";
+      const needsAction = rowHasFail(row) && !String(row.action || "").trim();
       return `
-      <div class="checklist-row" data-idx="${i}">
+      <div class="checklist-row${needsAction ? " row-invalid" : ""}" data-idx="${i}">
         <div class="row-head">
           <input type="text" data-field="item" value="${esc(row.item)}" placeholder="검사항목" />
           <button class="row-remove" data-action="removeRow" type="button" title="삭제">✕</button>
         </div>
         <div class="row-field">
-          <label>검사기준(시방)</label>
+          <label>검사기준(시방)${
+            row.verificationStatus === "unverified" && row.dbItemId
+              ? ` <span class="badge-unverified" title="원문에서 자동 추출된 항목입니다. 최신 기준과 대조되지 않았습니다.">미검증</span>`
+              : ""
+          }</label>
           <input type="text" data-field="standard" value="${esc(row.standard)}" />
+          ${
+            missingCriteria
+              ? `<p class="criteria-missing">원문에 검사기준이 기재되어 있지 않습니다.</p>`
+              : ""
+          }
         </div>
         <div class="result-grid">
           <label>시공자1차 ${resultSelectHTML("result.c1", row.result.c1)}</label>
@@ -429,7 +524,15 @@ function renderChecklistRows() {
           <label>감리자1차 ${resultSelectHTML("result.s1", row.result.s1)}</label>
           <label>감리자2차 ${resultSelectHTML("result.s2", row.result.s2)}</label>
         </div>
-        <div class="row-field"><label>조치사항</label><input type="text" data-field="action" value="${esc(row.action)}" /></div>
+        <div class="row-field">
+          <label>조치사항${needsAction ? ` <span class="badge-required">필수</span>` : ""}</label>
+          <input type="text" data-field="action" value="${esc(row.action)}" />
+          ${
+            needsAction
+              ? `<p class="action-required">부적합으로 판정한 항목입니다. 조치사항을 입력해야 저장할 수 있습니다.</p>`
+              : ""
+          }
+        </div>
         <div class="row-field"><label>특기사항</label><input type="text" data-field="remark" value="${esc(row.remark)}" /></div>
         <div class="row-photo-btn">
           <button class="btn btn-sm" data-action="attachPhoto" type="button">사진첨부</button>

@@ -215,7 +215,16 @@
 <!-- 인쇄 전용 영역 (화면에는 보이지 않고 인쇄시에만 표시) -->
 <div id="printRoot"></div>
 
+<!--
+  로딩 순서가 중요합니다.
+  1) inspectionTemplates.js       기존 하드코딩 템플릿 (WORK_CATEGORIES / SUB_WORK_TEMPLATES)
+  2) inspectionDatabase.generated.js  검측업무 DB 자동 생성물 (직접 편집 금지)
+  3) inspectionDataAdapter.js     위 둘을 합쳐 기존 배열에 주입
+  4) app.js                       앱 로직
+-->
 <script src="inspectionTemplates.js"></script>
+<script src="inspectionDatabase.generated.js"></script>
+<script src="inspectionDataAdapter.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

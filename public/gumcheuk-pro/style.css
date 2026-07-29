@@ -286,3 +286,47 @@ textarea { resize: vertical; }
   #printRoot table, #printRoot figure { break-inside: avoid; page-break-inside: avoid; }
   #printRoot .doc-footer-note { break-inside: avoid; }
 }
+
+/* ---------- 검측업무 DB 연동 상태 표시 ---------- */
+.badge-unverified {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 2px 5px;
+  margin-left: 4px;
+  border-radius: 3px;
+  color: #92400e;
+  background: #fef3c7;
+  border: 1px solid #fcd34d;
+  vertical-align: middle;
+  cursor: help;
+}
+.badge-required {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 2px 5px;
+  margin-left: 4px;
+  border-radius: 3px;
+  color: #fff;
+  background: var(--danger);
+  vertical-align: middle;
+}
+.criteria-missing {
+  margin: 4px 0 0;
+  font-size: 0.75rem;
+  color: var(--muted);
+  font-style: italic;
+}
+.action-required {
+  margin: 4px 0 0;
+  font-size: 0.75rem;
+  color: var(--danger);
+  font-weight: 600;
+}
+.checklist-row.row-invalid {
+  border-color: var(--danger);
+  background: #fef2f2;
+}

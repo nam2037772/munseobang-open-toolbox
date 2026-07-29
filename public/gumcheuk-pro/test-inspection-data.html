@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>검측프로 데이터 연동 점검 (개발용)</title>
+<style>
+  :root { --ok:#15803d; --ng:#b91c1c; --muted:#6b7280; --border:#d7dee3; }
+  * { box-sizing: border-box; }
+  body {
+    margin:0; padding:20px; background:#f4f7f9; color:#1f2937;
+    font-family:"Noto Sans KR","Malgun Gothic",sans-serif; font-size:14px;
+  }
+  h1 { font-size:1.2rem; margin:0 0 4px; }
+  .warn-banner {
+    background:#fef3c7; border:1px solid #fcd34d; color:#92400e;
+    padding:10px 12px; border-radius:6px; margin-bottom:16px; font-size:0.85rem;
+  }
+  .summary { font-size:1rem; font-weight:700; padding:10px 12px; border-radius:6px;
+    margin-bottom:14px; }
+  .summary.ok { background:#dcfce7; color:var(--ok); border:1px solid #86efac; }
+  .summary.ng { background:#fee2e2; color:var(--ng); border:1px solid #fca5a5; }
+  section { background:#fff; border:1px solid var(--border); border-radius:6px;
+    padding:12px 14px; margin-bottom:12px; }
+  h2 { font-size:0.92rem; margin:0 0 8px; color:#0f4d6b; }
+  .case { padding:3px 0; font-family:Consolas,monospace; font-size:0.8rem;
+    border-bottom:1px solid #f1f5f9; }
+  .case:last-child { border-bottom:none; }
+  .tag { display:inline-block; width:44px; font-weight:700; }
+  .pass .tag { color:var(--ok); }
+  .fail .tag { color:var(--ng); }
+  .fail { background:#fef2f2; }
+  .detail { color:var(--muted); }
+  table { border-collapse:collapse; width:100%; font-size:0.78rem; margin-top:6px; }
+  th,td { border:1px solid var(--border); padding:4px 6px; text-align:left;
+    vertical-align:top; }
+  th { background:#f8fafc; }
+  .missing { color:var(--muted); font-style:italic; }
+  .badge { display:inline-block; font-size:0.68rem; font-weight:600; padding:1px 5px;
+    border-radius:3px; background:#fef3c7; color:#92400e; border:1px solid #fcd34d; }
+</style>
+</head>
+<body>
+
+<h1>검측프로 데이터 연동 점검</h1>
+<div class="warn-banner">
+  <strong>개발용 페이지입니다.</strong>
+  운영 화면(index.html)에는 포함되지 않습니다. 이 페이지는 데이터만 검사하며
+  localStorage 를 읽거나 쓰지 않습니다.
+</div>
+
+<div id="summary" class="summary">실행 중…</div>
+<div id="results"></div>
+
+<script src="inspectionTemplates.js"></script>
+<script src="inspectionDatabase.generated.js"></script>
+<script src="inspectionDataAdapter.js"></script>
+<script>
+(function () {
+  "use strict";
+
+  var out = document.getElementById("results");
+  var pass = 0, fail = 0, current = null;
+
+  function section(title) {
+    current = document.createElement("section");
+    var h = document.createElement("h2");
+    h.textContent = title;
+    current.appendChild(h);
+    out.appendChild(current);
+  }
+  function check(name, cond, detail) {
+    var d = document.createElement("div");
+    d.className = "case " + (cond ? "pass" : "fail");
+    d.innerHTML = '<span class="tag">' + (cond ? "PASS" : "FAIL") + "</span>" +
+      escapeHtml(name) +
+      (detail && !cond ? ' <span class="detail">— ' + escapeHtml(String(detail)) + "</span>" : "");
+    current.appendChild(d);
+    cond ? pass++ : fail++;
+  }
+  function note(html) {
+    var d = document.createElement("div");
+    d.innerHTML = html;
+    current.appendChild(d);
+  }
+  function escapeHtml(s) {
+    return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
+      return { "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[c];
+    });
+  }
+
+  var A = window.INSPECTION_DB_ADAPTER;
+  var DB = window.INSPECTION_DATABASE;
+
+  /* ---------------- 1. 로딩 ---------------- */
+  section("1. 스크립트 로딩");
+  check("inspectionTemplates.js (WORK_CATEGORIES)", typeof WORK_CATEGORIES !== "undefined");
+  check("inspectionTemplates.js (SUB_WORK_TEMPLATES)", typeof SUB_WORK_TEMPLATES !== "undefined");
+  check("inspectionDatabase.generated.js", !!DB);
+  check("inspectionDataAdapter.js", !!A);
+  check("어댑터 정상 동작", A && A.available === true, A && A.reason);
+
+  if (!A || !A.available) {
+    document.getElementById("summary").className = "summary ng";
+    document.getElementById("summary").textContent =
+      "치명적 오류: 어댑터가 동작하지 않습니다. " + ((A && A.reason) || "");
+    return;
+  }
+
+  /* ---------------- 2. 기존 데이터 보존 ---------------- */
+  section("2. 기존 데이터 보존 (회귀 방지)");
+  check("공종 18개 유지", WORK_CATEGORIES.length === 18, WORK_CATEGORIES.length);
+  var catNames = WORK_CATEGORIES.map(function (c) { return c.name; });
+  check("공종 이름 중복 없음", new Set(catNames).size === catNames.length);
+  var codes = SUB_WORK_TEMPLATES.map(function (t) { return t.code; });
+  check("세부공종 code 중복 없음", new Set(codes).size === codes.length);
+  check("세부공종 22건 (기존 19 + DB 3)", SUB_WORK_TEMPLATES.length === 22,
+    SUB_WORK_TEMPLATES.length);
+  check("기존 CO-01 템플릿 살아있음", !!getSubWorkTemplate("CO-01"));
+  check("기존 CO-01 검사기준 보존",
+    getSubWorkTemplate("CO-01").items[0].standard === "설계도면 두께(통상 50~100mm) 이내");
+
+  /* ---------------- 3. 공종 → 세부공종 조회 ---------------- */
+  section("3. 공종 선택 → 세부공종 조회");
+  var rc = getSubWorkByCategory("rc");
+  check("'철근콘크리트공사'(rc) 에서 3건 조회", rc.length === 3, rc.length);
+  check("코드가 DB-04-001~003",
+    rc.map(function (t) { return t.code; }).join(",") === "DB-04-001,DB-04-002,DB-04-003",
+    rc.map(function (t) { return t.code; }).join(","));
+  check("존재하지 않는 공종은 빈 배열", getSubWorkByCategory("없는공종").length === 0);
+  check("기존 공종(concrete) 조회도 정상", getSubWorkByCategory("concrete").length === 4);
+
+  /* ---------------- 4. 세부공종 → 체크리스트 ---------------- */
+  section("4. 세부공종 선택 → 체크리스트 조회");
+  var expect = { "DB-04-001": 7, "DB-04-002": 9, "DB-04-003": 14 };
+  Object.keys(expect).forEach(function (code) {
+    var t = getSubWorkTemplate(code);
+    check(code + " (" + (t ? t.name : "?") + ") 항목 " + expect[code] + "건",
+      t && t.items.length === expect[code], t && t.items.length);
+  });
+  check("없는 코드는 null", getSubWorkTemplate("DB-99-999") === null);
+
+  /* ---------------- 5. 검사기준 취급 ---------------- */
+  section("5. 검사기준 취급 (기준을 지어내지 않는가)");
+  var all = Object.keys(expect).reduce(function (acc, c) {
+    return acc.concat(getSubWorkTemplate(c).items);
+  }, []);
+  check("총 30건", all.length === 30, all.length);
+  var missing = all.filter(function (i) { return i.criteriaStatus === "missing_in_source"; });
+  check("기준 누락 2건", missing.length === 2, missing.length);
+  check("누락 항목의 standard 는 빈 문자열",
+    missing.every(function (i) { return i.standard === ""; }));
+  check("누락 항목의 criteriaText 는 null",
+    missing.every(function (i) { return i.criteriaText === null; }));
+  check("전 항목 unverified",
+    all.every(function (i) { return i.verificationStatus === "unverified"; }));
+  check("verified 로 표시된 항목 0건",
+    all.filter(function (i) { return i.verificationStatus === "verified"; }).length === 0);
+
+  note("<p style='margin:8px 0 2px;font-size:0.8rem'><strong>기준 누락 항목 (UI에 안내문이 떠야 함)</strong></p>");
+  var t1 = document.createElement("table");
+  t1.innerHTML = "<tr><th>ID</th><th>검사항목</th><th>표시될 내용</th></tr>" +
+    missing.map(function (i) {
+      return "<tr><td>" + escapeHtml(i.dbItemId) + "</td><td>" + escapeHtml(i.item) +
+        '</td><td class="missing">원문에 검사기준이 기재되어 있지 않습니다.</td></tr>';
+    }).join("");
+  current.appendChild(t1);
+
+  /* ---------------- 6. 출처 추적 ---------------- */
+  section("6. 출처 추적");
+  check("전 항목에 sourceIds 존재",
+    all.every(function (i) { return i.sourceIds && i.sourceIds.length > 0; }));
+  check("전 sourceId 가 실제 출처로 해석됨",
+    all.every(function (i) {
+      return i.sourceIds.every(function (s) { return A.getSourceReference(s) !== null; });
+    }));
+  check("없는 sourceId 는 null", A.getSourceReference("REF-NOPE") === null);
+  check("null/undefined 도 안전",
+    A.getSourceReference(null) === null && A.getSourceReference(undefined) === null);
+
+  var sample = all[0];
+  var ref = A.getSourceReference(sample.sourceIds[0]);
+  note("<p style='margin:8px 0 2px;font-size:0.8rem'><strong>출처 추적 예시</strong></p>");
+  var t2 = document.createElement("table");
+  t2.innerHTML =
+    "<tr><th>검사항목</th><td>" + escapeHtml(sample.item) + "</td></tr>" +
+    "<tr><th>원본 파일</th><td>" + escapeHtml(ref.fileName) + "</td></tr>" +
+    "<tr><th>문서 위치</th><td>" + escapeHtml(ref.section) +
+      (ref.row != null ? " / row " + ref.row : "") + "</td></tr>" +
+    "<tr><th>원문</th><td>" + escapeHtml(ref.sourceText) + "</td></tr>";
+  current.appendChild(t2);
+
+  /* ---------------- 7. 메타 / 서식 결함 ---------------- */
+  section("7. 메타 및 서식 결함 분리");
+  check("schemaVersion 2", DB.schemaVersion === 2);
+  check("templateSource normalized-db", DB.templateSource === "normalized-db");
+  check("전체 137건 중 3건만 노출",
+    DB.meta.totalTemplatesInSource === 137 && DB.meta.exposedTemplateCount === 3);
+  var meta = A.getTemplateMeta("DB-04-001");
+  check("formIssues 가 verificationStatus 와 분리 유지",
+    meta && meta.verificationStatus === "unverified" &&
+    meta.formIssues.indexOf("outdated_year_placeholder") >= 0,
+    meta && JSON.stringify(meta.formIssues));
+
+  note("<p style='margin:8px 0 2px;font-size:0.8rem'><strong>노출된 세부공종</strong></p>");
+  var t3 = document.createElement("table");
+  t3.innerHTML = "<tr><th>코드</th><th>이름</th><th>항목</th><th>검증</th><th>서식 결함</th></tr>" +
+    A.templateCodes.map(function (c) {
+      var t = getSubWorkTemplate(c), m = A.getTemplateMeta(c);
+      return "<tr><td>" + escapeHtml(c) + "</td><td>" + escapeHtml(t.name) +
+        "</td><td>" + t.items.length +
+        '</td><td><span class="badge">미검증</span></td><td>' +
+        escapeHtml(m.formIssues.join(", ") || "-") + "</td></tr>";
+    }).join("");
+  current.appendChild(t3);
+
+  /* ---------------- 8. 전체 항목 목록 ---------------- */
+  section("8. 전체 검사항목 30건 (눈으로 확인)");
+  var t4 = document.createElement("table");
+  t4.innerHTML = "<tr><th>#</th><th>세부공종</th><th>검사항목</th><th>검사기준(원문)</th></tr>" +
+    Object.keys(expect).reduce(function (rows, code) {
+      var t = getSubWorkTemplate(code);
+      return rows.concat(t.items.map(function (i, n) {
+        return "<tr><td>" + (n + 1) + "</td><td>" + escapeHtml(t.name) + "</td><td>" +
+          escapeHtml(i.item) + "</td><td>" +
+          (i.criteriaStatus === "missing_in_source"
+            ? '<span class="missing">원문에 기재 없음</span>'
+            : escapeHtml(i.standard)) + "</td></tr>";
+      }));
+    }, []).join("");
+  current.appendChild(t4);
+
+  /* ---------------- 결과 ---------------- */
+  var s = document.getElementById("summary");
+  s.className = "summary " + (fail === 0 ? "ok" : "ng");
+  s.textContent = fail === 0
+    ? "전체 통과 — " + pass + "건"
+    : "실패 " + fail + "건 / 통과 " + pass + "건";
+})();
+</script>
+
+</body>
+</html>
