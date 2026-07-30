@@ -7,7 +7,7 @@
  *   python 기술자료집/검측업무_DB/05_scripts/build-static-database.py
  *
  * 원본 → 추출 → 정규화 → 이 파일 순서로 만들어집니다.
- * 원본 위치와 해시는 window.INSPECTION_DATABASE.sourceFiles 에 있습니다.
+ * 원본 파일명과 해시는 window.INSPECTION_DATABASE.sourceFiles 에 있습니다.
  *
  * 이 파일은 window.INSPECTION_DATABASE 전역 객체 하나만 정의합니다.
  * 기존 inspectionTemplates.js 의 WORK_CATEGORIES / SUB_WORK_TEMPLATES 는
@@ -27,7 +27,6 @@ window.INSPECTION_DATABASE = {
   {
    "id": "SRC-HWP-001",
    "fileName": "【◐ 검측업무지침 잋 I.T.P】.hwp",
-   "absolutePath": "C:\\Users\\user\\내 드라이브(nam2037772@gmail.com)\\기술자료집\\검측업무\\【◐ 검측업무지침 잋 I.T.P】.hwp",
    "fileType": "hwp",
    "sizeBytes": 1046528,
    "modifiedAt": "2026-07-29T07:01:20",

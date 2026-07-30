@@ -1,4 +1,4 @@
-﻿# 검측프로
+# 검측프로
 
 문서방 오픈 툴박스의 품질관리용 독립 웹앱입니다. 건설현장의 검측요청서, 검측점검표, 검측결과통보서, 공사참여자실명부, 사진대지를 브라우저에서 작성하고 JSON/PDF로 보관합니다.
 
@@ -110,8 +110,64 @@ python -m http.server 8080
 - `inspectionTemplates.js` — 기존 하드코딩 템플릿. **그대로 유지**됩니다.
 - `inspectionDatabase.generated.js` — **자동 생성물. 직접 편집하지 마세요.**
   `기술자료집/검측업무_DB/05_scripts/build-static-database.py` 로만 갱신합니다.
-- `inspectionDataAdapter.js` — 위 둘을 합쳐 기존 배열에 주입합니다.
+- `inspectionDataAdapter.js` — 검증 → 주입 → 표준 구조 정규화를 모두 담당합니다.
 - `test-inspection-data.html` — 개발용 데이터 점검 페이지. 운영 화면과 무관합니다.
+
+### 데이터 계층 (2026-07-30)
+
+앱(`app.js`)은 데이터 출처를 직접 판단하지 않습니다. `app.js` 안의 `AppTemplates`
+가 `InspectionDataAdapter` 를 호출하고, 어댑터가 기존 템플릿과 DB 템플릿을 같은
+구조로 돌려줍니다. 어댑터 로딩이 실패하면 기존 전역 배열로 자동 폴백하므로
+앱이 멈추지 않습니다.
+
+표준 템플릿 구조:
+
+```js
+{
+  id, categoryId, categoryName, templateName, subCategory,
+  sourceType: "legacy" | "database",
+  sourceFile, inspectionStage,
+  items: [{
+    id, sequence, inspectionItem, inspectionCriteria, inspectionMethod,
+    reference, timing, responsibleParty, requiredEvidence, notes
+  }]
+}
+```
+
+없는 값은 오류 대신 빈 문자열입니다. `inspectionMethod` / `reference` /
+`responsibleParty` 는 원문(HWP/XLS)에서 검사기준과 분리되어 있지 않아 현재
+DB 항목에서 비어 있습니다. **추측해서 채우지 않습니다.**
+
+어댑터 API:
+
+```js
+InspectionDataAdapter.getAllCategories()
+InspectionDataAdapter.getAllTemplates()
+InspectionDataAdapter.getTemplatesByCategory(categoryId)
+InspectionDataAdapter.getTemplateById(templateId)
+InspectionDataAdapter.validateDatabase()      // 인자 없으면 로딩 시 결과
+InspectionDataAdapter.getStatistics()
+InspectionDataAdapter.getSourceInformation(id)
+InspectionDataAdapter.normalizeLegacyTemplate(tpl)
+InspectionDataAdapter.normalizeDatabaseTemplate(tpl, items, options)
+InspectionDataAdapter.getAppTemplate(code)    // 기존 app 형식 (체크리스트 생성용)
+InspectionDataAdapter.runSelfTest()           // 콘솔 점검
+```
+
+`validateDatabase()` 는 `{ valid, errors, warnings, summary }` 를 돌려줍니다.
+카테고리 ID 존재, 템플릿/검사항목 ID 중복, 빈 템플릿, 필수 텍스트 누락,
+잘못된 참조 ID, 순번 중복·누락, 템플릿-항목 연결 오류, 동일 항목 과다중복,
+기존 code 와의 충돌을 봅니다. 오류가 있는 템플릿은 **주입에서 제외**되거나
+공종을 `etc` 로 **대체**하고, 콘솔에 오류·경고·제외·보정을 구분해 찍습니다.
+검증 실패가 앱 전체를 멈추게 하지는 않습니다.
+
+브라우저 콘솔에서 바로 확인할 수 있습니다.
+
+```js
+InspectionDataAdapter.runSelfTest()
+```
+
+하위호환을 위해 1차 연동 때의 `window.INSPECTION_DB_ADAPTER` 도 유지됩니다.
 
 ### 데이터를 믿을 때 주의할 점
 
@@ -128,3 +184,53 @@ DB에서 온 항목은 전부 **미검증(unverified)** 입니다. 원문을 정
 
 부적합으로 판정한 항목에 조치사항이 비어 있으면 **JSON 저장이 차단**됩니다.
 (자동 임시저장은 차단하지 않습니다. 작성 중 데이터가 유실되면 안 되기 때문입니다.)
+
+마이그레이션 진입점은 `app.js` 의 `migrateSavedInspectionData(data)` 입니다.
+변환에 실패하면 원본 객체를 **그대로 반환**합니다. 저장 데이터를 지우거나
+기본값으로 덮어쓰지 않습니다.
+
+---
+
+## 배포 기준 폴더 (중요)
+
+이 앱의 파일은 두 곳에 **똑같이** 존재합니다.
+
+| 경로 | 역할 |
+|---|---|
+| `바이브코딩/검측프로/` | **원본(수정 기준)**. 여기서 먼저 고칩니다. |
+| `munseobang-open-toolbox-master/public/gumcheuk-pro/` | **배포 기준**. Vite 빌드가 `dist/gumcheuk-pro/` 로 그대로 복사합니다. |
+
+`munseobang-open-toolbox-master/dist/` 는 빌드 산출물이며 `.gitignore` 대상입니다.
+직접 편집하지 마세요.
+
+작업 순서는 항상 **원본에서 수정 → 브라우저 검증 → 배포 경로에 복제 → 해시 비교**
+입니다. 배포 경로만 고치면 다음 복제 때 되돌아갑니다.
+
+```bash
+# 동일성 확인
+cd "바이브코딩"
+for f in index.html app.js style.css inspectionTemplates.js \
+         inspectionDatabase.generated.js inspectionDataAdapter.js \
+         test-inspection-data.html README.md; do
+  a=$(sha256sum "검측프로/$f" | cut -d' ' -f1)
+  b=$(sha256sum "munseobang-open-toolbox-master/public/gumcheuk-pro/$f" | cut -d' ' -f1)
+  [ "$a" = "$b" ] && echo "SAME $f" || echo "DIFF $f"
+done
+```
+
+### 정적 배포 호환성
+
+- 모든 `src`/`href` 가 상대경로입니다. 외부 CDN, 웹폰트, `fetch`, ES 모듈을 쓰지
+  않으므로 `file://` 로 열어도, 하위 경로(`/gumcheuk-pro/`)에 올려도 동작합니다.
+- 클라이언트 라우팅이 없어 새로고침 404 문제가 없습니다. **`vercel.json` 이
+  필요하지 않습니다.** `cleanUrls` 를 켜면 `test-inspection-data.html` 의 URL이
+  바뀌므로 넣지 않는 편이 낫습니다.
+- 파일명 대소문자가 참조와 정확히 일치합니다(리눅스 호스팅에서 안전).
+
+### 배포 전 확인 필요
+
+`inspectionDatabase.generated.js` 의 사용하지 않는 `sourceFiles[].absolutePath` 는
+공개 배포본에서 제거했습니다. 다만 현재 생성 스크립트
+`기술자료집/검측업무_DB/05_scripts/build-static-database.py` 는 작업공간 밖에 있어
+아직 원본 절대경로를 다시 생성합니다. DB를 재생성한 직후에는 반드시
+`absolutePath` 필드, Windows 사용자 절대경로, 이메일 주소를 검색해 제거 여부를 확인해야 합니다.

@@ -6,6 +6,7 @@
 
 const STORAGE_KEY = "gumcheukpro_autosave_v1";
 const TOOLBOX_STORAGE_KEY = "munseobang:gumcheuk:autosave_v1";
+const MAX_JSON_FILE_BYTES = 5 * 1024 * 1024;
 if (!localStorage.getItem(STORAGE_KEY) && localStorage.getItem(TOOLBOX_STORAGE_KEY)) {
   try {
     // 기존 배포본의 임시저장도 보존한다. 원본 키는 복구 여지를 위해 삭제하지 않는다.
@@ -14,6 +15,86 @@ if (!localStorage.getItem(STORAGE_KEY) && localStorage.getItem(TOOLBOX_STORAGE_K
     console.warn("[검측프로] 기존 배포본의 자동저장 데이터를 복원하지 못했습니다.", e);
   }
 }
+
+/* ===================== 데이터 접근 계층 ===================== */
+
+/**
+ * 앱은 템플릿 데이터의 출처(기존 하드코딩 / 정규화 DB)를 판단하지 않는다.
+ * 전부 inspectionDataAdapter.js 를 통해 읽는다.
+ *
+ * 어댑터가 로딩되지 않았더라도(스크립트 순서 오류, 캐시 문제 등) 앱이
+ * 죽지 않도록 기존 전역(WORK_CATEGORIES / SUB_WORK_TEMPLATES)으로 되돌아간다.
+ */
+const AppTemplates = {
+  /** 어댑터를 쓸 수 있으면 돌려준다. 없으면 null. */
+  adapter() {
+    return typeof window !== "undefined" && window.InspectionDataAdapter
+      ? window.InspectionDataAdapter
+      : null;
+  },
+
+  /** 공종 목록 [{id, name}] */
+  getCategories() {
+    const a = this.adapter();
+    if (a && typeof a.getAllCategories === "function") {
+      const list = a.getAllCategories();
+      if (Array.isArray(list) && list.length) return list;
+    }
+    return typeof WORK_CATEGORIES !== "undefined" ? WORK_CATEGORIES : [];
+  },
+
+  /** 공종 id → 공종명. 없으면 "" */
+  getCategoryName(id) {
+    const found = this.getCategories().find((c) => c && c.id === id);
+    return found ? found.name : "";
+  },
+
+  /**
+   * 공종 id → 세부공종 목록. 선택박스에 필요한 { code, name } 형태로 돌려준다.
+   * 어댑터의 표준 구조(id/templateName)를 여기서 한 번만 변환한다.
+   */
+  getSubWorkList(categoryId) {
+    const a = this.adapter();
+    if (a && typeof a.getTemplatesByCategory === "function") {
+      const list = a.getTemplatesByCategory(categoryId);
+      if (Array.isArray(list)) {
+        return list.map((t) => ({ code: t.id, name: t.templateName }));
+      }
+    }
+    if (typeof getSubWorkByCategory === "function") {
+      return getSubWorkByCategory(categoryId).map((t) => ({ code: t.code, name: t.name }));
+    }
+    return [];
+  },
+
+  /** 세부공종 code → 이름. 없으면 "" */
+  getSubWorkName(code) {
+    const a = this.adapter();
+    if (a && typeof a.getTemplateById === "function") {
+      const t = a.getTemplateById(code);
+      if (t) return t.templateName;
+    }
+    const legacy = typeof getSubWorkTemplate === "function" ? getSubWorkTemplate(code) : null;
+    return legacy ? legacy.name : "";
+  },
+
+  /**
+   * 체크리스트 생성용 템플릿.
+   *
+   * 표준 구조가 아니라 기존 앱 형식({ items: [{ item, standard, ... }] })을
+   * 그대로 쓴다. 저장 데이터(state.checklist) 구조를 바꾸지 않기 위해서다.
+   * 어댑터가 DB 항목의 추적 필드(dbItemId / criteriaStatus 등)를 이 형식에
+   * 실어 주므로 "부적합 즉시 경고", "기준 누락 안내" 표시가 그대로 동작한다.
+   */
+  getChecklistTemplate(code) {
+    const a = this.adapter();
+    if (a && typeof a.getAppTemplate === "function") {
+      const t = a.getAppTemplate(code);
+      if (t) return t;
+    }
+    return typeof getSubWorkTemplate === "function" ? getSubWorkTemplate(code) : null;
+  },
+};
 
 /* ===================== 상태(state) ===================== */
 
@@ -52,7 +133,8 @@ function createDefaultState() {
       inspectionDate: todayStr(),
     },
     requestInfo: {
-      categoryId: WORK_CATEGORIES[0].id,
+      // 공종 목록이 어떤 이유로든 비어 있어도 앱이 죽지 않게 한다.
+      categoryId: (AppTemplates.getCategories()[0] || { id: "" }).id,
       subWorkCode: "",
       location: "",
       drawingNo: "",
@@ -88,7 +170,45 @@ function loadFromStorage() {
     if (!raw) return null;
     return mergeWithDefaults(JSON.parse(raw));
   } catch (e) {
+    console.warn("[검측프로] 자동저장 데이터가 손상되어 기본 상태로 시작합니다.");
     return null;
+  }
+}
+
+function isRecord(value) {
+  return !!value && typeof value === "object" && !Array.isArray(value);
+}
+
+function assertImportStructure(data) {
+  if (!isRecord(data)) throw new Error("JSON 최상위 값이 객체가 아닙니다.");
+  const known = ["schemaVersion", "projectInfo", "requestInfo", "checklist", "signatures", "photos", "participants"];
+  if (!known.some((key) => Object.prototype.hasOwnProperty.call(data, key))) {
+    throw new Error("검측프로 저장 데이터 구조가 아닙니다.");
+  }
+  ["projectInfo", "requestInfo", "signatures", "resultNotice", "ui"].forEach((key) => {
+    if (data[key] !== undefined && !isRecord(data[key])) throw new Error(key + " 구조가 올바르지 않습니다.");
+  });
+  ["checklist", "photos", "participants"].forEach((key) => {
+    if (data[key] !== undefined && !Array.isArray(data[key])) throw new Error(key + " 구조가 올바르지 않습니다.");
+  });
+}
+
+/**
+ * 저장 데이터 마이그레이션의 공개 진입점.
+ *
+ * 실패하더라도 원본 객체를 그대로 돌려준다. 저장된 데이터를 삭제하거나
+ * 기본값으로 덮어쓰지 않는다. (사용자가 작성한 내용이 사라지면 안 된다)
+ */
+function migrateSavedInspectionData(data) {
+  try {
+    return migrateState(data);
+  } catch (e) {
+    console.error(
+      "[검측프로] 저장 데이터 변환에 실패했습니다. 원본을 그대로 사용합니다. " +
+      "데이터가 이상하면 'JSON 저장'으로 먼저 내려받아 두세요.",
+      e
+    );
+    return data;
   }
 }
 
@@ -101,12 +221,15 @@ function migrateState(loaded) {
   const from = Number(loaded.schemaVersion) || 1;
   if (from >= SCHEMA_VERSION) return loaded;
 
+  // 호출자가 가진 원본 객체는 그대로 두고 새 객체에만 마이그레이션을 적용한다.
+  const migrated = { ...loaded };
+
   // v1 -> v2: 체크리스트 행에 DB 추적 필드가 없다. 기존 손입력 항목으로 표시한다.
   if (from < 2) {
-    loaded.schemaVersion = 2;
-    if (!loaded.templateSource) loaded.templateSource = "legacy";
-    if (Array.isArray(loaded.checklist)) {
-      loaded.checklist = loaded.checklist.map((row) => ({
+    migrated.schemaVersion = 2;
+    if (!migrated.templateSource) migrated.templateSource = "legacy";
+    if (Array.isArray(migrated.checklist)) {
+      migrated.checklist = migrated.checklist.filter(isRecord).map((row) => ({
         ...row,
         dbItemId: row.dbItemId || null,
         dbTemplateId: row.dbTemplateId || null,
@@ -117,23 +240,48 @@ function migrateState(loaded) {
     }
     console.info("[검측프로] 저장 데이터를 v" + from + " → v2 로 변환했습니다.");
   }
-  return loaded;
+  return migrated;
 }
 
 function mergeWithDefaults(loaded) {
   const base = createDefaultState();
-  loaded = migrateState(loaded) || {};
+  loaded = migrateSavedInspectionData(loaded);
+  if (!isRecord(loaded)) loaded = {};
+  const projectInfo = isRecord(loaded.projectInfo) ? loaded.projectInfo : {};
+  const requestInfo = isRecord(loaded.requestInfo) ? loaded.requestInfo : {};
+  const signatures = isRecord(loaded.signatures) ? loaded.signatures : {};
+  const sanitizedSignatures = { ...base.signatures, ...signatures };
+  Object.keys(sanitizedSignatures).forEach((key) => {
+    sanitizedSignatures[key] = safeImageDataUrl(sanitizedSignatures[key]) || null;
+  });
+  const resultNotice = isRecord(loaded.resultNotice) ? loaded.resultNotice : {};
+  const ui = isRecord(loaded.ui) ? loaded.ui : {};
   return {
     ...base,
     ...loaded,
-    projectInfo: { ...base.projectInfo, ...(loaded.projectInfo || {}) },
-    requestInfo: { ...base.requestInfo, ...(loaded.requestInfo || {}) },
-    signatures: { ...base.signatures, ...(loaded.signatures || {}) },
-    resultNotice: { ...base.resultNotice, ...(loaded.resultNotice || {}) },
-    checklist: Array.isArray(loaded.checklist) ? loaded.checklist : [],
-    photos: Array.isArray(loaded.photos) ? loaded.photos : [],
-    participants: Array.isArray(loaded.participants) ? loaded.participants : [],
-    ui: { ...base.ui, ...(loaded.ui || {}) },
+    projectInfo: { ...base.projectInfo, ...projectInfo },
+    requestInfo: { ...base.requestInfo, ...requestInfo },
+    signatures: sanitizedSignatures,
+    resultNotice: { ...base.resultNotice, ...resultNotice },
+    checklist: Array.isArray(loaded.checklist)
+      ? loaded.checklist.filter(isRecord).map((row) => ({
+          ...row,
+          result: { c1: "", c2: "", s1: "", s2: "", ...(isRecord(row.result) ? row.result : {}) },
+        }))
+      : [],
+    photos: Array.isArray(loaded.photos)
+      ? loaded.photos.filter(isRecord).map((photo) => ({
+          ...photo,
+          dataUrl: safeImageDataUrl(photo.dataUrl),
+        }))
+      : [],
+    participants: Array.isArray(loaded.participants)
+      ? loaded.participants.filter(isRecord).map((participant) => ({
+          ...participant,
+          signature: safeImageDataUrl(participant.signature) || null,
+        }))
+      : [],
+    ui: { ...base.ui, ...ui },
   };
 }
 
@@ -171,6 +319,10 @@ function esc(s) {
 }
 function nl2br(s) {
   return esc(s).replace(/\n/g, "<br/>");
+}
+function safeImageDataUrl(value) {
+  if (typeof value !== "string") return "";
+  return /^data:image\/(?:png|jpe?g|gif|webp);base64,[a-z0-9+/=]+$/i.test(value) ? value : "";
 }
 
 /* ===================== 초기화 ===================== */
@@ -255,10 +407,16 @@ function bindTopbar() {
   document.getElementById("fileLoad").addEventListener("change", (e) => {
     const file = e.target.files[0];
     if (!file) return;
+    if (file.size > MAX_JSON_FILE_BYTES) {
+      alert("JSON 파일은 5MB 이하만 불러올 수 있습니다.");
+      e.target.value = "";
+      return;
+    }
     const reader = new FileReader();
     reader.onload = () => {
       try {
         const parsed = JSON.parse(reader.result);
+        assertImportStructure(parsed);
         state = mergeWithDefaults(parsed);
         afterStateReplaced();
         alert("불러오기가 완료되었습니다.");
@@ -336,13 +494,15 @@ function bindProjectForm() {
 
 function populateCategorySelect() {
   const sel = document.getElementById("ri_category");
-  sel.innerHTML = WORK_CATEGORIES.map((c) => `<option value="${c.id}">${esc(c.name)}</option>`).join("");
+  sel.innerHTML = AppTemplates.getCategories()
+    .map((c) => `<option value="${esc(c.id)}">${esc(c.name)}</option>`)
+    .join("");
 }
 function populateSubWorkSelect(categoryId) {
   const sel = document.getElementById("ri_subWork");
-  const list = getSubWorkByCategory(categoryId);
+  const list = AppTemplates.getSubWorkList(categoryId);
   const options = [`<option value="">(세부공종 선택)</option>`].concat(
-    list.map((t) => `<option value="${t.code}">${esc(t.name)}</option>`)
+    list.map((t) => `<option value="${esc(t.code)}">${esc(t.name)}</option>`)
   );
   sel.innerHTML = options.join("");
 }
@@ -394,12 +554,12 @@ function bindRequestForm() {
 }
 
 function loadTemplateItemsIntoChecklist(code, force) {
-  const tpl = getSubWorkTemplate(code);
+  const tpl = AppTemplates.getChecklistTemplate(code);
   if (!tpl) return;
   if (!force && state.checklist.length > 0) return;
-  state.checklist = tpl.items.map((it) => ({
-    item: it.item,
-    standard: it.standard,
+  state.checklist = (Array.isArray(tpl.items) ? tpl.items : []).map((it) => ({
+    item: it.item || "",
+    standard: it.standard || "",
     result: { c1: "", c2: "", s1: "", s2: "" },
     action: "",
     remark: "",
@@ -633,13 +793,13 @@ function applySignature(target, dataUrl) {
 function renderSignaturePreviews() {
   ["contractorCheck", "supervisorCheck", "contractorRecheck", "supervisorRecheck"].forEach((key) => {
     const el = document.getElementById("sigPreview_" + key);
-    const v = state.signatures[key];
-    el.innerHTML = v ? `<img src="${v}" alt="서명"/>` : `<span class="empty">미서명</span>`;
+    const v = safeImageDataUrl(state.signatures[key]);
+    el.innerHTML = v ? `<img src="${esc(v)}" alt="서명"/>` : `<span class="empty">미서명</span>`;
   });
   ["supervisorSign", "chiefSign"].forEach((key) => {
     const el = document.getElementById("sigPreview_" + key);
-    const v = state.signatures[key];
-    el.innerHTML = v ? `<img src="${v}" alt="서명"/>` : `<span class="empty">미서명</span>`;
+    const v = safeImageDataUrl(state.signatures[key]);
+    el.innerHTML = v ? `<img src="${esc(v)}" alt="서명"/>` : `<span class="empty">미서명</span>`;
   });
 }
 
@@ -759,8 +919,8 @@ function renderPhotoList() {
   container.innerHTML = state.photos
     .map(
       (p) => `
-      <div class="photo-card" data-id="${p.id}">
-        <img src="${p.dataUrl}" alt="첨부 사진" />
+      <div class="photo-card" data-id="${esc(p.id)}">
+        <img src="${esc(safeImageDataUrl(p.dataUrl))}" alt="첨부 사진" />
         <div class="cap">${esc(p.caption) || "(설명 없음)"}</div>
       </div>`
     )
@@ -771,7 +931,7 @@ function openPhotoModal(id) {
   currentPhotoId = id;
   const photo = state.photos.find((p) => p.id === id);
   if (!photo) return;
-  document.getElementById("photoModalImg").src = photo.dataUrl;
+  document.getElementById("photoModalImg").src = safeImageDataUrl(photo.dataUrl);
   document.getElementById("photoModalCaption").value = photo.caption || "";
   const sel = document.getElementById("photoModalLink");
   const opts = [`<option value="">연결 안함</option>`].concat(
@@ -869,7 +1029,7 @@ function renderParticipantRows() {
         <label>서명
           <button class="btn btn-sm" data-action="signParticipant" type="button">서명하기</button>
         </label>
-        <div>${row.signature ? `<img src="${row.signature}" style="max-height:34px" alt="서명"/>` : `<span class="hint">미서명</span>`}</div>
+        <div>${safeImageDataUrl(row.signature) ? `<img src="${esc(safeImageDataUrl(row.signature))}" style="max-height:34px" alt="서명"/>` : `<span class="hint">미서명</span>`}</div>
       </div>`
     )
     .join("");
@@ -928,15 +1088,14 @@ function renderActivePreview() {
 /* ===================== 문서 템플릿 빌더 ===================== */
 
 function categoryName(id) {
-  const c = WORK_CATEGORIES.find((x) => x.id === id);
-  return c ? c.name : "";
+  return AppTemplates.getCategoryName(id);
 }
 function subWorkName(code) {
-  const t = getSubWorkTemplate(code);
-  return t ? t.name : "";
+  return AppTemplates.getSubWorkName(code);
 }
 function sigCell(dataUrl) {
-  return dataUrl ? `<img class="sig-img" src="${dataUrl}" alt="서명"/>` : `<span class="sig-line">&nbsp;</span>`;
+  const safeUrl = safeImageDataUrl(dataUrl);
+  return safeUrl ? `<img class="sig-img" src="${esc(safeUrl)}" alt="서명"/>` : `<span class="sig-line">&nbsp;</span>`;
 }
 
 function projectMetaTableHTML() {
@@ -1076,7 +1235,7 @@ function buildPhotosDocHTML() {
       const linkTxt = p.linkedItem !== null && p.linkedItem !== undefined && state.checklist[p.linkedItem]
         ? `[#${p.linkedItem + 1} ${esc(state.checklist[p.linkedItem].item)}] `
         : "";
-      return `<figure><img src="${p.dataUrl}" alt="첨부 사진"/><figcaption>${linkTxt}${esc(p.caption)}</figcaption></figure>`;
+      return `<figure><img src="${esc(safeImageDataUrl(p.dataUrl))}" alt="첨부 사진"/><figcaption>${linkTxt}${esc(p.caption)}</figcaption></figure>`;
     })
     .join("");
   return `
