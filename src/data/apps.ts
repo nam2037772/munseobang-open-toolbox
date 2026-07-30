@@ -163,7 +163,7 @@ export const apps: AppItem[] = [
     tags: ['검측', '검측요청서', '검측점검표', '품질관리', '사진대지'],
     status: '사용가능',
     badge: '실무 기준',
-    url: 'https://nam2037772.github.io/gumcheuk-pro/',
+    url: 'https://gumcheuk-pro.vercel.app/',
   },
   {
     id: 'material-inspection',
@@ -623,7 +623,7 @@ export const familyApps: FamilyApp[] = [
   { id: 'gongjung-pro', name: '공정관리 도구', category: '공사관리', description: '공정표와 진행률을 일목요연하게 관리합니다.', url: 'https://nam2037772.github.io/gongjung-pro/', status: '사용가능', icon: '📊' },
   
   // 검수검측
-  { id: 'inspection-pro', name: '검측프로', category: '검수검측', description: '검측요청서, 점검표, 결과통보서와 사진대지를 작성합니다.', url: 'https://nam2037772.github.io/gumcheuk-pro/', status: '사용가능', icon: '🔍' },
+  { id: 'inspection-pro', name: '검측프로', category: '검수검측', description: '검측요청서, 점검표, 결과통보서와 사진대지를 작성합니다.', url: 'https://gumcheuk-pro.vercel.app/', status: '사용가능', icon: '🔍' },
   
   // 안전환경
   { id: 'tbm-log-pro', name: 'TBM 일지 표준 양식', category: '안전환경', description: '작업 전 TBM 회의록 및 안전 점검 일지를 작성합니다.', url: 'https://nam2037772.github.io/tbm-log-pro/', status: '사용가능', icon: '⛑️' },
