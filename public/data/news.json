@@ -56,6 +56,28 @@
   },
   {
     "source": "국토교통부",
+    "category": "보도자료",
+    "title": "하나의 앱에서 KTX·SRT 예매한다... 통합 앱 ‘코레일+’ 8월 3일 출시",
+    "date": "2026-07-31",
+    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092278&src=text&kw=000004",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "보도자료",
+    "title": "코레일-SR 기업결합 승인",
+    "date": "2026-07-31",
+    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092277&src=text&kw=000004",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
     "category": "공지사항",
     "title": "대구연호 공공주택지구 지구계획 변경(5차) 및 주택지구 밖 사업 변경(1차) 승인",
     "date": "2026-07-30",
@@ -616,17 +638,6 @@
     ]
   },
   {
-    "source": "국토교통부",
-    "category": "보도자료",
-    "title": "[설명] 용산국제업무지구 등 주택정책 현안 관련 서울시와 지속적으로 논의하고 있습니다.",
-    "date": "2026-07-24",
-    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092255&src=text&kw=000004",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
     "source": "대한건설협회",
     "category": "공지사항",
     "title": "「2026 스마트건설 청년인재 채용설명회」 개최 및 참가신청 안내",
@@ -656,17 +667,6 @@
     "url": "https://www.csi.go.kr/community/noticeOnlyView.do?bbs_id=noti&bbt_no=148508",
     "tags": [
       "안전",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "보도자료",
-    "title": "건축사 자격제도, 2032년까지 단계적 개편",
-    "date": "2026-07-24",
-    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092254&src=text&kw=000004",
-    "tags": [
-      "정책",
       "건설"
     ]
   },
