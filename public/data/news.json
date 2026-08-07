@@ -1,5 +1,27 @@
 [
   {
+    "source": "국토교통부",
+    "category": "공지사항",
+    "title": "판교 제2테크노밸리 산업단지계획 변경(22차) 및 지형도면",
+    "date": "2026-08-07",
+    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269202&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "대한건설협회",
+    "category": "공지사항",
+    "title": "[2026-4] 대한건설협회 노후 정보화시스템 재구축 용역업체 선정 입찰공고",
+    "date": "2026-08-07",
+    "url": "https://www.cak.or.kr/lay1/bbs/S1T9C11/A/1/view.do?article_seq=159924",
+    "tags": [
+      "건설",
+      "협회"
+    ]
+  },
+  {
     "source": "CSI",
     "category": "공지사항",
     "title": "건설현장 및 야외작업장 온열질환 예방을 위한 폭염 대비 핵심 안전수칙",
@@ -18,6 +40,83 @@
     "url": "https://www.csi.go.kr/community/dataOnlyView.do?bbs_id=data&bbt_no=148670",
     "tags": [
       "안전",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "보도자료",
+    "title": "전세사기 피해주택 매입실적 1만호 넘어",
+    "date": "2026-08-06",
+    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092291&src=text&kw=000004",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "보도자료",
+    "title": "[참고] 국토교통부, 건설현장 폭염 안전 집중 점검",
+    "date": "2026-08-06",
+    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092292&src=text&kw=000004",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "보도자료",
+    "title": "인기 관광지 ‘체오헝’ 여행, 더욱 편리해진다",
+    "date": "2026-08-06",
+    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092289&src=text&kw=000004",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "보도자료",
+    "title": "[해명] 호남권 반도체 국가산업단지는 관계기관 협의를 통해 추진하고 있습니다",
+    "date": "2026-08-06",
+    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092290&src=text&kw=000004",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "공지사항",
+    "title": "프로젝트 부동산투자회사 설립신고 수리 공고(㈜코스모스캡스톤제1호프로젝트위탁관리부동산투자회사)",
+    "date": "2026-08-06",
+    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269246&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "공지사항",
+    "title": "부동산투자회사 영업인가 공고(주)한국투자제4호위탁관리부동산투자회사",
+    "date": "2026-08-06",
+    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269245&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "공지사항",
+    "title": "남악신도시지구 택지개발사업 개발계획(26차) 변경 승인",
+    "date": "2026-08-06",
+    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269171&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
       "건설"
     ]
   },
@@ -63,6 +162,28 @@
     "tags": [
       "건설",
       "협회"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "보도자료",
+    "title": "안심하고 거래하는 중고차 시장 만든다 「중고차 소비자 보호대책」 추진",
+    "date": "2026-08-05",
+    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092287&src=text&kw=000004",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "보도자료",
+    "title": "현대·기아 등 자발적 시정조치(리콜)",
+    "date": "2026-08-05",
+    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092288&src=text&kw=000004",
+    "tags": [
+      "정책",
+      "건설"
     ]
   },
   {
@@ -430,28 +551,6 @@
   },
   {
     "source": "국토교통부",
-    "category": "공지사항",
-    "title": "제주화북2 공공주택지구의 지정 변경(1차)",
-    "date": "2026-07-30",
-    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269124&mode=view&src=text&kw=000001",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "공지사항",
-    "title": "부동산투자회사 영업인가 공고(㈜부산범천대한제64호위탁관리부동산투자회사)",
-    "date": "2026-07-30",
-    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269106&mode=view&src=text&kw=000001",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
     "category": "보도자료",
     "title": "[차관동정] 홍지선 제2차관, “모빌리티 혁신, 전문가와 현장의 제안을 실질적 성과로 연결”",
     "date": "2026-07-30",
@@ -528,28 +627,6 @@
     ]
   },
   {
-    "source": "국토교통부",
-    "category": "공지사항",
-    "title": "부동산투자회사 변경인가 공고(㈜신한서부티엔디위탁관리부동산투자회사)",
-    "date": "2026-07-29",
-    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269132&mode=view&src=text&kw=000001",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "공지사항",
-    "title": "부동산투자회사 변경인가 공고(㈜엠프라퍼티제1호위탁관리부동산투자회사)",
-    "date": "2026-07-29",
-    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269134&mode=view&src=text&kw=000001",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
     "source": "대한건설협회",
     "category": "공지사항",
     "title": "「제1회 대한민국 조경박람회」개최 안내 및 회원사 참가 신청 요청",
@@ -599,72 +676,6 @@
     "title": "모두의카드(기후동행패스) 서비스 9월 1일부터 시행",
     "date": "2026-07-29",
     "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092266&src=text&kw=000004",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "보도자료",
-    "title": "[참고] 호남권 반도체 국가산단 후보지, 광주군공항 부지 250만평 우선 지정",
-    "date": "2026-07-29",
-    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092270&src=text&kw=000004",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "보도자료",
-    "title": "[설명] 다양한 주거수요에 맞는 공공임대주택을 공급해 나갈 계획입니다.",
-    "date": "2026-07-29",
-    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092269&src=text&kw=000004",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "보도자료",
-    "title": "대안교육기관 건축물 용도를 신설하여 학생의 학습권을 보장합니다",
-    "date": "2026-07-29",
-    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092265&src=text&kw=000004",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "보도자료",
-    "title": "더 빠르고 더 편리한 BRT로 국민의 일상을 연결합니다.",
-    "date": "2026-07-29",
-    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092264&src=text&kw=000004",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "보도자료",
-    "title": "도심 내 유휴공간을 주거공간으로 바꾸는 비주택 리모델링 사업자 간담회 개최",
-    "date": "2026-07-29",
-    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092263&src=text&kw=000004",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "보도자료",
-    "title": "[설명] 주택공급대책 관련 내용이나 일정은 정해진 바 없습니다.",
-    "date": "2026-07-28",
-    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092262&src=text&kw=000004",
     "tags": [
       "정책",
       "건설"
@@ -1391,17 +1402,6 @@
     "title": "[26.05.27] 대한건설협회, 수도권·강원 회원사 정책 간담회 개최",
     "date": "2026-05-27",
     "url": "https://www.cak.or.kr/lay1/bbs/S1T9C12/A/2/view.do?article_seq=157601",
-    "tags": [
-      "건설",
-      "협회"
-    ]
-  },
-  {
-    "source": "대한건설협회",
-    "category": "공지사항",
-    "title": "협회 「건설규제 애로 해소센터」 운영 안내",
-    "date": "2026-05-15",
-    "url": "https://www.cak.or.kr/lay1/bbs/S1T9C11/A/1/view.do?article_seq=157347",
     "tags": [
       "건설",
       "협회"
