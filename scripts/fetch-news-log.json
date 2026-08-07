@@ -1,57 +1,5 @@
 [
   {
-    "runAt": "2026-07-23T13:21:22.893Z",
-    "sources": [
-      {
-        "name": "국토교통부 보도자료",
-        "status": "error",
-        "count": 0,
-        "error": "fetch failed",
-        "tookMs": 10556
-      },
-      {
-        "name": "국토교통부 공지사항",
-        "status": "error",
-        "count": 0,
-        "error": "fetch failed",
-        "tookMs": 10495
-      },
-      {
-        "name": "대한건설협회 공지사항",
-        "status": "ok",
-        "count": 13,
-        "tookMs": 6008
-      },
-      {
-        "name": "대한건설협회 보도자료",
-        "status": "ok",
-        "count": 10,
-        "tookMs": 2351
-      },
-      {
-        "name": "대한건축사협회 공지사항",
-        "status": "ok",
-        "count": 12,
-        "tookMs": 1802
-      },
-      {
-        "name": "CSI 공지사항",
-        "status": "error",
-        "count": 0,
-        "error": "fetch failed",
-        "tookMs": 10087
-      },
-      {
-        "name": "CSI 자료실",
-        "status": "error",
-        "count": 0,
-        "error": "fetch failed",
-        "tookMs": 10494
-      }
-    ],
-    "totalItems": 126
-  },
-  {
     "runAt": "2026-07-24T01:48:20.060Z",
     "sources": [
       {
@@ -1465,6 +1413,56 @@
         "status": "ok",
         "count": 10,
         "tookMs": 585
+      }
+    ],
+    "totalItems": 145
+  },
+  {
+    "runAt": "2026-08-07T12:37:38.031Z",
+    "sources": [
+      {
+        "name": "국토교통부 보도자료",
+        "status": "ok",
+        "count": 10,
+        "tookMs": 2795
+      },
+      {
+        "name": "국토교통부 공지사항",
+        "status": "ok",
+        "count": 10,
+        "tookMs": 1940
+      },
+      {
+        "name": "대한건설협회 공지사항",
+        "status": "ok",
+        "count": 11,
+        "tookMs": 5314
+      },
+      {
+        "name": "대한건설협회 보도자료",
+        "status": "ok",
+        "count": 10,
+        "tookMs": 3270
+      },
+      {
+        "name": "대한건축사협회 공지사항",
+        "status": "ok",
+        "count": 12,
+        "tookMs": 1309
+      },
+      {
+        "name": "CSI 공지사항",
+        "status": "error",
+        "count": 0,
+        "error": "fetch failed",
+        "tookMs": 10092
+      },
+      {
+        "name": "CSI 자료실",
+        "status": "error",
+        "count": 0,
+        "error": "fetch failed",
+        "tookMs": 10494
       }
     ],
     "totalItems": 145
