@@ -1,6 +1,61 @@
 [
   {
     "source": "국토교통부",
+    "category": "공지사항",
+    "title": "수도권광역급행철도 C노선 민간투자사업 실시계획 변경(2차) 승인",
+    "date": "2026-08-13",
+    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269247&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "공지사항",
+    "title": "파주운정3지구 택지개발사업 개발계획 변경(20차) 및 실시계획 변경(18차) 승인",
+    "date": "2026-08-13",
+    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269252&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "공지사항",
+    "title": "청원오창지구 공공주택건설사업 전략환경영향평가서 초안 공람 및 설명회 개최 공고",
+    "date": "2026-08-13",
+    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269265&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "공지사항",
+    "title": "제주김녕 공공주택지구 전략환경영향평가(재협의)초안 공람 및 설명회 개최 공고",
+    "date": "2026-08-13",
+    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269264&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "대한건설협회",
+    "category": "공지사항",
+    "title": "건설현장 밀폐공간 질식사고 예방안내",
+    "date": "2026-08-13",
+    "url": "https://www.cak.or.kr/lay1/bbs/S1T9C11/A/1/view.do?article_seq=160099",
+    "tags": [
+      "건설",
+      "협회"
+    ]
+  },
+  {
+    "source": "국토교통부",
     "category": "보도자료",
     "title": "[참고] 미래를 위한 세제지원, 자율주행 혁신은 앞당기고 청년 주거부담은 낮춘다.",
     "date": "2026-08-12",
@@ -485,54 +540,10 @@
   },
   {
     "source": "국토교통부",
-    "category": "공지사항",
-    "title": "부동산투자회사 영업인가 공고(주)한국투자제4호위탁관리부동산투자회사",
-    "date": "2026-08-06",
-    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269245&mode=view&src=text&kw=000001",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "공지사항",
-    "title": "남악신도시지구 택지개발사업 개발계획(26차) 변경 승인",
-    "date": "2026-08-06",
-    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269171&mode=view&src=text&kw=000001",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
     "category": "보도자료",
     "title": "[해명] 주택 공급대책에 대해서는 확정된 바 없습니다.",
     "date": "2026-08-05",
     "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092286&src=text&kw=000004",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "공지사항",
-    "title": "폭염 6대 행동요령",
-    "date": "2026-08-05",
-    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269216&mode=view&src=text&kw=000001",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "공지사항",
-    "title": "서해선~경부고속선 연결선 철도건설사업 전략환경영향평가서 초안에 대한 주민 등의 의견 수렴 결과 및 반영 여부 공개",
-    "date": "2026-08-05",
-    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269193&mode=view&src=text&kw=000001",
     "tags": [
       "정책",
       "건설"
@@ -1160,17 +1171,6 @@
     "title": "2026년도 건설사업자간 상호협력평가 결과 발표",
     "date": "2026-06-30",
     "url": "https://www.cak.or.kr/lay1/bbs/S1T9C11/A/1/view.do?article_seq=158497",
-    "tags": [
-      "건설",
-      "협회"
-    ]
-  },
-  {
-    "source": "대한건설협회",
-    "category": "공지사항",
-    "title": "2026년도 종합건설사업자 건설근로자 고용평가 결과 공시",
-    "date": "2026-06-30",
-    "url": "https://www.cak.or.kr/lay1/bbs/S1T9C11/A/1/view.do?article_seq=158495",
     "tags": [
       "건설",
       "협회"
