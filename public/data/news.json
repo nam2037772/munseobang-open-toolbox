@@ -1,6 +1,94 @@
 [
   {
     "source": "국토교통부",
+    "category": "공지사항",
+    "title": "화성어천 공공주택지구 지구계획 변경(4차) 및 주택지구 밖 사업(도로) 승인",
+    "date": "2026-08-28",
+    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269410&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "공지사항",
+    "title": "화성-안성 고속도로 민간투자사업 전략환경영향평가 및 기후변화영향평가 평가항목 등의 결정내용 공개",
+    "date": "2026-08-28",
+    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269417&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "공지사항",
+    "title": "건설신기술 보호기간 연장(2785)",
+    "date": "2026-08-28",
+    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269420&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "공지사항",
+    "title": "건설신기술 보호기간 연장(2786)",
+    "date": "2026-08-28",
+    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269421&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "공지사항",
+    "title": "주민감사청구 공표",
+    "date": "2026-08-28",
+    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269409&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "공지사항",
+    "title": "경부선 왜관~동대구간 배전선로 개량사업 실시계획 승인",
+    "date": "2026-08-28",
+    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269411&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "공지사항",
+    "title": "하남-남양주-포천 고속도로 민간투자사업 전략환경영향평가서 초안에 대한 주민 등의 의견수렴 결과 및 반영 여부 공개",
+    "date": "2026-08-28",
+    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=268147&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "공지사항",
+    "title": "건설신기술 지정 신청(2816)",
+    "date": "2026-08-28",
+    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269413&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
     "category": "보도자료",
     "title": "“KTX·SRT 고속철도 통합, 안전하고 빈틈없이 준비한다”",
     "date": "2026-08-27",
@@ -16,6 +104,17 @@
     "title": "[가덕도신공항 건설사업] 타당성평가 보고서 검토 결과",
     "date": "2026-08-27",
     "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269436&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "보도자료",
+    "title": "위례선 트램 건설사업 갈등조정안 심의·의결",
+    "date": "2026-08-27",
+    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092355&src=text&kw=000004",
     "tags": [
       "정책",
       "건설"
@@ -507,17 +606,6 @@
   },
   {
     "source": "국토교통부",
-    "category": "공지사항",
-    "title": "건설신기술 지정 신청(2820)",
-    "date": "2026-08-20",
-    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269302&mode=view&src=text&kw=000001",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
     "category": "보도자료",
     "title": "[해명] 현재 용산공원을 활용한 구체적인 주택건설계획은 정해진 바가 없습니다.",
     "date": "2026-08-20",
@@ -550,39 +638,6 @@
     ]
   },
   {
-    "source": "국토교통부",
-    "category": "보도자료",
-    "title": "[참고] 국토 외곽 섬지역 353곳, 외국인 토지거래허가구역 신규 지정",
-    "date": "2026-08-20",
-    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092324&src=text&kw=000004",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "공지사항",
-    "title": "외국인등의 토지거래허가구역 지정 고시",
-    "date": "2026-08-20",
-    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269387&mode=view&src=text&kw=000001",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "공지사항",
-    "title": "토지거래허가구역 재지정 공고",
-    "date": "2026-08-20",
-    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269386&mode=view&src=text&kw=000001",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
     "source": "대한건축사협회",
     "category": "공지사항",
     "title": "[공지사항] 『건축사를 위한 AI 실무활용법』 3차 교육생 모집공고",
@@ -591,28 +646,6 @@
     "tags": [
       "건축",
       "협회"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "공지사항",
-    "title": "수색~광명 고속철도 건설사업 기본계획 고시",
-    "date": "2026-08-19",
-    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269299&mode=view&src=text&kw=000001",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "공지사항",
-    "title": "공공기관 지원 12·29사단법인 선정계획 재공고",
-    "date": "2026-08-19",
-    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269305&mode=view&src=text&kw=000001",
-    "tags": [
-      "정책",
-      "건설"
     ]
   },
   {
@@ -646,39 +679,6 @@
     "tags": [
       "건축",
       "협회"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "공지사항",
-    "title": "건설신기술 지정(2764)",
-    "date": "2026-08-18",
-    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269293&mode=view&src=text&kw=000001",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "공지사항",
-    "title": "부동산투자회사 특례등록 공고[(주)우리성남금토대토제1호위탁관리부동산투자회사]",
-    "date": "2026-08-18",
-    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269297&mode=view&src=text&kw=000001",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "공지사항",
-    "title": "제40회 육운의날 정부포상 후보자 공개검증",
-    "date": "2026-08-18",
-    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269338&mode=view&src=text&kw=000001",
-    "tags": [
-      "정책",
-      "건설"
     ]
   },
   {
