@@ -1,5 +1,38 @@
 [
   {
+    "source": "대한건축사협회",
+    "category": "공지사항",
+    "title": "[공지사항] 『건축사를 위한 AI 실무활용법』 4차 교육생 모집공고",
+    "date": "2026-09-07",
+    "url": "https://www.kira.or.kr/jsp/main/01/01.jsp?mode=read&ba_id=264444",
+    "tags": [
+      "건축",
+      "협회"
+    ]
+  },
+  {
+    "source": "대한건축사협회",
+    "category": "공지사항",
+    "title": "[공지사항] 2026 『건축사 BIM 교육과정』교육생 모집공고",
+    "date": "2026-09-07",
+    "url": "https://www.kira.or.kr/jsp/main/01/01.jsp?mode=read&ba_id=264443",
+    "tags": [
+      "건축",
+      "협회"
+    ]
+  },
+  {
+    "source": "대한건축사협회",
+    "category": "공지사항",
+    "title": "[공지사항] 제2차『BF인증의 이해와 적용사례』교육생 모집공고",
+    "date": "2026-09-07",
+    "url": "https://www.kira.or.kr/jsp/main/01/01.jsp?mode=read&ba_id=264442",
+    "tags": [
+      "건축",
+      "협회"
+    ]
+  },
+  {
     "source": "CSI",
     "category": "공지사항",
     "title": "2026년 건설공사안전관리종합정보망(CSI) 국민체감도 조사",
@@ -1254,28 +1287,6 @@
     ]
   },
   {
-    "source": "대한건축사협회",
-    "category": "공지사항",
-    "title": "[공지사항] 직원채용 공고 안내",
-    "date": "2026-07-13",
-    "url": "https://www.kira.or.kr/jsp/main/01/01.jsp?mode=read&ba_id=263760",
-    "tags": [
-      "건축",
-      "협회"
-    ]
-  },
-  {
-    "source": "대한건축사협회",
-    "category": "공지사항",
-    "title": "[공지사항] 제2차『BF인증의 이해와 적용사례』교육생 모집공고",
-    "date": "2026-07-13",
-    "url": "https://www.kira.or.kr/jsp/main/01/01.jsp?mode=read&ba_id=263750",
-    "tags": [
-      "건축",
-      "협회"
-    ]
-  },
-  {
     "source": "대한건설협회",
     "category": "보도자료",
     "title": "[26.07.09] 「제1기 대한건설협회 대학생 서포터즈」 위촉",
@@ -1294,17 +1305,6 @@
     "url": "https://www.cak.or.kr/lay1/bbs/S1T9C12/A/2/view.do?article_seq=158891",
     "tags": [
       "건설",
-      "협회"
-    ]
-  },
-  {
-    "source": "대한건축사협회",
-    "category": "공지사항",
-    "title": "[공지사항] 『건축사를 위한 AI 실무활용법』 2차 교육생 모집공고",
-    "date": "2026-07-08",
-    "url": "https://www.kira.or.kr/jsp/main/01/01.jsp?mode=read&ba_id=263712",
-    "tags": [
-      "건축",
       "협회"
     ]
   },
