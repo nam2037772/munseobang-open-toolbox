@@ -2,6 +2,17 @@
   {
     "source": "국토교통부",
     "category": "공지사항",
+    "title": "순환골재 품질인증 사용중지 공고",
+    "date": "2026-09-11",
+    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269566&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "공지사항",
     "title": "과천지식정보타운 공공주택지구 조성사업(2단계) 준공 공고",
     "date": "2026-09-10",
     "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269514&mode=view&src=text&kw=000001",
@@ -57,7 +68,7 @@
   {
     "source": "대한건설협회",
     "category": "공지사항",
-    "title": "[2026-6] 대한건설협회 노후 데이터베이스 업그레이드 및 정보시스템 개선 용역업체 선정 입찰공고",
+    "title": "[2026-6] 대한건설협회 노후 데이터베이스 업그레이드 및 정보시스템 개선 용역업체 선정 입찰공고(2026-6-1 정정공고 참조)",
     "date": "2026-09-10",
     "url": "https://www.cak.or.kr/lay1/bbs/S1T9C11/A/1/view.do?article_seq=160936",
     "tags": [
@@ -71,6 +82,61 @@
     "title": "[2026-5] 2026년도 전산기기(데스크탑) 구매 입찰공고",
     "date": "2026-09-10",
     "url": "https://www.cak.or.kr/lay1/bbs/S1T9C11/A/1/view.do?article_seq=160935",
+    "tags": [
+      "건설",
+      "협회"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "보도자료",
+    "title": "[설명] 3기 신도시 LH 공공분양주택의 중도금 대출은 차질없이 제공될 예정입니다.",
+    "date": "2026-09-10",
+    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092412&src=text&kw=000004",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "보도자료",
+    "title": "[설명] 정부는 근거 없는 공사비 인상을 막고, 분쟁이 발생한 정비사업 현장을 직접 찾아가 해결하고 있습니다.",
+    "date": "2026-09-10",
+    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092411&src=text&kw=000004",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "보도자료",
+    "title": "[설명] 국토부는 1기 신도시 정비사업의 원활한 추진을 적극 지원하고 있습니다.",
+    "date": "2026-09-10",
+    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092410&src=text&kw=000004",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "대한건설협회",
+    "category": "공지사항",
+    "title": "[2026-6-1] 대한건설협회 노후 데이터베이스 업그레이드 및 정보시스템 개선 용역업체 선정 입찰 정정공고",
+    "date": "2026-09-10",
+    "url": "https://www.cak.or.kr/lay1/bbs/S1T9C11/A/1/view.do?article_seq=160941",
+    "tags": [
+      "건설",
+      "협회"
+    ]
+  },
+  {
+    "source": "대한건설협회",
+    "category": "공지사항",
+    "title": "「강북구 행정복합타운 건립공사」 사전설명회 개최 안내",
+    "date": "2026-09-10",
+    "url": "https://www.cak.or.kr/lay1/bbs/S1T9C11/A/1/view.do?article_seq=160938",
     "tags": [
       "건설",
       "협회"
@@ -430,17 +496,6 @@
   },
   {
     "source": "국토교통부",
-    "category": "보도자료",
-    "title": "안전한 건설현장, 국민과 함께 만든다 「건설 추락사고 예방 콘텐츠 공모전」 개최",
-    "date": "2026-09-04",
-    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092383&src=text&kw=000004",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
     "category": "공지사항",
     "title": "서울 고은산 서측 도심 공공주택 복합지구의 지정 및 지형도면등의 고시",
     "date": "2026-09-04",
@@ -540,28 +595,6 @@
   },
   {
     "source": "국토교통부",
-    "category": "보도자료",
-    "title": "[참고] 「2차 공공기관 지방이전」 본격 추진",
-    "date": "2026-09-03",
-    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092378&src=text&kw=000004",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "보도자료",
-    "title": "추석 명절 택배 특별관리기간 4주간 운영",
-    "date": "2026-09-03",
-    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092377&src=text&kw=000004",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
     "category": "공지사항",
     "title": "의정부용현 공공주택지구 조성사업 환경영향평가서 초안에 대한 주민 등의 의견 수렴 결과 및 반영 여부 공개",
     "date": "2026-09-03",
@@ -632,17 +665,6 @@
     "title": "건설신기술 지정 신청(2810)",
     "date": "2026-09-02",
     "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269442&mode=view&src=text&kw=000001",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "공지사항",
-    "title": "건설신기술 지정(2767)",
-    "date": "2026-09-02",
-    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269443&mode=view&src=text&kw=000001",
     "tags": [
       "정책",
       "건설"
@@ -1240,28 +1262,6 @@
     "tags": [
       "안전",
       "건설"
-    ]
-  },
-  {
-    "source": "대한건설협회",
-    "category": "공지사항",
-    "title": "LH 민간참여사업 금융지원 설명회 개최 알림",
-    "date": "2026-07-20",
-    "url": "https://www.cak.or.kr/lay1/bbs/S1T9C11/A/1/view.do?article_seq=159326",
-    "tags": [
-      "건설",
-      "협회"
-    ]
-  },
-  {
-    "source": "대한건설협회",
-    "category": "공지사항",
-    "title": "'26년 건설업체 산업재해예방활동 실적평가 사업주 교육안내",
-    "date": "2026-07-20",
-    "url": "https://www.cak.or.kr/lay1/bbs/S1T9C11/A/1/view.do?article_seq=159309",
-    "tags": [
-      "건설",
-      "협회"
     ]
   },
   {
