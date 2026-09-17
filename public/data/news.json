@@ -2,6 +2,83 @@
   {
     "source": "국토교통부",
     "category": "공지사항",
+    "title": "도로구역 결정(변경) 및 지형도면 고시(고속국도 제12호 광주대구선 133.5k)",
+    "date": "2026-09-18",
+    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269591&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "공지사항",
+    "title": "건설신기술 지정(2809)",
+    "date": "2026-09-18",
+    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269595&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "공지사항",
+    "title": "수도권광역급행철도 C노선 민간투자사업 보상계획 공고",
+    "date": "2026-09-18",
+    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269617&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "공지사항",
+    "title": "건설신기술 보호기간 연장(2795)",
+    "date": "2026-09-18",
+    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269596&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "공지사항",
+    "title": "포항블루밸리 국가산업단지 산업단지계획 변경(20차) 및 지형도면",
+    "date": "2026-09-18",
+    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269593&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "공지사항",
+    "title": "성남복정1 공공주택지구 지구계획 변경(7차) 승인",
+    "date": "2026-09-18",
+    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269616&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "공지사항",
+    "title": "교육훈련기관 등 변경사항 고시",
+    "date": "2026-09-18",
+    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269569&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "공지사항",
     "title": "주민감사청구 공표",
     "date": "2026-09-17",
     "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269592&mode=view&src=text&kw=000001",
@@ -40,6 +117,50 @@
     "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092431&src=text&kw=000004",
     "tags": [
       "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "대한건설협회",
+    "category": "공지사항",
+    "title": "시설물유지관리업 전환업체 중 등록기준 충족의무 추가 유예대상 명단 안내",
+    "date": "2026-09-17",
+    "url": "https://www.cak.or.kr/lay1/bbs/S1T9C11/A/1/view.do?article_seq=161139",
+    "tags": [
+      "건설",
+      "협회"
+    ]
+  },
+  {
+    "source": "대한건설협회",
+    "category": "공지사항",
+    "title": "건설업 외국인근로자(E-9) 현장 간 이동 제도 개선 안내",
+    "date": "2026-09-17",
+    "url": "https://www.cak.or.kr/lay1/bbs/S1T9C11/A/1/view.do?article_seq=161137",
+    "tags": [
+      "건설",
+      "협회"
+    ]
+  },
+  {
+    "source": "대한건축사협회",
+    "category": "공지사항",
+    "title": "[공지사항] 건축사회관 8층 중회의실 회의용 마이크시스템 교체·설치공사 재입찰공고",
+    "date": "2026-09-17",
+    "url": "https://www.kira.or.kr/jsp/main/01/01.jsp?mode=read&ba_id=264650",
+    "tags": [
+      "건축",
+      "협회"
+    ]
+  },
+  {
+    "source": "CSI",
+    "category": "공지사항",
+    "title": "시스템 작업 안내(2026-09-17 18:00 ~ 02:00)",
+    "date": "2026-09-17",
+    "url": "https://www.csi.go.kr/community/noticeOnlyView.do?bbs_id=noti&bbt_no=149055",
+    "tags": [
+      "안전",
       "건설"
     ]
   },
@@ -463,17 +584,6 @@
   },
   {
     "source": "국토교통부",
-    "category": "공지사항",
-    "title": "감정평가사 징계사실 공고",
-    "date": "2026-09-10",
-    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269539&mode=view&src=text&kw=000001",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
     "category": "보도자료",
     "title": "’27년 도시재생 신규사업 선정 추진",
     "date": "2026-09-10",
@@ -568,72 +678,6 @@
     "url": "https://www.csi.go.kr/community/dataOnlyView.do?bbs_id=data&bbt_no=148980",
     "tags": [
       "안전",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "공지사항",
-    "title": "가덕도신공항 부지조성공사 일괄입찰 설계심의위원 명단",
-    "date": "2026-09-10",
-    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269578&mode=view&src=text&kw=000001",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "공지사항",
-    "title": "건설신기술 지정 신청(2814)",
-    "date": "2026-09-09",
-    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269510&mode=view&src=text&kw=000001",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "공지사항",
-    "title": "건설신기술 지정(2761)",
-    "date": "2026-09-09",
-    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269511&mode=view&src=text&kw=000001",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "공지사항",
-    "title": "인천계양테크노밸리 공공주택지구 지구계획 변경(4차) 승인",
-    "date": "2026-09-09",
-    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269515&mode=view&src=text&kw=000001",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "공지사항",
-    "title": "K-AI 시티 실행전략을 소개합니다.",
-    "date": "2026-09-09",
-    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269561&mode=view&src=text&kw=000001",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "공지사항",
-    "title": "제46회 항공의 날 정부포상 후보자 추가 공개 검증",
-    "date": "2026-09-09",
-    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269567&mode=view&src=text&kw=000001",
-    "tags": [
-      "정책",
       "건설"
     ]
   },
@@ -1166,17 +1210,6 @@
     ]
   },
   {
-    "source": "대한건설협회",
-    "category": "공지사항",
-    "title": "폭염에 따른 재해복구 건설현장 안전관리 강화 요청",
-    "date": "2026-07-28",
-    "url": "https://www.cak.or.kr/lay1/bbs/S1T9C11/A/1/view.do?article_seq=159562",
-    "tags": [
-      "건설",
-      "협회"
-    ]
-  },
-  {
     "source": "대한건축사협회",
     "category": "공지사항",
     "title": "[공지사항] 제2차『BF인증의 이해와 적용사례』교육생 추가모집공고",
@@ -1195,17 +1228,6 @@
     "url": "https://www.kira.or.kr/jsp/main/01/01.jsp?mode=read&ba_id=263906",
     "tags": [
       "건축",
-      "협회"
-    ]
-  },
-  {
-    "source": "대한건설협회",
-    "category": "공지사항",
-    "title": "국립도시건축박물관 2026년 제3차 자료 공개구입 공고 알림",
-    "date": "2026-07-27",
-    "url": "https://www.cak.or.kr/lay1/bbs/S1T9C11/A/1/view.do?article_seq=159521",
-    "tags": [
-      "건설",
       "협회"
     ]
   },
@@ -1259,17 +1281,6 @@
     "title": "[공지사항] 제1차『D5 Render AI 활용 및 영상 제작(중급)』 교육대상자 공고",
     "date": "2026-07-21",
     "url": "https://www.kira.or.kr/jsp/main/01/01.jsp?mode=read&ba_id=263831",
-    "tags": [
-      "건축",
-      "협회"
-    ]
-  },
-  {
-    "source": "대한건축사협회",
-    "category": "공지사항",
-    "title": "[공지사항] 제1차『D5 Render를 활용한 건축 실감형 이미지 제작(초급)』 교육대상자 공고",
-    "date": "2026-07-21",
-    "url": "https://www.kira.or.kr/jsp/main/01/01.jsp?mode=read&ba_id=263830",
     "tags": [
       "건축",
       "협회"
