@@ -1,6 +1,28 @@
 [
   {
     "source": "국토교통부",
+    "category": "공지사항",
+    "title": "도심 공공주택 복합사업 후보지 선정 공고",
+    "date": "2026-10-01",
+    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269997&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "공지사항",
+    "title": "수도권광역급행철도 B노선 민간투자사업 보상협의 공고(공시송달_지하, 서울특별시 1구간, 구로구)",
+    "date": "2026-10-01",
+    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269965&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
     "category": "보도자료",
     "title": "‘도심 공공주택 복합사업’ 서울 11곳(1.8만호) 신규 후보지 선정",
     "date": "2026-09-30",
@@ -129,6 +151,28 @@
     "tags": [
       "건설",
       "협회"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "보도자료",
+    "title": "[설명] 정부는 주택건설실적 통계의 정확도 제고를 위해 통계 생산 및 공표방식을 ‘25.9월 기개선하였습니다",
+    "date": "2026-09-30",
+    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092475&src=text&kw=000004",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "보도자료",
+    "title": "[참고] 부전~마산 복선전철 터널 붕괴사고 사고조사위원회, 조사기간 11월 20일까지 연장",
+    "date": "2026-09-30",
+    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092474&src=text&kw=000004",
+    "tags": [
+      "정책",
+      "건설"
     ]
   },
   {
@@ -451,28 +495,6 @@
     ]
   },
   {
-    "source": "국토교통부",
-    "category": "공지사항",
-    "title": "부동산투자회사 변경인가 공고(㈜부산거제대한제47호위탁관리부동산투자회사)",
-    "date": "2026-09-23",
-    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269902&mode=view&src=text&kw=000001",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "공지사항",
-    "title": "부동산투자회사 영업등록 공고(㈜밸류트러스트제2호기업구조조정부동산투자회사)",
-    "date": "2026-09-23",
-    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269901&mode=view&src=text&kw=000001",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
     "source": "대한건축사협회",
     "category": "공지사항",
     "title": "[공지사항] 2026 한국건축산업대전 연계 건축사 실무교육 실시 안내",
@@ -566,28 +588,6 @@
     "title": "[차관동정] 김이탁 제1차관, “전월세 안심신탁사업, 국민이 체감하는 주거지원 제도로 안착시킬 것”",
     "date": "2026-09-22",
     "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092451&src=text&kw=000004",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "보도자료",
-    "title": "[참고] 무안국제공항 활주로 포장 보수·보강 추진",
-    "date": "2026-09-22",
-    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092450&src=text&kw=000004",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "보도자료",
-    "title": "APEC 교통장관회의서 AI·스마트 모빌리티 미래협력 제안 나선다",
-    "date": "2026-09-22",
-    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092447&src=text&kw=000004",
     "tags": [
       "정책",
       "건설"
