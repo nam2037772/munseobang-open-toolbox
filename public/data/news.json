@@ -56,6 +56,61 @@
   },
   {
     "source": "국토교통부",
+    "category": "보도자료",
+    "title": "[차관동정] 김이탁 제1차관, “연말까지 수도권 공공주택 6.2만호 착공 목표 달성에 총력”",
+    "date": "2026-10-02",
+    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092481&src=text&kw=000004",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "보도자료",
+    "title": "[참고] 제2용인-서울(용인~성남) 민자고속도로, 민자적격성조사 통과로 사업 본격화",
+    "date": "2026-10-02",
+    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092480&src=text&kw=000004",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "보도자료",
+    "title": "[설명] 정부는 지방정부와 협력하여 빈집의 자발적 정비·활용을 적극 활성화하겠습니다.",
+    "date": "2026-10-02",
+    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092479&src=text&kw=000004",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "공지사항",
+    "title": "제3기 건설엔지니어링 종합심사낙찰제 심사위원회 위원 명단(2026.10.2 기준)",
+    "date": "2026-10-02",
+    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=270022&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "대한건축사협회",
+    "category": "공지사항",
+    "title": "[공지사항] [공지사항]2027년도 캘린더(탁상용) 제작업체 선정 재입찰공고",
+    "date": "2026-10-02",
+    "url": "https://www.kira.or.kr/jsp/main/01/01.jsp?mode=read&ba_id=264828",
+    "tags": [
+      "건축",
+      "협회"
+    ]
+  },
+  {
+    "source": "국토교통부",
     "category": "공지사항",
     "title": "도심 공공주택 복합사업 후보지 선정 공고",
     "date": "2026-10-01",
@@ -418,17 +473,6 @@
     ]
   },
   {
-    "source": "국토교통부",
-    "category": "공지사항",
-    "title": "빛그린산업단지 산업단지계획 변경(17차)",
-    "date": "2026-09-28",
-    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=269889&mode=view&src=text&kw=000001",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
     "source": "대한건설협회",
     "category": "공지사항",
     "title": "국가계약 분쟁조정제도 설명회 개최 안내",
@@ -555,39 +599,6 @@
     "title": "[설명] 국토교통부는 국민 안전을 최우선으로 조속히 대안을 결정할 계획입니다.",
     "date": "2026-09-23",
     "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092457&src=text&kw=000004",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "보도자료",
-    "title": "[참고] 청약 예·부금 등 가입자, 종합저축 전환기회 1년 더",
-    "date": "2026-09-23",
-    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092454&src=text&kw=000004",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "보도자료",
-    "title": "[참고] 「외국인 부동산 거래」 더 촘촘히 들여다본다",
-    "date": "2026-09-23",
-    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092453&src=text&kw=000004",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "보도자료",
-    "title": "도시의 오늘과 미래를 한눈에 … 29일부터 도시·지역혁신 박람회",
-    "date": "2026-09-23",
-    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092456&src=text&kw=000004",
     "tags": [
       "정책",
       "건설"
@@ -1250,17 +1261,6 @@
     "url": "https://www.cak.or.kr/lay1/bbs/S1T9C11/A/1/view.do?article_seq=159822",
     "tags": [
       "건설",
-      "협회"
-    ]
-  },
-  {
-    "source": "대한건축사협회",
-    "category": "공지사항",
-    "title": "[공지사항] 건축사회관 8층 중회의실 회의용 마이크시스템 교체·설치공사 용역 업체선정 입찰공고",
-    "date": "2026-08-04",
-    "url": "https://www.kira.or.kr/jsp/main/01/01.jsp?mode=read&ba_id=264032",
-    "tags": [
-      "건축",
       "협회"
     ]
   },
