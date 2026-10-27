@@ -35,6 +35,28 @@
   {
     "source": "국토교통부",
     "category": "공지사항",
+    "title": "[계룡대로~국도1호선 연결도로] 타당성 평가보고서 검토결과",
+    "date": "2026-10-27",
+    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=270253&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "대한건축사협회",
+    "category": "공지사항",
+    "title": "[공지사항] 제3차「에너지 절약계획서 실무해설」교육대상자 공고",
+    "date": "2026-10-27",
+    "url": "https://www.kira.or.kr/jsp/main/01/01.jsp?mode=read&ba_id=265150",
+    "tags": [
+      "건축",
+      "협회"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "공지사항",
     "title": "성남금토2 공공주택지구 전략환경영향평가서 초안 설명회 생략 및 공청회 개최 공고",
     "date": "2026-10-26",
     "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=270185&mode=view&src=text&kw=000001",
@@ -162,6 +184,28 @@
     "tags": [
       "건축",
       "협회"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "보도자료",
+    "title": "‘26년 노후 산업단지 재생사업 공모 착수",
+    "date": "2026-10-26",
+    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092522&src=text&kw=000004",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "CSI",
+    "category": "공지사항",
+    "title": "2026년 안전관리계획서 길라잡이 교육 안내[10차]",
+    "date": "2026-10-26",
+    "url": "https://www.csi.go.kr/community/noticeOnlyView.do?bbs_id=noti&bbt_no=149375",
+    "tags": [
+      "안전",
+      "건설"
     ]
   },
   {
@@ -429,17 +473,6 @@
     ]
   },
   {
-    "source": "국토교통부",
-    "category": "공지사항",
-    "title": "자산관리회사 설립인가 공고(티엔디투자운용)",
-    "date": "2026-10-21",
-    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=270181&mode=view&src=text&kw=000001",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
     "source": "대한건축사협회",
     "category": "공지사항",
     "title": "[공지사항] 「교육시설 사전기획 전문가 교육과정」11월 집합교육 실시안내",
@@ -678,17 +711,6 @@
     "url": "https://www.csi.go.kr/community/dataOnlyView.do?bbs_id=data&bbt_no=149299",
     "tags": [
       "안전",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "보도자료",
-    "title": "세계 첨단 교통기술 강릉에 모인다··· 19일 ITS 세계총회 개막",
-    "date": "2026-10-16",
-    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092501&src=text&kw=000004",
-    "tags": [
-      "정책",
       "건설"
     ]
   },
@@ -1105,17 +1127,6 @@
     "title": "[공지사항] 『건축사를 위한 AI 실무활용법』 4차 교육생 모집공고",
     "date": "2026-09-07",
     "url": "https://www.kira.or.kr/jsp/main/01/01.jsp?mode=read&ba_id=264444",
-    "tags": [
-      "건축",
-      "협회"
-    ]
-  },
-  {
-    "source": "대한건축사협회",
-    "category": "공지사항",
-    "title": "[공지사항] 2026 『건축사 BIM 교육과정』교육생 모집공고",
-    "date": "2026-09-07",
-    "url": "https://www.kira.or.kr/jsp/main/01/01.jsp?mode=read&ba_id=264443",
     "tags": [
       "건축",
       "협회"
@@ -1710,17 +1721,6 @@
     "title": "2026년 안전관리계획서 길라잡이 교육 안내[8차]",
     "date": "2026-04-27",
     "url": "https://www.csi.go.kr/community/noticeOnlyView.do?bbs_id=noti&bbt_no=147654",
-    "tags": [
-      "안전",
-      "건설"
-    ]
-  },
-  {
-    "source": "CSI",
-    "category": "공지사항",
-    "title": "DfS 인사이트 설명회(영남권역) 안내",
-    "date": "2026-04-21",
-    "url": "https://www.csi.go.kr/community/noticeOnlyView.do?bbs_id=noti&bbt_no=147597",
     "tags": [
       "안전",
       "건설"
