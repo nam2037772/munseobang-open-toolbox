@@ -1,53 +1,5 @@
 [
   {
-    "runAt": "2026-10-24T15:00:17.234Z",
-    "sources": [
-      {
-        "name": "국토교통부 보도자료",
-        "status": "ok",
-        "count": 10,
-        "tookMs": 2688
-      },
-      {
-        "name": "국토교통부 공지사항",
-        "status": "ok",
-        "count": 10,
-        "tookMs": 2159
-      },
-      {
-        "name": "대한건설협회 공지사항",
-        "status": "ok",
-        "count": 12,
-        "tookMs": 2587
-      },
-      {
-        "name": "대한건설협회 보도자료",
-        "status": "ok",
-        "count": 10,
-        "tookMs": 1106
-      },
-      {
-        "name": "대한건축사협회 공지사항",
-        "status": "ok",
-        "count": 13,
-        "tookMs": 5230
-      },
-      {
-        "name": "CSI 공지사항",
-        "status": "ok",
-        "count": 10,
-        "tookMs": 1738
-      },
-      {
-        "name": "CSI 자료실",
-        "status": "ok",
-        "count": 10,
-        "tookMs": 971
-      }
-    ],
-    "totalItems": 164
-  },
-  {
     "runAt": "2026-10-25T02:19:05.648Z",
     "sources": [
       {
@@ -1443,6 +1395,54 @@
         "status": "ok",
         "count": 10,
         "tookMs": 814
+      }
+    ],
+    "totalItems": 165
+  },
+  {
+    "runAt": "2026-11-08T17:20:48.340Z",
+    "sources": [
+      {
+        "name": "국토교통부 보도자료",
+        "status": "ok",
+        "count": 10,
+        "tookMs": 2839
+      },
+      {
+        "name": "국토교통부 공지사항",
+        "status": "ok",
+        "count": 10,
+        "tookMs": 2040
+      },
+      {
+        "name": "대한건설협회 공지사항",
+        "status": "ok",
+        "count": 13,
+        "tookMs": 2246
+      },
+      {
+        "name": "대한건설협회 보도자료",
+        "status": "ok",
+        "count": 10,
+        "tookMs": 960
+      },
+      {
+        "name": "대한건축사협회 공지사항",
+        "status": "ok",
+        "count": 12,
+        "tookMs": 1620
+      },
+      {
+        "name": "CSI 공지사항",
+        "status": "ok",
+        "count": 10,
+        "tookMs": 1350
+      },
+      {
+        "name": "CSI 자료실",
+        "status": "ok",
+        "count": 10,
+        "tookMs": 818
       }
     ],
     "totalItems": 165
