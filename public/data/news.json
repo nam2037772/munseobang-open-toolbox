@@ -11,6 +11,28 @@
     ]
   },
   {
+    "source": "대한건설협회",
+    "category": "공지사항",
+    "title": "건설안전 이해관계자 인식조사 협조요청",
+    "date": "2026-11-11",
+    "url": "https://www.cak.or.kr/lay1/bbs/S1T9C11/A/1/view.do?article_seq=162498",
+    "tags": [
+      "건설",
+      "협회"
+    ]
+  },
+  {
+    "source": "대한건축사협회",
+    "category": "공지사항",
+    "title": "[공지사항] 물류시설 보행거리 제한기준 개선을 위한 전문가 설문조사",
+    "date": "2026-11-11",
+    "url": "https://www.kira.or.kr/jsp/main/01/01.jsp?mode=read&ba_id=265394",
+    "tags": [
+      "건축",
+      "협회"
+    ]
+  },
+  {
     "source": "국토교통부",
     "category": "공지사항",
     "title": "건설신기술 지정(2716)",
@@ -282,6 +304,17 @@
     "url": "https://www.csi.go.kr/community/noticeOnlyView.do?bbs_id=noti&bbt_no=149524",
     "tags": [
       "안전",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "보도자료",
+    "title": "「제11회 부동산산업의 날」 “국민 신뢰와 산업 혁신 다짐”",
+    "date": "2026-11-10",
+    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092581&src=text&kw=000004",
+    "tags": [
+      "정책",
       "건설"
     ]
   },
@@ -676,17 +709,6 @@
     "title": "철도안전법 위반 철도운영기관 및 철도차량 정비조직 등에 과징금 부과 의결",
     "date": "2026-11-05",
     "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092565&src=text&kw=000004",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "보도자료",
-    "title": "’26년 공간정보 품질관리 수준 15.9% 향상",
-    "date": "2026-11-05",
-    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092563&src=text&kw=000004",
     "tags": [
       "정책",
       "건설"
@@ -1122,17 +1144,6 @@
     ]
   },
   {
-    "source": "대한건축사협회",
-    "category": "공지사항",
-    "title": "[공지사항] 2026 한국건축산업대전 연계 건축사 실무교육 실시 안내",
-    "date": "2026-09-23",
-    "url": "https://www.kira.or.kr/jsp/main/01/01.jsp?mode=read&ba_id=264729",
-    "tags": [
-      "건축",
-      "협회"
-    ]
-  },
-  {
     "source": "CSI",
     "category": "공지사항",
     "title": "2026년 2차 「현장 맞춤형 스마트 안전장비 지원사업」 현장선정 결과 공고",
@@ -1350,17 +1361,6 @@
     "tags": [
       "안전",
       "건설"
-    ]
-  },
-  {
-    "source": "대한건설협회",
-    "category": "공지사항",
-    "title": "건설현장 KS인증 안전자재 사용 요청",
-    "date": "2026-08-26",
-    "url": "https://www.cak.or.kr/lay1/bbs/S1T9C11/A/1/view.do?article_seq=160483",
-    "tags": [
-      "건설",
-      "협회"
     ]
   },
   {
