@@ -2,6 +2,17 @@
   {
     "source": "국토교통부",
     "category": "공지사항",
+    "title": "자동차 제작결함 시정명령 공시송달 공고",
+    "date": "2026-11-17",
+    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=270391&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "공지사항",
     "title": "건설신기술 지정(2792)",
     "date": "2026-11-16",
     "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=270335&mode=view&src=text&kw=000001",
@@ -112,9 +123,64 @@
   {
     "source": "대한건축사협회",
     "category": "공지사항",
-    "title": "[공지사항] 2026 한반도건축위원회 세마니 [제10회] 「북한 도시·건축의 미래와 새로운 가능성」 개최안내",
+    "title": "[공지사항] 2026 한반도건축위원회 세미나 [제10회] 「북한 도시·건축의 미래와 새로운 가능성」 개최안내",
     "date": "2026-11-16",
     "url": "https://www.kira.or.kr/jsp/main/01/01.jsp?mode=read&ba_id=265457",
+    "tags": [
+      "건축",
+      "협회"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "보도자료",
+    "title": "[설명] 국토부는 3기 신도시 교통대책을 차질없이 추진하기 위해 총력을 다하고 있습니다",
+    "date": "2026-11-16",
+    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092606&src=text&kw=000004",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "보도자료",
+    "title": "[장관동정] 홍지선 장관, 국내 최대 모듈러 공공주택 현장 점검… “‘30년까지 2만호로 확대”",
+    "date": "2026-11-16",
+    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092605&src=text&kw=000004",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "보도자료",
+    "title": "국토부, 반복되는 철도사고·운행장애 예방에 관계기관 및 전문가 역량 결집",
+    "date": "2026-11-16",
+    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092603&src=text&kw=000004",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "공지사항",
+    "title": "부동산투자회사 영업인가 신청사실 공고( ㈜명품대한제67호위탁관리부동산투자회사)",
+    "date": "2026-11-16",
+    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=270448&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "대한건축사협회",
+    "category": "공지사항",
+    "title": "[공지사항] 2027 SketchUp 및 Chaos AI 건축디자인 워크플로우 특별세미나 개최 안내",
+    "date": "2026-11-16",
+    "url": "https://www.kira.or.kr/jsp/main/01/01.jsp?mode=read&ba_id=265472",
     "tags": [
       "건축",
       "협회"
@@ -484,17 +550,6 @@
     ]
   },
   {
-    "source": "국토교통부",
-    "category": "공지사항",
-    "title": "여수국가산업단지 산업단지계획 변경(여수에코에너지(주) 집단에너지공급시설(열병합발전소) 부지 조성사업)",
-    "date": "2026-11-11",
-    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=270339&mode=view&src=text&kw=000001",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
     "source": "대한건설협회",
     "category": "공지사항",
     "title": "건설안전 이해관계자 인식조사 협조요청",
@@ -533,17 +588,6 @@
     "title": "[장관동정] 홍지선 장관, 공공·민간 협력으로 2030 착공목표 차질 없이 추진",
     "date": "2026-11-11",
     "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092587&src=text&kw=000004",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "공지사항",
-    "title": "프로젝트 부동산투자회사 설립신고 수리 공고(㈜퍼시픽피치프로젝트위탁관리부동산투자회사)",
-    "date": "2026-11-11",
-    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=270409&mode=view&src=text&kw=000001",
     "tags": [
       "정책",
       "건설"
@@ -668,39 +712,6 @@
     "tags": [
       "건축",
       "협회"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "보도자료",
-    "title": "[설명] 남산 케이블카 독점 해소를 이행 중이며, 시행령 개정은 신중한 검토가 필요합니다.",
-    "date": "2026-11-10",
-    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092586&src=text&kw=000004",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "보도자료",
-    "title": "[해명] 「제5차 국가철도망 구축계획(‘26~’35)」은 아직 확정되지 않았습니다.",
-    "date": "2026-11-10",
-    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092585&src=text&kw=000004",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "보도자료",
-    "title": "[설명] 민간 정비사업 용적률 특례의 추진 여부와 적용 방식 등은 확정된 바 없습니다.",
-    "date": "2026-11-10",
-    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092584&src=text&kw=000004",
-    "tags": [
-      "정책",
-      "건설"
     ]
   },
   {
@@ -1105,17 +1116,6 @@
     "title": "[공지사항] 제3차『에너지 절약계획서 실무해설』교육생 모집공고",
     "date": "2026-10-12",
     "url": "https://www.kira.or.kr/jsp/main/01/01.jsp?mode=read&ba_id=264952",
-    "tags": [
-      "건축",
-      "협회"
-    ]
-  },
-  {
-    "source": "대한건축사협회",
-    "category": "공지사항",
-    "title": "[공지사항] 제2차『3D 프린팅 기술로 바라보는 미래 건축의 가능성』교육생 모집공고",
-    "date": "2026-10-12",
-    "url": "https://www.kira.or.kr/jsp/main/01/01.jsp?mode=read&ba_id=264951",
     "tags": [
       "건축",
       "협회"
