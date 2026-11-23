@@ -1,6 +1,61 @@
 [
   {
     "source": "국토교통부",
+    "category": "공지사항",
+    "title": "건설신기술 지정(2792)",
+    "date": "2026-11-24",
+    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=270335&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "공지사항",
+    "title": "태안-안성 고속도로 민간투자사업 전략환경영향평가 및 기후변화영향평가 평가항목 등의 결정내용 공개",
+    "date": "2026-11-24",
+    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=270518&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "공지사항",
+    "title": "건설신기술 지정 신청(2849)",
+    "date": "2026-11-24",
+    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=270455&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "공지사항",
+    "title": "토지세목조서 변경 고시(서울 영등포 공공주택지구)",
+    "date": "2026-11-24",
+    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=270500&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "공지사항",
+    "title": "국토교통 가명정보 결합전문기관 재지정/지정취소 고시",
+    "date": "2026-11-24",
+    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=270426&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
     "category": "보도자료",
     "title": "한국형 위성항법시스템(KPS), 본격 제작·조립·시험 절차 돌입",
     "date": "2026-11-23",
@@ -16,6 +71,72 @@
     "title": "[설명] 휴게소 서비스 경쟁력과 공정성을 높이는 관리？감독 체계를 확립하겠습니다.",
     "date": "2026-11-23",
     "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092632&src=text&kw=000004",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "보도자료",
+    "title": "인공지능(AI)과 로봇이 바꾸는 건설 현장, 안전하고 더 스마트한 미래를 열다",
+    "date": "2026-11-23",
+    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092634&src=text&kw=000004",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "보도자료",
+    "title": "[설명] 공공기관 지방 이전의 구체적인 내용은 확정된 바 없습니다",
+    "date": "2026-11-23",
+    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092636&src=text&kw=000004",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "보도자료",
+    "title": "[설명] 국토교통부는 철도안전을 최우선으로 사고·운행장애 최소화에 지속 노력하겠습니다.",
+    "date": "2026-11-23",
+    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092635&src=text&kw=000004",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "공지사항",
+    "title": "자산관리회사 변경인가 공고(에이알에이코리아(주))",
+    "date": "2026-11-23",
+    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=270555&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "공지사항",
+    "title": "자산관리회사 변경인가 공고(인천도시공사)",
+    "date": "2026-11-23",
+    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=270554&mode=view&src=text&kw=000001",
+    "tags": [
+      "정책",
+      "건설"
+    ]
+  },
+  {
+    "source": "국토교통부",
+    "category": "공지사항",
+    "title": "부동산투자회사 변경인가 신청사실 공고((주)코크렙제75호위탁관리부동산투자회사)",
+    "date": "2026-11-23",
+    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=270552&mode=view&src=text&kw=000001",
     "tags": [
       "정책",
       "건설"
@@ -440,39 +561,6 @@
     ]
   },
   {
-    "source": "국토교통부",
-    "category": "보도자료",
-    "title": "「주택법 시행령」 개정안, 국무회의 의결",
-    "date": "2026-11-17",
-    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092610&src=text&kw=000004",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "보도자료",
-    "title": "항공안전 조직 개편안, 국무회의 의결",
-    "date": "2026-11-17",
-    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092609&src=text&kw=000004",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "보도자료",
-    "title": "수능 영어듣기 35분간 항공기 이·착륙 통제",
-    "date": "2026-11-17",
-    "url": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092608&src=text&kw=000004",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
     "source": "CSI",
     "category": "공지사항",
     "title": "시스템 작업 안내(2026-11-17 18:00 ~ 21:00)",
@@ -489,17 +577,6 @@
     "title": "전문교육기관(가톨릭관동대학교 비행교육원) 조종사과정 지정공고",
     "date": "2026-11-17",
     "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=270467&mode=view&src=text&kw=000001",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "공지사항",
-    "title": "건설신기술 지정(2792)",
-    "date": "2026-11-16",
-    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=270335&mode=view&src=text&kw=000001",
     "tags": [
       "정책",
       "건설"
@@ -594,17 +671,6 @@
     ]
   },
   {
-    "source": "국토교통부",
-    "category": "공지사항",
-    "title": "부동산투자회사 영업인가 신청사실 공고( ㈜명품대한제67호위탁관리부동산투자회사)",
-    "date": "2026-11-16",
-    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=270448&mode=view&src=text&kw=000001",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
     "source": "대한건축사협회",
     "category": "공지사항",
     "title": "[공지사항] 2027 SketchUp 및 Chaos AI 건축디자인 워크플로우 특별세미나 개최 안내",
@@ -613,72 +679,6 @@
     "tags": [
       "건축",
       "협회"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "공지사항",
-    "title": "공공주택건설 사업계획 변경승인(고양창릉 S-2BL)",
-    "date": "2026-11-13",
-    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=270375&mode=view&src=text&kw=000001",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "공지사항",
-    "title": "부동산투자회사 영업등록 공고((주)밸류트러스트제3호기업구조조정위탁관리부동산투자회사)",
-    "date": "2026-11-13",
-    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=270382&mode=view&src=text&kw=000001",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "공지사항",
-    "title": "부동산투자회사 영업등록 공고(㈜하나하우징수유위탁관리부동산투자회사)",
-    "date": "2026-11-13",
-    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=270386&mode=view&src=text&kw=000001",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "공지사항",
-    "title": "사천선인 공공주택지구 지구계획 변경(5차) 승인",
-    "date": "2026-11-13",
-    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=270384&mode=view&src=text&kw=000001",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "공지사항",
-    "title": "부동산투자회사 영업등록 공고(㈜하나하우징상계위탁관리부동산투자회사)",
-    "date": "2026-11-13",
-    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=270387&mode=view&src=text&kw=000001",
-    "tags": [
-      "정책",
-      "건설"
-    ]
-  },
-  {
-    "source": "국토교통부",
-    "category": "공지사항",
-    "title": "광주송정역 KTX지역경제거점형 투자선도지구 지정(변경) 승인 고시 정정",
-    "date": "2026-11-13",
-    "url": "https://www.molit.go.kr/USR/BORD0201/m_69/BRD.jsp?idx=270374&mode=view&src=text&kw=000001",
-    "tags": [
-      "정책",
-      "건설"
     ]
   },
   {
